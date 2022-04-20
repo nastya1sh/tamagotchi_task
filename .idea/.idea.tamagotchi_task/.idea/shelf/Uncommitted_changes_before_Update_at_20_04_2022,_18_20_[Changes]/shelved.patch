@@ -1,0 +1,162 @@
+Index: tamagotchi_task/obj/tamagotchi_task.csproj.nuget.dgspec.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"format\": 1,\n  \"restore\": {\n    \"/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/tamagotchi_task.csproj\": {}\n  },\n  \"projects\": {\n    \"/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/tamagotchi_task.csproj\": {\n      \"version\": \"1.0.0\",\n      \"restore\": {\n        \"projectUniqueName\": \"/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/tamagotchi_task.csproj\",\n        \"projectName\": \"tamagotchi_task\",\n        \"projectPath\": \"/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/tamagotchi_task.csproj\",\n        \"packagesPath\": \"/Users/aleksandrsavinyh/.nuget/packages/\",\n        \"outputPath\": \"/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/\",\n        \"projectStyle\": \"PackageReference\",\n        \"configFilePaths\": [\n          \"/Users/aleksandrsavinyh/.nuget/NuGet/NuGet.Config\"\n        ],\n        \"originalTargetFrameworks\": [\n          \"net6.0\"\n        ],\n        \"sources\": {\n          \"https://api.nuget.org/v3/index.json\": {}\n        },\n        \"frameworks\": {\n          \"net6.0\": {\n            \"targetAlias\": \"net6.0\",\n            \"projectReferences\": {}\n          }\n        },\n        \"warningProperties\": {\n          \"warnAsError\": [\n            \"NU1605\"\n          ]\n        }\n      },\n      \"frameworks\": {\n        \"net6.0\": {\n          \"targetAlias\": \"net6.0\",\n          \"imports\": [\n            \"net461\",\n            \"net462\",\n            \"net47\",\n            \"net471\",\n            \"net472\",\n            \"net48\"\n          ],\n          \"assetTargetFallback\": true,\n          \"warn\": true,\n          \"frameworkReferences\": {\n            \"Microsoft.AspNetCore.App\": {\n              \"privateAssets\": \"none\"\n            },\n            \"Microsoft.NETCore.App\": {\n              \"privateAssets\": \"all\"\n            }\n          },\n          \"runtimeIdentifierGraphPath\": \"/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json\"\n        }\n      }\n    }\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tamagotchi_task/obj/tamagotchi_task.csproj.nuget.dgspec.json b/tamagotchi_task/obj/tamagotchi_task.csproj.nuget.dgspec.json
+--- a/tamagotchi_task/obj/tamagotchi_task.csproj.nuget.dgspec.json	
++++ b/tamagotchi_task/obj/tamagotchi_task.csproj.nuget.dgspec.json	
+@@ -55,7 +55,7 @@
+               "privateAssets": "all"
+             }
+           },
+-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
++          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+         }
+       }
+     }
+Index: tamagotchi_task/obj/rider.project.restore.info
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>16494360479529829
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tamagotchi_task/obj/rider.project.restore.info b/tamagotchi_task/obj/rider.project.restore.info
+--- a/tamagotchi_task/obj/rider.project.restore.info	
++++ b/tamagotchi_task/obj/rider.project.restore.info	
+@@ -1,1 +1,1 @@
+-16494360479529829
+\ No newline at end of file
++16504665809984784
+\ No newline at end of file
+Index: tamagotchi_task/obj/project.assets.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"version\": 3,\n  \"targets\": {\n    \"net6.0\": {}\n  },\n  \"libraries\": {},\n  \"projectFileDependencyGroups\": {\n    \"net6.0\": []\n  },\n  \"packageFolders\": {\n    \"/Users/aleksandrsavinyh/.nuget/packages/\": {}\n  },\n  \"project\": {\n    \"version\": \"1.0.0\",\n    \"restore\": {\n      \"projectUniqueName\": \"/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/tamagotchi_task.csproj\",\n      \"projectName\": \"tamagotchi_task\",\n      \"projectPath\": \"/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/tamagotchi_task.csproj\",\n      \"packagesPath\": \"/Users/aleksandrsavinyh/.nuget/packages/\",\n      \"outputPath\": \"/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/\",\n      \"projectStyle\": \"PackageReference\",\n      \"configFilePaths\": [\n        \"/Users/aleksandrsavinyh/.nuget/NuGet/NuGet.Config\"\n      ],\n      \"originalTargetFrameworks\": [\n        \"net6.0\"\n      ],\n      \"sources\": {\n        \"https://api.nuget.org/v3/index.json\": {}\n      },\n      \"frameworks\": {\n        \"net6.0\": {\n          \"targetAlias\": \"net6.0\",\n          \"projectReferences\": {}\n        }\n      },\n      \"warningProperties\": {\n        \"warnAsError\": [\n          \"NU1605\"\n        ]\n      }\n    },\n    \"frameworks\": {\n      \"net6.0\": {\n        \"targetAlias\": \"net6.0\",\n        \"imports\": [\n          \"net461\",\n          \"net462\",\n          \"net47\",\n          \"net471\",\n          \"net472\",\n          \"net48\"\n        ],\n        \"assetTargetFallback\": true,\n        \"warn\": true,\n        \"frameworkReferences\": {\n          \"Microsoft.AspNetCore.App\": {\n            \"privateAssets\": \"none\"\n          },\n          \"Microsoft.NETCore.App\": {\n            \"privateAssets\": \"all\"\n          }\n        },\n        \"runtimeIdentifierGraphPath\": \"/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json\"\n      }\n    }\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tamagotchi_task/obj/project.assets.json b/tamagotchi_task/obj/project.assets.json
+--- a/tamagotchi_task/obj/project.assets.json	
++++ b/tamagotchi_task/obj/project.assets.json	
+@@ -61,7 +61,7 @@
+             "privateAssets": "all"
+           }
+         },
+-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
++        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+       }
+     }
+   }
+Index: .idea/.idea.tamagotchi_task/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"RunManager\" selected=\".NET Launch Settings Profile.tamagotchi_task\">\n    <configuration name=\"tamagotchi_task\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/tamagotchi_task/tamagotchi_task.csproj\" />\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net6.0\" />\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"tamagotchi_task\" />\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\n      <option name=\"USE_MONO\" value=\"0\" />\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\n      <method v=\"2\">\n        <option name=\"Build\" />\n      </method>\n    </configuration>\n    <configuration name=\"tamagotchi_task: IIS Express\" type=\"LaunchSettings\" factoryName=\".NET Launch Settings Profile\">\n      <option name=\"LAUNCH_PROFILE_PROJECT_FILE_PATH\" value=\"$PROJECT_DIR$/tamagotchi_task/tamagotchi_task.csproj\" />\n      <option name=\"LAUNCH_PROFILE_TFM\" value=\"net6.0\" />\n      <option name=\"LAUNCH_PROFILE_NAME\" value=\"IIS Express\" />\n      <option name=\"USE_EXTERNAL_CONSOLE\" value=\"0\" />\n      <option name=\"USE_MONO\" value=\"0\" />\n      <option name=\"RUNTIME_ARGUMENTS\" value=\"\" />\n      <option name=\"GENERATE_APPLICATIONHOST_CONFIG\" value=\"1\" />\n      <option name=\"SHOW_IIS_EXPRESS_OUTPUT\" value=\"0\" />\n      <option name=\"SEND_DEBUG_REQUEST\" value=\"1\" />\n      <option name=\"ADDITIONAL_IIS_EXPRESS_ARGUMENTS\" value=\"\" />\n      <method v=\"2\">\n        <option name=\"Build\" />\n      </method>\n    </configuration>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.idea.tamagotchi_task/.idea/workspace.xml b/.idea/.idea.tamagotchi_task/.idea/workspace.xml
+--- a/.idea/.idea.tamagotchi_task/.idea/workspace.xml	
++++ b/.idea/.idea.tamagotchi_task/.idea/workspace.xml	
+@@ -1,5 +1,44 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoGeneratedRunConfigurationManager">
++    <projectFile profileName="tamagotchi_task">tamagotchi_task/tamagotchi_task.csproj</projectFile>
++    <projectFile profileName="IIS Express">tamagotchi_task/tamagotchi_task.csproj</projectFile>
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="7c4afd4f-32a1-4040-974d-5f95817f4930" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/.idea.tamagotchi_task/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tamagotchi_task/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.assets.cache" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.csproj.AssemblyReference.cache" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tamagotchi_task/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/tamagotchi_task/obj/project.assets.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tamagotchi_task/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tamagotchi_task/obj/project.nuget.cache" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tamagotchi_task/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/tamagotchi_task/obj/project.packagespec.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tamagotchi_task/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/tamagotchi_task/obj/rider.project.restore.info" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/tamagotchi_task/obj/tamagotchi_task.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/tamagotchi_task/obj/tamagotchi_task.csproj.nuget.dgspec.json" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="main" />
++      </map>
++    </option>
++  </component>
++  <component name="ProjectId" id="27WVkfnfPI6V2lDY3KQpLyxt07d" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="vue.rearranger.settings.migration" value="true" />
++  </component>
+   <component name="RunManager" selected=".NET Launch Settings Profile.tamagotchi_task">
+     <configuration name="tamagotchi_task" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/tamagotchi_task/tamagotchi_task.csproj" />
+@@ -32,4 +71,52 @@
+       </method>
+     </configuration>
+   </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="7c4afd4f-32a1-4040-974d-5f95817f4930" name="Changes" comment="" />
++      <created>1649436047763</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1649436047763</updated>
++      <workItem from="1649436049957" duration="813000" />
++      <workItem from="1650466582586" duration="406000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
++  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
++  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++    <option name="RECENT_FILTERS">
++      <map>
++        <entry key="Branch">
++          <value>
++            <list>
++              <RecentGroup>
++                <option name="FILTER_VALUES">
++                  <option value="origin/main" />
++                </option>
++              </RecentGroup>
++            </list>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
++  </component>
+ </project>
+\ No newline at end of file

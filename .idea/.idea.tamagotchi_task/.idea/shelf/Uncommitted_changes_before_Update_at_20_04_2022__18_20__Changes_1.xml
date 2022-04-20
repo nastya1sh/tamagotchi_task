@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_20_04_2022,_18_20_[Changes]1" date="1650468168118" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.tamagotchi_task/.idea/shelf/Uncommitted_changes_before_Update_at_20_04_2022,_18_20_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 20.04.2022, 18:20 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.assets.cache" />
+    <option name="AFTER_PATH" value="tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.assets.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.tamagotchi_task/.idea/shelf/Uncommitted_changes_before_Update_at_20_04_2022,_18_20_[Changes]1/tamagotchi_task.assets.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.csproj.AssemblyReference.cache" />
+    <option name="AFTER_PATH" value="tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.csproj.AssemblyReference.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.tamagotchi_task/.idea/shelf/Uncommitted_changes_before_Update_at_20_04_2022,_18_20_[Changes]1/tamagotchi_task.csproj.AssemblyReference.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="tamagotchi_task/obj/project.nuget.cache" />
+    <option name="AFTER_PATH" value="tamagotchi_task/obj/project.nuget.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.tamagotchi_task/.idea/shelf/Uncommitted_changes_before_Update_at_20_04_2022,_18_20_[Changes]1/project.nuget.cache" />
+  </binary>
+</changelist>

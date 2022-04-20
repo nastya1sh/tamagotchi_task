@@ -1,26 +1,52 @@
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\bin\Debug\net6.0\appsettings.Development.json
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\bin\Debug\net6.0\appsettings.json
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\bin\Debug\net6.0\tamagotchi_task.staticwebassets.runtime.json
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\bin\Debug\net6.0\tamagotchi_task.exe
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\bin\Debug\net6.0\tamagotchi_task.deps.json
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\bin\Debug\net6.0\tamagotchi_task.runtimeconfig.json
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\bin\Debug\net6.0\tamagotchi_task.dll
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\bin\Debug\net6.0\ref\tamagotchi_task.dll
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\bin\Debug\net6.0\tamagotchi_task.pdb
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.csproj.AssemblyReference.cache
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.GeneratedMSBuildEditorConfig.editorconfig
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.AssemblyInfoInputs.cache
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.AssemblyInfo.cs
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.csproj.CoreCompileInputs.cache
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.MvcApplicationPartsAssemblyInfo.cache
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.RazorAssemblyInfo.cache
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.RazorAssemblyInfo.cs
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\staticwebassets.build.json
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\staticwebassets.development.json
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\scopedcss\bundle\tamagotchi_task.styles.css
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\scopedcss\projectbundle\tamagotchi_task.bundle.scp.css
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.dll
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\ref\tamagotchi_task.dll
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.pdb
-D:\Program Files\Git\tamagotchi_task\tamagotchi_task\obj\Debug\net6.0\tamagotchi_task.genruntimeconfig.cache
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/appsettings.Development.json
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/appsettings.json
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.staticwebassets.runtime.json
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.exe
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.deps.json
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.runtimeconfig.json
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.dll
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/ref/tamagotchi_task.dll
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.pdb
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.csproj.AssemblyReference.cache
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.GeneratedMSBuildEditorConfig.editorconfig
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.AssemblyInfoInputs.cache
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.AssemblyInfo.cs
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.csproj.CoreCompileInputs.cache
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.MvcApplicationPartsAssemblyInfo.cache
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.RazorAssemblyInfo.cache
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.RazorAssemblyInfo.cs
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/staticwebassets.build.json
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/staticwebassets.development.json
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/scopedcss/bundle/tamagotchi_task.styles.css
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/scopedcss/projectbundle/tamagotchi_task.bundle.scp.css
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.dll
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/ref/tamagotchi_task.dll
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.pdb
+D:/Program Files/Git/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.genruntimeconfig.cache
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/appsettings.Development.json
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/appsettings.json
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.staticwebassets.runtime.json
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.deps.json
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.runtimeconfig.json
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.dll
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/bin/Debug/net6.0/tamagotchi_task.pdb
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.csproj.AssemblyReference.cache
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.AssemblyInfoInputs.cache
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.AssemblyInfo.cs
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.csproj.CoreCompileInputs.cache
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.MvcApplicationPartsAssemblyInfo.cache
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.RazorAssemblyInfo.cache
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.RazorAssemblyInfo.cs
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/staticwebassets.build.json
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/staticwebassets.development.json
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/scopedcss/bundle/tamagotchi_task.styles.css
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/scopedcss/projectbundle/tamagotchi_task.bundle.scp.css
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.dll
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/refint/tamagotchi_task.dll
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.pdb
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/tamagotchi_task.genruntimeconfig.cache
+/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/Debug/net6.0/ref/tamagotchi_task.dll

@@ -9,5 +9,6 @@ namespace tamagotchi_task.Domain
 
         [Required]
         public string Password { get; set; }
+
     }
 }
