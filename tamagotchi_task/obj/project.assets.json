@@ -8,24 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/aleksandrsavinyh/.nuget/packages/": {}
+    "C:\\Users\\vladu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/tamagotchi_task.csproj",
+      "projectUniqueName": "D:\\Program Files\\Git\\tamagotchi_task\\tamagotchi_task\\tamagotchi_task.csproj",
       "projectName": "tamagotchi_task",
-      "projectPath": "/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/tamagotchi_task.csproj",
-      "packagesPath": "/Users/aleksandrsavinyh/.nuget/packages/",
-      "outputPath": "/Users/aleksandrsavinyh/RiderProjects/tamagotchi_task/tamagotchi_task/obj/",
+      "projectPath": "D:\\Program Files\\Git\\tamagotchi_task\\tamagotchi_task\\tamagotchi_task.csproj",
+      "packagesPath": "C:\\Users\\vladu\\.nuget\\packages\\",
+      "outputPath": "D:\\Program Files\\Git\\tamagotchi_task\\tamagotchi_task\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/aleksandrsavinyh/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\vladu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -61,7 +63,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
