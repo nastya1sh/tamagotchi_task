@@ -11,6 +11,9 @@ namespace tamagotchi_task.Domain
 
         //Возможно, сделаем как-то иначе
         //public string Rank { get; set; } = "Noob";
-
+        public int HP { get; set; } = 6;
+        public int XP { get; set; } = 0;
+        public int Strength { get; set; } = 0;
+        public int Intellect { get; set; } = 0;
     }
 }
