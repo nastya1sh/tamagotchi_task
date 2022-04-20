@@ -12,6 +12,5 @@ namespace tamagotchi_task.Domain
         //Возможно, сделаем как-то иначе
         //public string Rank { get; set; } = "Noob";
 
-
     }
 }
