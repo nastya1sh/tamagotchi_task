@@ -4,10 +4,12 @@ namespace tamagotchi_task.Domain
 {
     public class User: DomainEntity
     {
-        [Required]
+        [Required(ErrorMessage = "Введите логин!")]
+        [Display(Name = "Логин")]
         public string Login { get; set; } //Зачем нужны поля, когда есть свойства?
 
-        [Required]
+        [Required(ErrorMessage = "Придумайте пароль!")]
+        [Display(Name = "Пароль")]
         public string Password { get; set; }
 
     }

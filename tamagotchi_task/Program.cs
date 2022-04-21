@@ -1,7 +1,14 @@
+﻿using Microsoft.EntityFrameworkCore;
+using tamagotchi_task.Domain;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//Подключаем контекст БД, чтобы не писать команды SQL, а использовать EF Core
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
+        "Data Source=(local); Database=Characters; Persist Security Info=False; MultipleActiveResultSets=True; Trusted_Connection=True;"
+        ));
 
 var app = builder.Build();
 
