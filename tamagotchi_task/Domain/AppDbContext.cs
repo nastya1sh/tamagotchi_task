@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using tamagotchi_task.Domain.Entities;
 
 namespace tamagotchi_task.Domain
 {
@@ -11,15 +12,20 @@ namespace tamagotchi_task.Domain
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Character> Characters { get; set; }
+        public DbSet<CharacterTask> CharacterTasks { get; set; }
+        //Пока не хочу подключать класс User, так как в строке 9 есть IdentityUser
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            //Повторяющийся код, как-нибудь надо потом сократить
+            modelBuilder.Entity<CharacterTask>().HasKey(c => c.Id); //До сих пор не понимаю, зачем ему явно объявляет PK
+            modelBuilder.Entity<Character>().HasKey(c => c.Id);
+
             /*modelBuilder.Entity<Character>().HasData(new Character
             {
-                Id = new Guid(), //Надо потом прописать AddSingleton
-                Nickname = "Little_Foxe"
+                Эта конструкция создаёт элемент таблицы Character, но пока редактировать БД не будем
             }) ;*/
         }
     }
