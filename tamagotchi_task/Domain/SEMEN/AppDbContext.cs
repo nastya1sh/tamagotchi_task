@@ -7,16 +7,16 @@ namespace tamagotchi_task.Domain
 {
     //Всё перечисленное ниже может не сработать, если не установить специальные расширения
     //Этот класс - дар Microsoft и заодно главный элемент в EF Core
-    public class AppDbContext : IdentityDbContext<IdentityUser>
+    public partial class AppDbContext : IdentityDbContext<IdentityUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Character> Characters { get; set; }
-        public DbSet<CharacterTask> CharacterTasks { get; set; }
         //Пока не хочу подключать класс User, так как в строке 9 есть IdentityUser
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Не могу сделать этот метод partial, придётся кому-то одному писать
             base.OnModelCreating(modelBuilder);
 
             //Повторяющийся код, как-нибудь надо потом сократить
