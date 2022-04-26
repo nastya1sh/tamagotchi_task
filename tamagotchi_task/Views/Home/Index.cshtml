@@ -2,7 +2,110 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">Vladd</a>.</p>
+<link rel="stylesheet" href="~/css/dashboard.css">
+
+<div class="wrapper">
+    <div class="avatar">
+    <img src="img/cat1.png" class="ava" alt="avatar">
+    <div id="rectangle"></div>
+    <div>
+        <p class="nickname">Nick</p>
+    </div>
+    <div class="heart">
+        <img src="img/heart.png" alt="heart">
+        <img src="img/heart.png" alt="heart">
+        <img src="img/heart.png" alt="heart">
+    </div>
+    <div class="xp">
+        <img src="img/star.png" alt="xp">
+        <progress id="xpvalue" max="100" value="35"> </progress>
+    </div>
+    <div>
+        <p class="level">Level</p>
+        <p class="numlevel">24</p>
+    </div>
+    <div>
+        <p class="tasks">Tasks</p>
+        <p class="numtasks">5</p>
+    </div>
+    </div>
+    <div class="input">
+        <div id="rectangle2"></div>
+        <div>
+            <input placeholder="My task" maxlength="20" type="text" class="area"></input>
+            <input placeholder="Description" maxlength="100" type="text" class="area2"></input>
+            <div class="buttonstask">
+                <a title="Set tag" href=""><i class="fa fa-tags fa-1x"></i></a>
+                <a title="Set priority" href=""><i class="fa fa-flag fa-1x"></i></a>
+
+                <div id="window">
+                    <div id="okno">
+                        <input type="date" id="start" name="trip-start" value="2022-04-23" min="2022-04-23" max="">
+                        <a href="#" type="submit" id="close">OK</a>
+                    </div>
+                  </div>
+                <a title="Set a deadline" href="#window"><i class="fa fa-calendar fa-1x"></i></a>
+            </div>
+            <input type="submit" id="buttonadd" value="ADD">
+        </div>
+    </div>
+    <div id="rectangle3"></div>
+    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+        <label class="btn active">
+            <input type="checkbox" checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> Homework</span>
+            <span class="descrdate">
+                <a title="Delete" class="delete" href=""><img src="img/trash.png" alt="heart"></a>
+                <span class="descr">hello</span>
+                <time class="date" datetime="12.04.2022">12.04.2022</time>
+            </span>
+        </label>
+        <label class="btn active" >
+            <input type="checkbox" checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> Homework</span>
+            <span class="descrdate">
+            <a title="Delete" class="delete" href=""><img src="img/trash.png" alt="heart"></a>
+            <span class="descr"></span>
+            <time class="date" datetime="12.04.2022">12.04.2022</time>
+            </span>
+        </label>
+        <label class="btn active">
+            <input type="checkbox"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> Hey</span>
+            <span class="descrdate">
+            <a title="Delete" class="delete" href=""><img src="img/trash.png" alt="heart"></a>
+            <span class="descr">task</span>
+            <time class="date" datetime=""></time>
+            </span>
+        </label>
+        <label class="btn active">
+            <input type="checkbox"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> Hey</span>
+            <span class="descrdate">
+            <a title="Delete" class="delete" href=""><img src="img/trash.png" alt="heart"></a>
+            <span class="descr">task</span>
+            <time class="date" datetime=""></time>
+            </span>
+        </label>
+        <label class="btn active">
+            <input type="checkbox"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> Hey</span>
+            <span class="descrdate">
+                <a title="Delete" class="delete" href=""><img src="img/trash.png" alt="heart"></a>
+                <span class="descr">task</span>
+                <time class="date" datetime=""></time>
+            </span>
+        </label>
+        <label class="btn active">
+            <input type="checkbox"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> Hey</span>
+            <span class="descrdate">
+                <a title="Delete" class="delete" href=""><img src="img/trash.png" alt="heart"></a>
+                <span class="descr">task</span>
+                <time class="date" datetime=""></time>
+            </span>
+        </label>
+        <label class="btn active">
+                            <input type="checkbox"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> Hey</span>
+                            <span class="descrdate">
+                            <a title="Delete" class="delete" href=""><img src="img/trash.png" alt="heart"></a>
+                            <span class="descr">task</span>
+                            <time class="date" datetime=""></time>
+                            </span>
+                        </label>
+    </div>
 </div>
