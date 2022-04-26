@@ -411,12 +411,14 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
     position: absolute;
     width: 343.7px;
     height: 270px;  
-    margin-left: -15px;
+    margin-left: -10px;
     margin-top: -5px;
     top: 620px;
     left: 45%;
     overflow-y:scroll;
 }
+
+.btn-group::-webkit-scrollbar { width: 0; }
 
 #window {
     width: 100%;
