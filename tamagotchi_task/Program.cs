@@ -22,18 +22,9 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Conf
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options => //CookieAuthenticationOptions
     {
-        options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login"); //NB Похоже, проблема здесь
+        options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
     });
 builder.Services.AddControllersWithViews();
-
-/*builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.Cookie.Name = "ApplicationCookie";
-    options.Cookie.HttpOnly = true;
-    options.LoginPath = "/Account/Login";
-    options.AccessDeniedPath = "/Account/Accessdenied";
-    options.SlidingExpiration = true;
-});*/
 #endregion
 
 var app = builder.Build();
