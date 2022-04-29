@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace tamagotchi_task.Domain
+﻿namespace tamagotchi_task.Domain
 {
-    public class User: DomainEntity
+    public class LoginUser: DomainEntity
     {
         [Required(ErrorMessage = "Введите логин!")]
         [Display(Name = "Логин")]
@@ -11,6 +9,9 @@ namespace tamagotchi_task.Domain
         [Required(ErrorMessage = "Придумайте пароль!")]
         [Display(Name = "Пароль")]
         public string Password { get; set; }
+
+        [Display(Name = "Запомнить меня")]
+        public bool RememberMe { get; set; }
 
         //Ссылка на персонажей
         //Не забываем, что в один момент времени у пользователя м.б. только одна зверушка

@@ -12,7 +12,7 @@ namespace tamagotchi_task.Domain
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Character> Characters { get; set; }
-        //Пока не хочу подключать класс User, так как в строке 9 есть IdentityUser
+        public DbSet<LoginUser> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
