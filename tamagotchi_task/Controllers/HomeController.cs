@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using tamagotchi_task.Models;
 
@@ -26,6 +27,14 @@ public class HomeController : Controller
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
-        return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    //Код ниже позволяет делать редирект сразу на модуль аутентификации
+    //Если пользователь ещё не вошёл на сайт (нужно закомментить всё сверху, чтобы использовать)
+    /*[Authorize]
+    public IActionResult Index()
+    {
+        return Content(User.Identity.Name);
+    }*/
 }

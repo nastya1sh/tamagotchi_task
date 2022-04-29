@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
 using tamagotchi_task.Domain;
 using tamagotchi_task.Service;
 
@@ -13,6 +15,25 @@ builder.Configuration.Bind("Project", new Config());
 
 //Подключаем контекст БД
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Config.ConnectionString));
+#endregion
+
+#region Настройки Cookies
+//Устанавливаем конфигурацию подключения через "печеньки"
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options => //CookieAuthenticationOptions
+    {
+        options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login"); //NB Похоже, проблема здесь
+    });
+builder.Services.AddControllersWithViews();
+
+/*builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.Name = "ApplicationCookie";
+    options.Cookie.HttpOnly = true;
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Account/Accessdenied";
+    options.SlidingExpiration = true;
+});*/
 #endregion
 
 var app = builder.Build();
@@ -30,7 +51,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseAuthorization(); //Работает с ролями пользователей
+app.UseAuthentication(); //Позволяет проверять подлинность пользователей по логину/паролю
 
 app.MapControllerRoute(
     name: "default",

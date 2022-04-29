@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace tamagotchi_task.Domain.Entities
+﻿namespace tamagotchi_task.Domain.Entities
 {
     public class CharacterTask: DomainEntity
     {
