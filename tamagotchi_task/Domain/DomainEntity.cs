@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace tamagotchi_task.Domain
+﻿namespace tamagotchi_task.Domain
 {
     public abstract class DomainEntity
     {

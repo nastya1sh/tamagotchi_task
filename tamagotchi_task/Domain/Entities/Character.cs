@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using tamagotchi_task.Domain.Entities;
-
-namespace tamagotchi_task.Domain
+﻿namespace tamagotchi_task.Domain
 {
     public class Character: DomainEntity
     {
@@ -19,6 +16,6 @@ namespace tamagotchi_task.Domain
         public List<CharacterTask> CharacterTasks { get; set; } = new List<CharacterTask>(); //Нужна для создания связи "Один ко многим"
 
         //Ссылка на пользователя
-        public User User { get; set; }
+        public LoginUser User { get; set; }
     }
 }
