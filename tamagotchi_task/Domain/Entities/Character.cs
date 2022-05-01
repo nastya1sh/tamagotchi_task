@@ -17,5 +17,10 @@
 
         //Ссылка на пользователя
         public LoginUser User { get; set; }
+
+        public ToyCharacter ToyCharacter { get; set; } //Ссылка на таблицу  ToyCharacter
+        public PotionCharacter PotionCharacter { get; set; } 
+        public ForageCharacter ForageCharacter { get; set; } 
+
     }
 }
