@@ -23,7 +23,6 @@ body, html
 #rectangle {
     position: absolute;
     display: grid;
-
     width: 313.7px;
     height: 270px;
     left: 45%;
@@ -411,7 +410,7 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
     position: absolute;
     width: 343.7px;
     height: 270px;  
-    margin-left: -10px;
+    margin-left: -12px;
     margin-top: -5px;
     top: 620px;
     left: 45%;

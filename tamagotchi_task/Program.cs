@@ -47,6 +47,6 @@ app.UseAuthentication(); //Позволяет проверять подлинн�
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Register}/{id?}");
 
 app.Run();
