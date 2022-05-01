@@ -20,7 +20,7 @@
 
         public ToyCharacter ToyCharacter { get; set; } //Ссылка на таблицу  ToyCharacter
         public PotionCharacter PotionCharacter { get; set; } 
-        public ForageCharacter ForageCharacter { get; set; } 
-
+        public ForageCharacter ForageCharacter { get; set; }
+        public List<Avatar> Avatars { get; set; } = new List<Avatar>();
     }
 }
