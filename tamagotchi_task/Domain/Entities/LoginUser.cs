@@ -16,5 +16,7 @@
         //Ссылка на персонажей
         //Не забываем, что в один момент времени у пользователя м.б. только одна зверушка
         public List<Character> Characters { get; set; }
+        public List<Massage> Massages { get; set; } = new List<Massage>();
+        public Chats_Users Chats_Users { get; set; }
     }
 }
