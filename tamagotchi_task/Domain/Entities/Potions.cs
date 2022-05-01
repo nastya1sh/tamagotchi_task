@@ -1,6 +1,6 @@
 ﻿namespace tamagotchi_task.Domain.Entities
 {
-    public class Potions
+    public class Potions : DomainEntity
     {
         public string Image { get; set; }
         public int Buff_XP { get; set; }

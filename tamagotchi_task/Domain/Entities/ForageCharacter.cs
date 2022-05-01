@@ -1,6 +1,6 @@
 ﻿namespace tamagotchi_task.Domain.Entities
 {
-    public class ForageCharacter
+    public class ForageCharacter : DomainEntity
     {
         public int Amount { get; set; }
         public List<Character> Character { get; set; } = new List<Character>();

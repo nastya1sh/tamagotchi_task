@@ -1,6 +1,6 @@
 ﻿namespace tamagotchi_task.Domain.Entities
 {
-    public class TagsTasks
+    public class TagsTasks : DomainEntity
     {
         
 

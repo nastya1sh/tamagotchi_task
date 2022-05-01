@@ -1,6 +1,6 @@
 ﻿namespace tamagotchi_task.Domain.Entities
 {
-    public class Forage
+    public class Forage : DomainEntity
     {
         public string Image { get; set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace tamagotchi_task.Domain.Entities
 {
-    public class Showcase
+    public class Showcase : DomainEntity
     {
         public int Item_Id { get; set; }
         public string Item_Type{ get; set; }
