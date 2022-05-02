@@ -19,6 +19,7 @@ namespace tamagotchi_task.Controllers
         }
 
         [HttpGet]
+        //Без AllowAnonymous невозможно регаться
         [AllowAnonymous]
         public IActionResult Login(string returnUrl)
         {
@@ -40,7 +41,7 @@ namespace tamagotchi_task.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-                ModelState.AddModelError("", "Incorrect username and password.");
+                ModelState.AddModelError("", "Incorrect username or password.");
             }
             return View(model);
         }
@@ -70,7 +71,7 @@ namespace tamagotchi_task.Controllers
                     return RedirectToAction("Index", "Home");
                 }
                 else
-                    ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                    ModelState.AddModelError("", "Incorrect username or password.");
             }
             return View(model);
         }
