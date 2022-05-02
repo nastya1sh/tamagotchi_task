@@ -3,7 +3,8 @@
     public class ForageCharacter : DomainEntity
     {
         public int Amount { get; set; }
-        public List<Character> Character { get; set; } = new List<Character>();
-        public List<Forage> Forage { get; set; } = new List<Forage>();
+
+        public List<Character> Characters { get; set; }
+        public List<Forage> Forages { get; set; }
     }
 }

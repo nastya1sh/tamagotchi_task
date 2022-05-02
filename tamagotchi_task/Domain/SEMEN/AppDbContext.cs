@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using tamagotchi_task.Domain.Entities;
 
 namespace tamagotchi_task.Domain
 {
@@ -12,42 +11,30 @@ namespace tamagotchi_task.Domain
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Character> Characters { get; set; }
-        public DbSet<Forage> Forage { get; set; }
-        public DbSet<LoginUser> Users { get; set; }
-        public DbSet<ForageCharacter> ForageCharacter { get; set; }
-        public DbSet<PotionCharacter> PotionCharacter { get; set; }
+        public DbSet<Forage> Forages { get; set; }
+        public DbSet<MyUser> MyUsers { get; set; }
+        public DbSet<ForageCharacter> ForageCharacters { get; set; }
+        public DbSet<PotionCharacter> PotionCharacters { get; set; }
         public DbSet<Potions> Potions { get; set; }
         public DbSet<Showcase> Showcases { get; set; }
         public DbSet<Tags> Tags { get; set; }
         public DbSet<TagsTasks> TagsTasks { get; set; }
-        public DbSet<ToyCharacter> ToyCharacter{ get; set; }
+        public DbSet<ToyCharacter> ToyCharacters{ get; set; }
         public DbSet<Toys> Toys { get; set; }
        
 
 
 protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Не могу сделать этот метод partial, придётся кому-то одному писать
             base.OnModelCreating(modelBuilder);
 
-            //Повторяющийся код, как-нибудь надо потом сократить
-            modelBuilder.Entity<CharacterTask>().HasKey(c => c.Id); //До сих пор не понимаю, зачем ему явно объявляет PK
-            modelBuilder.Entity<Character>().HasKey(c => c.Id);
-            modelBuilder.Entity<Forage>().HasKey(c => c.Id);
-            modelBuilder.Entity<ForageCharacter>().HasKey(c => c.Id);
-            modelBuilder.Entity<PotionCharacter>().HasKey(c => c.Id);
-            modelBuilder.Entity<Potions>().HasKey(c => c.Id);
-            modelBuilder.Entity<Showcase>().HasKey(c => c.Id);
-            modelBuilder.Entity<Tags>().HasKey(c => c.Id);
-            modelBuilder.Entity<TagsTasks>().HasKey(c => c.Id);
-            modelBuilder.Entity<ToyCharacter>().HasKey(c => c.Id);
-            modelBuilder.Entity<Toys>().HasKey(c => c.Id);
-            
-
-            /*modelBuilder.Entity<Character>().HasData(new Character
+            modelBuilder.Entity<Chat>().HasData(new Chat
             {
-                Эта конструкция создаёт элемент таблицы Character, но пока редактировать БД не будем
-            }) ;*/
+                Id = new Guid("0FA0052E-B8FB-42F6-B8BA-BF205FDE5EFC"),
+                Name = "Global Chat", //Нужна для удобного поиска при создании нового пользователя
+                MyUsers = new List<MyUser>(),
+                Messages = new List<Message>()
+            });
         }
     }
 }

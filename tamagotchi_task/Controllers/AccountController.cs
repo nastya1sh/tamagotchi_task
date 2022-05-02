@@ -19,6 +19,7 @@ namespace tamagotchi_task.Controllers
         }
 
         [HttpGet]
+        //Без AllowAnonymous невозможно регаться
         [AllowAnonymous]
         public IActionResult Login(string returnUrl)
         {
@@ -30,18 +31,16 @@ namespace tamagotchi_task.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid) { -- С этой штукой не работает, но это может быть небезопасно
+            //Проверка параметров пользователя
+            MyUser user = await db.MyUsers.FirstOrDefaultAsync(u => u.Name == model.Name && u.Password == model.Password);
+            if (user != null)
             {
-                //Проверка параметров пользователя
-                LoginUser user = await db.Users.FirstOrDefaultAsync(u => u.Name == model.Name && u.Password == model.Password);
-                if (user != null)
-                {
-                    await Authenticate(model.Name); //Аутентификация
+                await Authenticate(model.Name); //Аутентификация
 
-                    return RedirectToAction("Index", "Home");
-                }
-                ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                return RedirectToAction("Index", "Home");
             }
+            ModelState.AddModelError("", "Incorrect username or password.");
             return View(model);
         }
 
@@ -58,19 +57,26 @@ namespace tamagotchi_task.Controllers
         {
             if (ModelState.IsValid)
             {
-                LoginUser user = await db.Users.FirstOrDefaultAsync(u => u.Name == model.Name);
+                MyUser user = await db.MyUsers.FirstOrDefaultAsync(u => u.Name == model.Name);
                 if (user == null)
                 {
-                    // добавляем пользователя в бд
-                    db.Users.Add(new LoginUser { Name = model.Name, Password = model.Password });
+                    Guid id = Guid.NewGuid(); //У нас Id не int, поэтому нужно его генерить ручками
+
+                    //Добавление нового пользователя в глобальный чат
+                    Chat chat = await db.Chats.FirstOrDefaultAsync(c => c.Name == "Global Chat");
+                    //Если chat == null, выйдет SQL Exception
+
+                    //Добавляем пользователя в бд
+                    db.MyUsers.Add(new MyUser { Id = id, Name = model.Name, Password = model.Password, Chats = chat });
+
                     await db.SaveChangesAsync();
 
-                    await Authenticate(model.Name); // аутентификация
+                    await Authenticate(model.Name); //Аутентификация
 
                     return RedirectToAction("Index", "Home");
                 }
                 else
-                    ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                    ModelState.AddModelError("", "Incorrect username or password.");
             }
             return View(model);
         }

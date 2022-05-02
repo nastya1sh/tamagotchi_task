@@ -2,8 +2,8 @@
 {
     public class Character: DomainEntity
     {
-        [Required(ErrorMessage = "У персонажа должно быть имя!")]
-        [Display(Name = "Имя персонажа")]
+        [Required(ErrorMessage = "Character must have a name!")]
+        [Display(Name = "Character's name")]
         public override string Name { get; set; } //Перегружаем, так как есть ErrorMessage и Name
 
         public int Level { get; set; } = 0;
@@ -13,14 +13,12 @@
         public int XP { get; set; } = 0;
         public int Strength { get; set; } = 0;
         public int Intellect { get; set; } = 0;
-        public List<CharacterTask> CharacterTasks { get; set; } = new List<CharacterTask>(); //Нужна для создания связи "Один ко многим"
 
-        //Ссылка на пользователя
-        public LoginUser User { get; set; }
-
-        public ToyCharacter ToyCharacter { get; set; } //Ссылка на таблицу  ToyCharacter
-        public PotionCharacter PotionCharacter { get; set; } 
-        public ForageCharacter ForageCharacter { get; set; }
-        public List<Avatar> Avatars { get; set; } = new List<Avatar>();
+        public MyUser MyUsers { get; set; } //Ссылка на пользователя
+        public ToyCharacter ToyCharacters { get; set; } //Ссылка на таблицу ToyCharacter
+        public PotionCharacter PotionCharacters { get; set; } //И т.д.
+        public ForageCharacter ForageCharacters { get; set; }
+        public List<CharacterTask> CharacterTasks { get; set; } //Нужна для создания связи "Один ко многим"
+        public List<Avatar> Avatars { get; set; }
     }
 }

@@ -2,9 +2,7 @@
 {
     public class TagsTasks : DomainEntity
     {
-        
-
-        public List<CharacterTask> CharacterTasks { get; set; } = new List<CharacterTask>();
-        public List<Tags> Tags { get; set; } = new List<Tags>();
+        public List<CharacterTask> CharacterTasks { get; set; }
+        public List<Tags> Tags { get; set; }
     }
 }
