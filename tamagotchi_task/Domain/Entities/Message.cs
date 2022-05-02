@@ -7,8 +7,8 @@
 
         [Required]
         public DateTime Sending_Time { get; set; }
-        public LoginUser User { get; set; }
-        public Chat Chat { get; set; }
 
+        public MyUser MyUsers { get; set; }
+        public Chat Chats { get; set; }
     }
 }

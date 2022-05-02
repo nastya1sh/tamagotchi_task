@@ -17,7 +17,6 @@ namespace tamagotchi_task.Domain
         public DbSet<Chat> Chats { get; set; }
         public DbSet<Chats_Users> Chats_Users { get; set; }
         public DbSet<Fur> Furs { get; set; }
-        public DbSet<LoginUser> LoginUsers { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Wallpaper> Wallpapers { get; set; }
 

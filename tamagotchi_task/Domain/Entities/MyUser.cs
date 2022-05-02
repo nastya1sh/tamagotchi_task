@@ -1,6 +1,6 @@
 ﻿namespace tamagotchi_task.Domain
 {
-    public class LoginUser: DomainEntity
+    public class MyUser: DomainEntity
     {
         [Required(ErrorMessage = "Login required!")]
         [Display(Name = "Login")]

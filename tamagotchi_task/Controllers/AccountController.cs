@@ -33,14 +33,14 @@ namespace tamagotchi_task.Controllers
             if (ModelState.IsValid)
             {
                 //Проверка параметров пользователя
-                LoginUser user = await db.Users.FirstOrDefaultAsync(u => u.Name == model.Name && u.Password == model.Password);
+                MyUser user = await db.MyUsers.FirstOrDefaultAsync(u => u.Name == model.Name && u.Password == model.Password);
                 if (user != null)
                 {
                     await Authenticate(model.Name); //Аутентификация
 
                     return RedirectToAction("Index", "Home");
                 }
-                ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                ModelState.AddModelError("", "Incorrect username and password.");
             }
             return View(model);
         }
@@ -58,14 +58,14 @@ namespace tamagotchi_task.Controllers
         {
             if (ModelState.IsValid)
             {
-                LoginUser user = await db.Users.FirstOrDefaultAsync(u => u.Name == model.Name);
+                MyUser user = await db.MyUsers.FirstOrDefaultAsync(u => u.Name == model.Name);
                 if (user == null)
                 {
-                    // добавляем пользователя в бд
-                    db.Users.Add(new LoginUser { Name = model.Name, Password = model.Password });
+                    //Добавляем пользователя в бд
+                    db.MyUsers.Add(new MyUser { Name = model.Name, Password = model.Password });
                     await db.SaveChangesAsync();
 
-                    await Authenticate(model.Name); // аутентификация
+                    await Authenticate(model.Name); //Аутентификация
 
                     return RedirectToAction("Index", "Home");
                 }

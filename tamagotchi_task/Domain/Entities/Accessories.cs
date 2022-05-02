@@ -2,9 +2,8 @@
 {
     public class Accessories : DomainEntity
     {
-        [Required]
-        [Display(Name = "Accessory")]
         public string Image { get; set; }
-        public Avatar Avatar { get; set; }
+
+        public Avatar Avatars { get; set; }
     }
 }

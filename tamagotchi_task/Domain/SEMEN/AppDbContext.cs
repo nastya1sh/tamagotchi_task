@@ -12,22 +12,21 @@ namespace tamagotchi_task.Domain
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Character> Characters { get; set; }
-        public DbSet<Forage> Forage { get; set; }
-        public DbSet<LoginUser> Users { get; set; }
-        public DbSet<ForageCharacter> ForageCharacter { get; set; }
-        public DbSet<PotionCharacter> PotionCharacter { get; set; }
+        public DbSet<Forage> Forages { get; set; }
+        public DbSet<MyUser> MyUsers { get; set; }
+        public DbSet<ForageCharacter> ForageCharacters { get; set; }
+        public DbSet<PotionCharacter> PotionCharacters { get; set; }
         public DbSet<Potions> Potions { get; set; }
         public DbSet<Showcase> Showcases { get; set; }
         public DbSet<Tags> Tags { get; set; }
         public DbSet<TagsTasks> TagsTasks { get; set; }
-        public DbSet<ToyCharacter> ToyCharacter{ get; set; }
+        public DbSet<ToyCharacter> ToyCharacters{ get; set; }
         public DbSet<Toys> Toys { get; set; }
        
 
 
 protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Не могу сделать этот метод partial, придётся кому-то одному писать
             base.OnModelCreating(modelBuilder);
 
             //Повторяющийся код, как-нибудь надо потом сократить
