@@ -1,6 +1,6 @@
 ﻿namespace tamagotchi_task.Domain.Entities
 {
-    public class Massage : DomainEntity
+    public class Message : DomainEntity
     {
         [Required]
         public string Text { get; set; }

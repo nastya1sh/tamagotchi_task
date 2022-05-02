@@ -2,8 +2,7 @@
 {
     public class Wallpaper : DomainEntity
     {
-        [Required(ErrorMessage = "У персонажа должен быть фон!")]
-        [Display(Name = "Фон")]
+        [Required(ErrorMessage = "There should be a background!")]
         public string Image { get; set; }
         public Avatar Avatar { get; set; }
     }

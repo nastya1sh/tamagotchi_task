@@ -2,8 +2,8 @@
 {
     public class Character: DomainEntity
     {
-        [Required(ErrorMessage = "У персонажа должно быть имя!")]
-        [Display(Name = "Имя персонажа")]
+        [Required(ErrorMessage = "Character must have a name!")]
+        [Display(Name = "Character's name")]
         public override string Name { get; set; } //Перегружаем, так как есть ErrorMessage и Name
 
         public int Level { get; set; } = 0;

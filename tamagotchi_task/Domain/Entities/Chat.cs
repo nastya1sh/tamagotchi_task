@@ -4,7 +4,7 @@
     {
         [Required]
         public int Participants { get; set; }
-        public List<Massage> Massages { get; set; } = new List<Massage>();
+        public List<Message> Messages { get; set; } = new List<Message>();
         public Chats_Users Chats_Users { get; set; }
     }
 }

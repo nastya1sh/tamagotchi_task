@@ -29,12 +29,4 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
-
-    //Код ниже позволяет делать редирект сразу на модуль аутентификации
-    //Если пользователь ещё не вошёл на сайт (нужно закомментить всё сверху, чтобы использовать)
-    /*[Authorize]
-    public IActionResult Index()
-    {
-        return Content(User.Identity.Name);
-    }*/
 }
