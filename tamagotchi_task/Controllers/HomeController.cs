@@ -19,7 +19,17 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Chat()
+    {
+        return View();
+    }
+
+    public IActionResult Inventory()
+    {
+        return View();
+    }
+
+    public IActionResult Shop()
     {
         return View();
     }
