@@ -14,11 +14,11 @@
         public int Strength { get; set; } = 0;
         public int Intellect { get; set; } = 0;
 
-        public List<CharacterTask> CharacterTasks { get; set; } = new List<CharacterTask>(); //Нужна для создания связи "Один ко многим"
         public MyUser MyUsers { get; set; } //Ссылка на пользователя
-        public ToyCharacter ToyCharacters { get; set; } //Ссылка на таблицу  ToyCharacter
+        public ToyCharacter ToyCharacters { get; set; } //Ссылка на таблицу ToyCharacter
         public PotionCharacter PotionCharacters { get; set; } //И т.д.
         public ForageCharacter ForageCharacters { get; set; }
-        public List<Avatar> Avatars { get; set; } = new List<Avatar>();
+        public List<CharacterTask> CharacterTasks { get; set; } //Нужна для создания связи "Один ко многим"
+        public List<Avatar> Avatars { get; set; }
     }
 }

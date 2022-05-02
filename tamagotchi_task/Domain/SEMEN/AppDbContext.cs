@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using tamagotchi_task.Domain.Entities;
 
 namespace tamagotchi_task.Domain
 {
@@ -29,24 +28,13 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            //Повторяющийся код, как-нибудь надо потом сократить
-            modelBuilder.Entity<CharacterTask>().HasKey(c => c.Id); //До сих пор не понимаю, зачем ему явно объявляет PK
-            modelBuilder.Entity<Character>().HasKey(c => c.Id);
-            modelBuilder.Entity<Forage>().HasKey(c => c.Id);
-            modelBuilder.Entity<ForageCharacter>().HasKey(c => c.Id);
-            modelBuilder.Entity<PotionCharacter>().HasKey(c => c.Id);
-            modelBuilder.Entity<Potions>().HasKey(c => c.Id);
-            modelBuilder.Entity<Showcase>().HasKey(c => c.Id);
-            modelBuilder.Entity<Tags>().HasKey(c => c.Id);
-            modelBuilder.Entity<TagsTasks>().HasKey(c => c.Id);
-            modelBuilder.Entity<ToyCharacter>().HasKey(c => c.Id);
-            modelBuilder.Entity<Toys>().HasKey(c => c.Id);
-            
-
-            /*modelBuilder.Entity<Character>().HasData(new Character
+            modelBuilder.Entity<Chat>().HasData(new Chat
             {
-                Эта конструкция создаёт элемент таблицы Character, но пока редактировать БД не будем
-            }) ;*/
+                Id = new Guid("0FA0052E-B8FB-42F6-B8BA-BF205FDE5EFC"),
+                Name = "Global Chat", //Нужна для удобного поиска при создании нового пользователя
+                MyUsers = new List<MyUser>(),
+                Messages = new List<Message>()
+            });
         }
     }
 }

@@ -4,7 +4,7 @@
     {
         public int Amount { get; set; }
 
-        public List<Character> Characters { get; set; } = new List<Character>();
-        public List<Potions> Potions { get; set; } = new List<Potions>();
+        public List<Character> Characters { get; set; }
+        public List<Potions> Potions { get; set; }
     }
 }

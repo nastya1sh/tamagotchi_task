@@ -10,12 +10,11 @@ namespace tamagotchi_task.Domain
     public partial class AppDbContext : IdentityDbContext<IdentityUser>
     {
         public DbSet<CharacterTask> CharacterTasks { get; set; }
-        //Всё остальное есть уже в папке SEMEN, осталось только доделать этот класс
+        //Всё остальное есть уже в папке SEMEN
         public DbSet<Accessories> Accessories { get; set; }
         public DbSet<Animal> Animals { get; set; }
         public DbSet<Avatar> Avatars { get; set; }
         public DbSet<Chat> Chats { get; set; }
-        public DbSet<Chats_Users> Chats_Users { get; set; }
         public DbSet<Fur> Furs { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Wallpaper> Wallpapers { get; set; }

@@ -2,10 +2,10 @@
 {
     public class LoginModel
     {
-        [Required(ErrorMessage = "Не указан логин!")]
+        [Required(ErrorMessage = "Username required!")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Не указан пароль!")]
+        [Required(ErrorMessage = "Password required!")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
     }

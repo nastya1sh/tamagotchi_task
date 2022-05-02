@@ -31,18 +31,16 @@ namespace tamagotchi_task.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid) { -- С этой штукой не работает, но это может быть небезопасно
+            //Проверка параметров пользователя
+            MyUser user = await db.MyUsers.FirstOrDefaultAsync(u => u.Name == model.Name && u.Password == model.Password);
+            if (user != null)
             {
-                //Проверка параметров пользователя
-                MyUser user = await db.MyUsers.FirstOrDefaultAsync(u => u.Name == model.Name && u.Password == model.Password);
-                if (user != null)
-                {
-                    await Authenticate(model.Name); //Аутентификация
+                await Authenticate(model.Name); //Аутентификация
 
-                    return RedirectToAction("Index", "Home");
-                }
-                ModelState.AddModelError("", "Incorrect username or password.");
+                return RedirectToAction("Index", "Home");
             }
+            ModelState.AddModelError("", "Incorrect username or password.");
             return View(model);
         }
 
@@ -62,8 +60,15 @@ namespace tamagotchi_task.Controllers
                 MyUser user = await db.MyUsers.FirstOrDefaultAsync(u => u.Name == model.Name);
                 if (user == null)
                 {
+                    Guid id = Guid.NewGuid(); //У нас Id не int, поэтому нужно его генерить ручками
+
+                    //Добавление нового пользователя в глобальный чат
+                    Chat chat = await db.Chats.FirstOrDefaultAsync(c => c.Name == "Global Chat");
+                    //Если chat == null, выйдет SQL Exception
+
                     //Добавляем пользователя в бд
-                    db.MyUsers.Add(new MyUser { Name = model.Name, Password = model.Password });
+                    db.MyUsers.Add(new MyUser { Id = id, Name = model.Name, Password = model.Password, Chats = chat });
+
                     await db.SaveChangesAsync();
 
                     await Authenticate(model.Name); //Аутентификация
