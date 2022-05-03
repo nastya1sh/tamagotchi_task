@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using tamagotchi_task.Domain;
 using tamagotchi_task.Service;
+using tamagotchi_task.Managers.Interfaces;
+using tamagotchi_task.Managers.EF_Realizations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +27,11 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
     });
 builder.Services.AddControllersWithViews();
+#endregion
+
+#region Внедрение зависимостей
+builder.Services.AddTransient<IUserManager, MyUserManager>();
+builder.Services.AddTransient<IChatManager, ChatManager>();
 #endregion
 
 var app = builder.Build();
