@@ -29,7 +29,7 @@ namespace tamagotchi_task.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginModel model, string returnUrl)
+        public async Task<IActionResult> Login(LoginModel model)
         {
             //if (ModelState.IsValid) { -- С этой штукой не работает, но это может быть небезопасно
             //Проверка параметров пользователя
@@ -79,6 +79,12 @@ namespace tamagotchi_task.Controllers
                     ModelState.AddModelError("", "Incorrect username or password.");
             }
             return View(model);
+        }
+
+        [AllowAnonymous]
+        public IActionResult Profile()
+        {
+            return View();
         }
 
         //Сейчас будет куча непонятных штук (обратим внимание на то, что он private)
