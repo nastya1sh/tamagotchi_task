@@ -5,7 +5,7 @@ using tamagotchi_task.Models;
 
 namespace tamagotchi_task.Controllers;
 
-public class HomeController : Controller
+public partial class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
@@ -15,11 +15,6 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Chat()
     {
         return View();
     }
