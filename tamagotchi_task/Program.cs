@@ -33,6 +33,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IUserManager, MyUserManager>();
 builder.Services.AddTransient<IChatManager, ChatManager>();
 builder.Services.AddTransient<ITaskManager, TaskManager>();
+builder.Services.AddTransient<ICharacterManager, CharacterManager>();
 #endregion
 
 var app = builder.Build();
