@@ -45,7 +45,7 @@ body {
     width: 150px;
     text-decoration: none;
     color: black;
-    padding-top: 10px;  
+    padding-top: 10px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
     backdrop-filter: blur(26.1418px);
@@ -71,23 +71,27 @@ body {
     display: block;
     align-self: center;
     margin-left: 30px;
+    margin-top: -10px;
 }
 
-.grid .item .coin{
-    display: flex;
+.grid .item .amount{
+    display: inline-grid;
     flex-direction: column;
     width: 20px;
-    margin-left: 50px;
+    margin-left: 35px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .grid .item .desc {
-    display:flex;
-    position:relative;
+    display: inline-grid;
+    text-align: center;
+    margin-left: 50px;
     margin-top: -10px;
     margin-bottom: 10px;
 }
 
-#buy {
+#usebut {
     flex-direction: row;
     justify-content: center;
     align-items: center;

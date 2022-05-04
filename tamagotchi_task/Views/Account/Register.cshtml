@@ -1,4 +1,5 @@
-﻿@model tamagotchi_task.Models.ViewModels.RegisterModel
+﻿@using tamagotchi_task.Models.ViewModels
+@model tamagotchi_task.Models.ViewModels.RegisterModel
 
 @{
     Layout = "";
@@ -51,6 +52,9 @@
         <div class="form-group">
             <input placeholder="Confirm your password" asp-for="ConfirmPassword"/>
             <span asp-validation-for="ConfirmPassword"/>
+        </div>
+        <div class="form-group">
+            <div class="editor-field">@Html.ValidationMessageFor(model => model.Name)</div>
         </div>
         <div class="form-group">
             <input type="submit" value="Sign Up" id="button"/>

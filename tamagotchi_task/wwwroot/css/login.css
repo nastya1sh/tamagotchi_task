@@ -52,3 +52,31 @@ body{
     text-align:center;
     color: #FFFFFF;
 }
+
+.field-validation-error {
+    display: none;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    display: none;
+}
+
+.validation-summary-errors {
+    list-style-type: none;  
+    font-size: 12px;
+    color: #f00;
+    text-align:center;
+    padding-right: 15px;
+}
+
+.validation-summary-errors li {
+    list-style-type: none;
+}
+
+.validation-summary-valid {
+    display: none;
+}
