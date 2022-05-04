@@ -32,6 +32,7 @@ builder.Services.AddControllersWithViews();
 #region Внедрение зависимостей
 builder.Services.AddTransient<IUserManager, MyUserManager>();
 builder.Services.AddTransient<IChatManager, ChatManager>();
+builder.Services.AddTransient<ITaskManager, TaskManager>();
 #endregion
 
 var app = builder.Build();
