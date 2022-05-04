@@ -1,18 +1,7 @@
 body, html
 {
     font-size: 16px !important;
-}
-
-.nav__item
-{
-    padding: 15px 25px !important;
-    margin: 2px !important;
-}
-
-.main__content
-{
-    width: 80% !important;
-    margin: 0 auto !important;
+    width: 100%;
 }
 
 .ui-button
@@ -298,7 +287,7 @@ progress::-webkit-progress-value {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #3D3655;
+    background-color: #742ECC;
     color: #FFF;
     position: absolute;
     font-family: 'Rubik';

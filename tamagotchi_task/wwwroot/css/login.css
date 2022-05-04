@@ -31,7 +31,7 @@ body{
     outline:none;
 }
 #button{
-    background:#742ECC;
+    background: #730dc5;
     border:0;
     color:#fff;
     padding:10px;
@@ -40,6 +40,10 @@ body{
     margin:20px auto;
     display:block;
     cursor:pointer;
+}
+
+#button:hover {
+    background: #742ECC;
 }
 
 .box a{

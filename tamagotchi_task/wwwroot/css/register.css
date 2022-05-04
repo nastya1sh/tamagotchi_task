@@ -20,6 +20,7 @@ h1{
     font-size: 20px;
     color: #FFFFFF;
 }
+
 .right-box input{
     display:block;
     width:300px;
@@ -33,7 +34,7 @@ h1{
     outline:none;
 }
 #button{
-    background:#742ECC;
+    background: #730dc5;
     border:0;
     color:#fff;
     padding:10px;
@@ -46,7 +47,7 @@ h1{
 
 #buttonlogin {
     float: right;
-    background: #742ECC;
+    background: #730dc5;
     border: 0;
     color: #fff;
     padding: 5px;
@@ -55,6 +56,14 @@ h1{
     margin: 20px;
     display: block;
     cursor: pointer;
+}
+
+#button:hover {
+    background: #742ECC;
+}
+
+#buttonlogin:hover {
+    background: #742ECC;
 }
 
 .right-box a{
@@ -71,7 +80,7 @@ h1{
     padding-left: 25%;
     font-family: Rubik;
     color:#fff;
-    padding-top: 400px;
+    padding-top: 15%;
 }
 
 .left-box img{

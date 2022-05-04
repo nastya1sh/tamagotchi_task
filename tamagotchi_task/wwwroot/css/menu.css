@@ -16,7 +16,6 @@
   height: 40px;
   padding: 6%;
   padding-left: 30%;
-  color: rgb(255, 255, 255);
   font-family: 'Rubik';
   font-size: 20px;
   font-weight: 300;
@@ -82,44 +81,38 @@
   top: 325px;
 }
 .menu a:nth-child(5):hover ~ .anim {
-  top: 369px;
+  top: 372px;
 }
 .menu a:nth-child(6):hover ~ .anim {
-  top: 413px;
+  top: 417px;
 }
 
 .dash::before {
   content: "\f015"; /* добавляем иконку дом */
   font-family: "Font Awesome";
-  color: #ffffff;
 }
 
 .shop::before {
   content: "\e23b"; /* добавляем иконку дом */
   font-family: 'Font Awesome';
-  color: #ffffff;
 }
 
 .inv::before {
   content: "\f015"; /* добавляем иконку дом */
   font-family: 'Font Awesome';
-  color: #ffffff;
 }
 
 .chat::before {
   content: "\f015"; /* добавляем иконку дом */
   font-family: 'Font Awesome';
-  color: #ffffff;
 }
 
 .profile::before {
   content: "\f015"; /* добавляем иконку дом */
   font-family: 'Font Awesome';
-  color: #ffffff;
 }
 
 .logout::before {
   content: "\f015"; /* добавляем иконку дом */
   font-family: 'Font Awesome';
-  color: #ffffff;
 }

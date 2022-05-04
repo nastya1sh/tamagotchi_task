@@ -1,0 +1,88 @@
+:root {
+    --primary-color: #cc0000;
+    --secondary-color: #7c0000;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* For sticky footer - grow to fill the space */
+.content {
+    flex: 1 0 auto;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.grid {
+    display: inline-block;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding-top: 80px;
+    padding-left: 350px;
+}
+
+.grid .item {
+    display: inline-block;
+    flex-direction: column;
+    height: 160px;
+    width: 150px;
+    text-decoration: none;
+    color: black;
+    padding-top: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
+    backdrop-filter: blur(26.1418px);
+    border-radius: 31.3701px;
+    margin-bottom: 5px;
+}
+
+.grid .item h4 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.grid .item p {
+    font-size: 16px;
+    color: var(--secondary-color);
+    text-align: center;
+    font-weight: bold;
+}
+
+.grid .item img {
+    width: 90px;
+    text-align: center;
+    display: block;
+    align-self: center;
+    margin-left: 30px;
+}
+
+.grid .item .coin{
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    margin-left: 50px;
+}
+
+.grid .item .desc {
+    display:flex;
+    position:relative;
+}
+
+
