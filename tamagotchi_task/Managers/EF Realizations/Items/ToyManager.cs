@@ -15,7 +15,7 @@ namespace tamagotchi_task.Managers.EF_Realizations.Items
 
         public async Task DecreaseAmount(Guid itemCharacterID)
         {
-            ToyCharacter pc = await _db.ToyCharacters.FirstOrDefaultAsync(c => c.Id == itemCharacterID);
+            /*ToyCharacter pc = await _db.ToyCharacters.FirstOrDefaultAsync(c => c.Id == itemCharacterID);
             if (pc != null)
             {
                 pc.Amount -= 1; //Убираем элемент при использовании
@@ -24,7 +24,7 @@ namespace tamagotchi_task.Managers.EF_Realizations.Items
                     _db.ToyCharacters.Remove(pc);
 
                 await _db.SaveChangesAsync();
-            }
+            }*/
         }
 
         public async Task<Guid> FindItemCharacterAsync(Guid characterID, Guid itemID)

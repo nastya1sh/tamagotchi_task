@@ -2,7 +2,7 @@
 {
     public class Chat : DomainEntity
     {
-        public List<Message> Messages { get; set; }
-        public List<MyUser> MyUsers { get; set; }
+        public List<Message> Messages { get; set; } = new List<Message>();
+        public List<MyUser> MyUsers { get; set; } = new List<MyUser>();
     }
 }

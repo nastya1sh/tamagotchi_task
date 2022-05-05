@@ -7,8 +7,8 @@
         public string Item_Name { get; set; }
         public int Price { get; set; }
 
-        public List<Toys> Toys { get; set; }
-        public List<Potions> Potions { get; set; }
-        public List<Forage> Forages { get; set; }
+        public List<Toys> Toys { get; set; } = new List<Toys>();
+        public List<Potions> Potions { get; set; } = new List<Potions>();
+        public List<Forage> Forages { get; set; } = new List<Forage>();
     }
 }

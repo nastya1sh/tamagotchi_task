@@ -4,7 +4,7 @@ namespace tamagotchi_task.Managers.Interfaces
 {
     public interface ICharacterManager
     {
-        Task AddCharacterToDataBase(Guid characterID, string characterName); /*добавление персонажа с заданным именем*/
+        Task AddCharacterToDataBase(Guid characterID, MyUser user, string characterName); /*добавление персонажа с заданным именем*/
         void DeleteCharacterDataBase(Guid characterID);
         void LevelUP(Guid characterID); /*я так понимаю за раз может увеличиться только на 1*/
         void HpUP(Guid characterID, int value);

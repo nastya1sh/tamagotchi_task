@@ -1,4 +1,5 @@
-﻿@{
+﻿@model tamagotchi_task.Models.ViewModels.CharacterModel
+@{
     Layout = "";
 }
 <!DOCTYPE html>
@@ -23,16 +24,19 @@
         <img src="~/img/cat.png">
         <div class="startmessage">
             <p>Hey! It must be your first time here. My name is Tamo!</p>
-            <p>Before we start, let's decide what to call you. Below you will find the display name. Once you've chosen a display name, we'll start by creating an avatar!</p>
+            <p>Before we start, let's decide what to call you. Below you will find the display name. Once you've chosen your name, we'll start by creating an avatar!</p>
         </div>
-        <div class="input">
-            <label class="displayname">Display name</label>
-            <input class="inputname" type="text" placeholder="Name"></input>
-        </div>
-        <button type="button" class="start" onclick="showDiv()">Start!</button>
+        <form asp-action="Create" asp-controller="Character">
+            <div class="input">
+                <label class="displayname">Your name</label>
+                <input class="inputname" type="text" placeholder="Name" asp-for="Name"></input>
+            </div>
+            <button type="submit" class="start" onclick="showDiv()">Start!</button>
+            @*В поле type раньше стоял "button", если тебе это поможет при вёрстке*@
+        </form>
     </div>
 
-    <div id="welcomeDiv"  style="display:none;" class="answer_box" >
+    @*<div id="welcomeDiv"  style="display:none;" class="answer_box" >
         <div id="mess">
             <img src="~/img/catMes.png">
             <p>Here you can choose your character with which you will complete tasks</p>
@@ -62,6 +66,6 @@
             <a href="#" onClick="changeImg('/img/cat12.png')"><img src="~/img/cat12.png"></a>  
         </div>
         <button type="button" id="finish" class="start" onClick='location.href="/home/index"'>Finish!</button>
-    </div>
+    </div>*@
 </body>
 </html>
