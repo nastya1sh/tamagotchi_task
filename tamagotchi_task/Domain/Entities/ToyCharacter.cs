@@ -4,7 +4,7 @@
     { 
         public int Amount { get; set; }
 
-        public List<Character> Characters { get; set; }
-        public List<Toys> Toys { get; set; }
+        public List<Character> Characters { get; set; } = new List<Character>();
+        public List<Toys> Toys { get; set; } = new List<Toys>();
     }
 }
