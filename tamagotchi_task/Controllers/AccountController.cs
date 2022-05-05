@@ -13,7 +13,7 @@ namespace tamagotchi_task.Controllers
     public class AccountController : Controller
     {
         //При использовании асинхронного програмирования нельзя брать реализацию!
-        //Вместо MyUserManager используем IUserManager, и биндим её через AddTransien (или AddScoped)
+        //Вместо MyUserManager используем IUserManager, и биндим её через AddTransient (или AddScoped)
         private readonly IUserManager _userManager;
         private readonly IChatManager _chatManager;
         public AccountController(IUserManager userManager, IChatManager chatManager)
