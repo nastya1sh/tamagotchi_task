@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using tamagotchi_task.Models;
 
 namespace tamagotchi_task.Controllers;
-
 public partial class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -16,17 +15,12 @@ public partial class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
-    }
-
-    public IActionResult Inventory()
-    {
-        return View();
-    }
-
-    public IActionResult Shop()
-    {
-        return View();
+        //Атрибут [Authorize] не видит аутентифицированного пользователя
+        //Поэтому пришлось вставить старый добрый костыль
+        if (User.Identity.IsAuthenticated)
+            return View();
+        else
+            return RedirectToAction("Login", "Account");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -12,11 +12,11 @@ namespace tamagotchi_task.Managers.EF_Realizations
         {
             _db = context;
         }
-        public async Task AddTaskToDataBase(Guid taskID, string description, string difficulty, DateTime deadLine, TagsTasks tagsTasks)
+        public async Task AddTaskToDataBase(Guid taskID, string description, string difficulty, string tag, DateTime deadLine)
         {
             if (DateTime.Compare(DateTime.Now, deadLine)<0) /*если дедлайн в будущем*/
             {
-                _db.CharacterTasks.Add(new CharacterTask { Id = taskID, Description= description , Difficulty= difficulty, DeadLine= deadLine, TagsTasks= tagsTasks});
+                _db.CharacterTasks.Add(new CharacterTask { Id = taskID, Description= description , Difficulty= difficulty, Tag = tag, DeadLine = deadLine});
                 await _db.SaveChangesAsync();
             }
             else

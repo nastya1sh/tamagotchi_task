@@ -86,10 +86,10 @@ namespace tamagotchi_task.Controllers
         [AllowAnonymous]
         public IActionResult Profile()
         {
-            //if (User.Identity.IsAuthenticated)
+            if (User.Identity.IsAuthenticated)
                 return View();
-            //else
-               // return RedirectToAction("Login", "Account");
+            else
+               return RedirectToAction("Login", "Account");
         }
 
         //Сейчас будет куча непонятных штук (обратим внимание на то, что он private)
