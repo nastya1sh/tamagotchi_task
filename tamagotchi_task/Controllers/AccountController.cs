@@ -42,6 +42,10 @@ namespace tamagotchi_task.Controllers
             {
                 await Authenticate(model.Name); //Аутентификация
 
+                //Если у пользователя нет животинки, то пусть идёт создавать новую
+                if (_userManager.HasAnimal(user.Id) == null)
+                    return RedirectToAction("Create", "Character");
+
                 return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("", "Incorrect username or password.");
@@ -75,7 +79,7 @@ namespace tamagotchi_task.Controllers
 
                     await Authenticate(model.Name); //Аутентификация
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Create", "Character");
                 }
                 else
                     ModelState.AddModelError("", "This user already exists!");

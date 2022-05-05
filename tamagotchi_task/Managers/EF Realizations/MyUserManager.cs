@@ -18,6 +18,13 @@ namespace tamagotchi_task.Managers.EF_Realizations
             return await _db.MyUsers.FirstOrDefaultAsync(u => u.Name == userName);
         }
 
+        public Character HasAnimal(Guid userID) 
+        {
+            //Поскольку у пользователя нет ссылки на животное,
+            //пришлось вставить такой костыль
+            return _db.Characters.FirstOrDefault(u => u.MyUsers.Id == userID);
+        }
+
         public async Task<MyUser> FindUserByNamePasswordAsync(string userName, string userPassword) 
         {
             return await _db.MyUsers.FirstOrDefaultAsync(u => u.Name == userName && u.Password == userPassword);

@@ -37,9 +37,17 @@ namespace tamagotchi_task.Controllers
                 //Добавляем персонажа в бд
                 await _characterManager.AddCharacterToDataBase(Guid.NewGuid(), user, model.Name);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Avatar", "Character");
             }
             return View(model);
+        }
+
+        public IActionResult Avatar() 
+        {
+            if (User.Identity.IsAuthenticated)
+                return View();
+            else
+                return RedirectToAction("Login", "Account");
         }
 
         public IActionResult Inventory()

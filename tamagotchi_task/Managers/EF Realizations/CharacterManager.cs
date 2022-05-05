@@ -23,6 +23,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
                 ForageCharacters = _db.ForageCharacters.First(),
                 ToyCharacters = _db.ToyCharacters.First(),
             };
+            user.Characters.Add(temp);
             _db.Characters.Add(temp);
 
             await _db.SaveChangesAsync();
