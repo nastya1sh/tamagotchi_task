@@ -5,6 +5,8 @@ using tamagotchi_task.Domain;
 using tamagotchi_task.Service;
 using tamagotchi_task.Managers.Interfaces;
 using tamagotchi_task.Managers.EF_Realizations;
+using tamagotchi_task.Managers.Interfaces.ItemInterfaces;
+using tamagotchi_task.Managers.EF_Realizations.Items;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +36,9 @@ builder.Services.AddTransient<IUserManager, MyUserManager>();
 builder.Services.AddTransient<IChatManager, ChatManager>();
 builder.Services.AddTransient<ITaskManager, TaskManager>();
 builder.Services.AddTransient<ICharacterManager, CharacterManager>();
+builder.Services.AddTransient<IForageManager, ForageManager>();
+builder.Services.AddTransient<IPotionManager, PotionManager>();
+builder.Services.AddTransient<IToyManager, ToyManager>();
 #endregion
 
 var app = builder.Build();

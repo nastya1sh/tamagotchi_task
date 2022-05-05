@@ -18,13 +18,12 @@ namespace tamagotchi_task.Domain
         public DbSet<Potions> Potions { get; set; }
         public DbSet<Showcase> Showcases { get; set; }
         public DbSet<Tags> Tags { get; set; }
-        public DbSet<TagsTasks> TagsTasks { get; set; }
         public DbSet<ToyCharacter> ToyCharacters{ get; set; }
         public DbSet<Toys> Toys { get; set; }
-       
+        public DbSet<Difficulty> Difficulties { get; set; }
 
 
-protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
@@ -35,6 +34,41 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
                 MyUsers = new List<MyUser>(),
                 Messages = new List<Message>()
             });
+
+            #region Хардкод сложностей
+            modelBuilder.Entity<Difficulty>().HasData(new Difficulty
+            {
+                Id = new Guid("2eb950a4-b039-47e8-b5b8-9bb596ba6ce5"),
+                Name = "Low"
+            });
+            modelBuilder.Entity<Difficulty>().HasData(new Difficulty
+            {
+                Id = new Guid("a2b7f2b0-2f30-4d7c-a4b5-0c812c677f18"),
+                Name = "Medium"
+            });
+            modelBuilder.Entity<Difficulty>().HasData(new Difficulty
+            {
+                Id = new Guid("f5b00802-6555-4fc5-af89-4532b09bc07a"),
+                Name = "High"
+            });
+            #endregion
+            #region Хардкод тэгов
+            modelBuilder.Entity<Tags>().HasData(new Tags
+            {
+                Id = new Guid("c21d9094-7381-45da-96e7-41a8d434bb0f"),
+                Name = "Sport"
+            });
+            modelBuilder.Entity<Tags>().HasData(new Tags
+            {
+                Id = new Guid("6b6a0ac9-e83b-4856-8119-b44281df595f"),
+                Name = "Study"
+            });
+            modelBuilder.Entity<Tags>().HasData(new Tags
+            {
+                Id = new Guid("dfe35ad9-f02f-4c68-96a4-29f5428d47e8"),
+                Name = "Home Chores"
+            });
+            #endregion
         }
     }
 }
