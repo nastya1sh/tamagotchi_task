@@ -1,4 +1,4 @@
-﻿namespace tamagotchi_task.Domain
+﻿namespace tamagotchi_task.Domain.Entities
 {
     public class Character : DomainEntity
     {

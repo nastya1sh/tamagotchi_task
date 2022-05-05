@@ -1,1 +1,67 @@
-﻿<h1>Здесь будет редактор животинки. При желании можно добавить Home/Index в папку Character</h1>
+﻿@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <script src="~/js/create.js" asp-append-version="true"></script>
+
+    <link rel="stylesheet" href="~/css/create.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/tamagotchi_task.styles.css" asp-append-version="true"/>
+</head>
+<body>
+    <div id="box1" class="box">
+        <h1>Welcome to</h1>
+        <h2>TAMOTASK</h2>
+        <img src="~/img/cat.png">
+        <div class="startmessage">
+            <p>Hey! It must be your first time here. My name is Tamo!</p>
+            <p>Before we start, let's decide what to call you. Below you will find the display name. Once you've chosen a display name, we'll start by creating an avatar!</p>
+        </div>
+        <div class="input">
+            <label class="displayname">Display name</label>
+            <input class="inputname" type="text" placeholder="Name"></input>
+        </div>
+        <button type="button" class="start" onclick="showDiv()">Start!</button>
+    </div>
+
+    <div id="welcomeDiv"  style="display:none;" class="answer_box" >
+        <div id="mess">
+            <img src="~/img/catMes.png">
+            <p>Here you can choose your character with which you will complete tasks</p>
+        </div>
+        <div>
+            <img id="myImg" src="~/img/cat0.png">
+        </div>
+        <div class="buttonChange">
+            <button type="button" class="start" onclick="showAnimal()">Animal</button>
+            <button type="button" class="start" onclick="showColor()">Color</button>
+        </div>
+        <div id="showAnimal" class="buttoncolor">
+            <a href="#" onClick="changeImg('/img/cat0.png')"><img src="~/img/catAnimal.png"></a> 
+        </div>
+        <div id="showColor" style="display:none;" class="buttoncolor">
+            <a href="#" onClick="changeImg('/img/cat0.png')"><img src="~/img/cat0.png"></a> 
+            <a href="#" onClick="changeImg('/img/cat2.png')"><img src="~/img/cat2.png"></a>
+            <a href="#" onClick="changeImg('/img/cat3.png')"><img src="~/img/cat3.png"></a> 
+            <a href="#" onClick="changeImg('/img/cat4.png')"><img src="~/img/cat4.png"></a>    
+            <a href="#" onClick="changeImg('/img/cat5.png')"><img src="~/img/cat5.png"></a> 
+            <a href="#" onClick="changeImg('/img/cat6.png')"><img src="~/img/cat6.png"></a>   
+            <a href="#" onClick="changeImg('/img/cat7.png')"><img src="~/img/cat7.png"></a> 
+            <a href="#" onClick="changeImg('/img/cat8.png')"><img src="~/img/cat8.png"></a>
+            <a href="#" onClick="changeImg('/img/cat9.png')"><img src="~/img/cat9.png"></a> 
+            <a href="#" onClick="changeImg('/img/cat10.png')"><img src="~/img/cat10.png"></a>    
+            <a href="#" onClick="changeImg('/img/cat11.png')"><img src="~/img/cat11.png"></a> 
+            <a href="#" onClick="changeImg('/img/cat12.png')"><img src="~/img/cat12.png"></a>  
+        </div>
+        <button type="button" id="finish" class="start" onClick='location.href="/home/index"'>Finish!</button>
+    </div>
+</body>
+</html>
