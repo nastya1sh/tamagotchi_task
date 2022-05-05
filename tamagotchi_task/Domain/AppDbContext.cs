@@ -65,6 +65,7 @@ namespace tamagotchi_task.Domain
                 Name = "High"
             });
             #endregion
+
             #region Хардкод тэгов
             modelBuilder.Entity<Tags>().HasData(new Tags
             {
@@ -82,6 +83,7 @@ namespace tamagotchi_task.Domain
                 Name = "Home Chores"
             });
             #endregion
+
             #region Промежуточные таблицы
             modelBuilder.Entity<ForageCharacter>().HasData(new ForageCharacter
             {

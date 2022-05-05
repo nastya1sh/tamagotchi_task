@@ -12,9 +12,13 @@ namespace tamagotchi_task.Managers.EF_Realizations
         {
             _db = context;
         }
-        public async Task AddCharacterToDataBase(Guid characterID, string characterName)
+        public async Task AddCharacterToDataBase(Guid characterID, MyUser user, string characterName)
         {
-            _db.Characters.Add(new Character { Id = characterID, Name = characterName});
+            Character temp = new Character();
+            temp.Id = characterID; temp.Name = characterName; temp.MyUsers = user;
+            temp.PotionCharacters = _db.PotionCharacters.First(); //У нас всё равно только один элемент в той таблице
+            _db.Characters.Add(new Character { Id = characterID, Name = characterName, MyUsers = user});
+
             await _db.SaveChangesAsync();
         }
 
