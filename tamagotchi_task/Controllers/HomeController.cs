@@ -24,7 +24,6 @@ public partial class HomeController : Controller
         //Поэтому пришлось вставить старый добрый костыль
         if (User.Identity.IsAuthenticated)
         {
-            var tasks = _taskManager.GetAll();
             return View();
         }
         else
