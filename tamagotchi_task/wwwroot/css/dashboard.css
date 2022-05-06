@@ -24,12 +24,19 @@ body, html
 
 .avatar .ava {
     position: absolute;
-    height: 130px;
-    padding-left: 95px;
+    height: 150px;
+    padding-left: 85px;
     left: 45%;
-    top: 0px;
+    top: -15px;
     image-rendering: pixelated;
     pointer-events: none;
+    z-index: 2;
+}
+
+#cat {
+    top: -15px;
+    padding-left: 90px;
+    height: 130px;
     z-index: 1;
 }
 
