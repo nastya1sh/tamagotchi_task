@@ -10,10 +10,12 @@ public partial class HomeController : Controller
 {
     //private readonly ILogger<HomeController> _logger;
     private readonly ITaskManager _taskManager;
+    private readonly ICharacterManager _characterManager;
 
-    public HomeController(ITaskManager taskManager)
+    public HomeController(ITaskManager taskManager, ICharacterManager characterManager)
     {
         _taskManager = taskManager;
+        _characterManager = characterManager;
     }
 
     public IActionResult Index()
@@ -52,5 +54,15 @@ public partial class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    public IActionResult ViewTasks()
+    {
+        var tasks = _taskManager.GetAll();
+        return View(tasks);
+    }
+    public IActionResult ViewCharacter ()
+    {
+        var animal = _characterManager.FindCharacterByUser(User.Identity.Name);
+        return View();
     }
 }

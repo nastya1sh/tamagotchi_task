@@ -13,5 +13,6 @@ namespace tamagotchi_task.Managers.Interfaces
         void StrengthUP(Guid characterID, int value);
         void IntellectUP(Guid characterID, int value);
         Task<Character> FindCharacterByID(Guid characterID); /*поиск персонажа по ID*/
+        public Task<Character> FindCharacterByUser(string userName);
     }
 }

@@ -86,5 +86,9 @@ namespace tamagotchi_task.Managers.EF_Realizations
             _db.Characters.Where(u => u.Id == characterID).FirstOrDefault().XP += value;
             await _db.SaveChangesAsync();
         }
+        public async Task<Character> FindCharacterByUser(string userName)
+        {
+            return await _db.Characters.FirstOrDefaultAsync(u => u.MyUsers.Name == userName);
+        }
     }
 }
