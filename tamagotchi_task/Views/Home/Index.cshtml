@@ -10,9 +10,10 @@
 </div>
 
 
-@Html.Partial("Actions/Avatar");
-@Html.PartialAsync("Actions/CreateTask");
-@Html.Partial("GetTasks")
+@await Html.PartialAsync("Actions/Avatar");
+@await Html.PartialAsync("Actions/CreateTask");
+@*@await Html.RenderAction("GetTasks", Model.CharacterTasks)*@
+@await Component.InvokeAsync("Tasks")
 
 
 <link rel="stylesheet" href="~/css/dashboard.css" xmlns="http://www.w3.org/1999/html">

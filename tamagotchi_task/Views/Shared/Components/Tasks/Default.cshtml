@@ -1,0 +1,17 @@
+﻿@model IQueryable<CharacterTask>
+
+<div class="wrapper">
+    <div id="rectangle3"></div>
+    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+@foreach (var c in Model) {
+    <label class="btn active">
+        <input type="checkbox" checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span>@c.Name</span>
+<span class="descrdate">
+    <a title="Delete" class="delete" href=""><img src="~/img/trash.png" alt="heart"></a>
+    <span class="descr">@c.Description</span>
+    <time class="date">@c.DeadLine</time>
+</span>
+</label>
+        }
+</div>
+</div>
