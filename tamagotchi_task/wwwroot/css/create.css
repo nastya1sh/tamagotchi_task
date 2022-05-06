@@ -112,7 +112,6 @@ img {
 
 #myImg {
     display: inline;
-    padding-left: 150px;
     position: center;
 }
 
@@ -120,7 +119,6 @@ img {
     display: inline-block;
     padding-top: 10px;
     margin-top: 10px;
-    margin-left: 25px;
     width: 350px;
     height: 240px;
     background: rgb(255, 255, 255);
@@ -141,26 +139,24 @@ img {
 }
 
 .buttonChange {
-    padding-left: 100px;
     padding-top: 20px;
 }
 
 #finish {
     width: 150px;
     margin-top: 25px;
-    margin-left: 125px;
 }
 
 #mess {
     display: flex;
     position:absolute;
-    justify-content: center;
+    justify-content: center;    
     align-items: center;
     flex-direction: column;
     width: 280px;
     height: 80px;
     left: 40%;
-    top: -13%;
+    top: -13%;      
     background: rgb(255, 255, 255);
     box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
     backdrop-filter: blur(26.1418px);

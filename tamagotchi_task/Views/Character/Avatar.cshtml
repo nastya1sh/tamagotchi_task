@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = "";
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -14,7 +17,7 @@
     <link rel="stylesheet" href="~/tamagotchi_task.styles.css" asp-append-version="true"/>
 </head>
 <body>
-    <div id="welcomeDiv"  style="display:none;" class="answer_box" >
+    <div id="welcomeDiv" class="answer_box" >
             <div id="mess">
                 <img src="~/img/catMes.png">
                 <p>Here you can choose your character with which you will complete tasks</p>
@@ -45,6 +48,5 @@
             </div>
             <button type="button" id="finish" class="start" onClick='location.href="/home/index"'>Finish!</button>
         </div>
-</div>
 </body>
 </html>
