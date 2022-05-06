@@ -9,8 +9,11 @@
     <p style="position: absolute; right: 0; padding-right: 30px; font-family: Rubik; color: #7c0000"><img src="~/img/coin.png">256</p>  
 </div>
 
-@Html.Partial("Actions/Avatar")
-@Html.Partial("Actions/Task")
+
+@Html.Partial("Actions/Avatar");
+@Html.PartialAsync("Actions/CreateTask");
+@Html.Partial("GetTasks")
+
 
 <link rel="stylesheet" href="~/css/dashboard.css" xmlns="http://www.w3.org/1999/html">
 

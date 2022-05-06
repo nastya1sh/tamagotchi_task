@@ -23,7 +23,10 @@ public partial class HomeController : Controller
         //Атрибут [Authorize] не видит аутентифицированного пользователя
         //Поэтому пришлось вставить старый добрый костыль
         if (User.Identity.IsAuthenticated)
+        {
+            var tasks = _taskManager.GetAll();
             return View();
+        }
         else
             return RedirectToAction("Login", "Account");
     }
@@ -55,11 +58,11 @@ public partial class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
-    public IActionResult ViewTasks()
+    public IActionResult GetTasks()
     {
         var tasks = _taskManager.GetAll();
-        return View(tasks);
-    }
+        return PartialView(tasks);
+    }   
     public IActionResult ViewCharacter ()
     {
         var animal = _characterManager.FindCharacterByUser(User.Identity.Name);

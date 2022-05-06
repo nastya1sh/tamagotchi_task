@@ -8,6 +8,6 @@ namespace tamagotchi_task.Managers.Interfaces
         Task<CharacterTask> FindTaskByID(Guid taskID); /*поиск задач по ID*/
         Task AddTaskToDataBase(Guid taskID, string description, string difficulty, string tag, DateTime deadLine); /*добавление задачи*/
         void DeleteTask (Guid taskID); /*удаление задачи*/
-        public IQueryable GetAll();
+        public IQueryable<CharacterTask> GetAll();
     }
 }
