@@ -2,6 +2,7 @@ body, html
 {
     font-size: 16px !important;
     width: 100%;
+    font-family: Rubik;
 }
 
 .ui-button
@@ -24,12 +25,19 @@ body, html
 
 .avatar .ava {
     position: absolute;
-    height: 130px;
-    padding-left: 95px;
+    height: 150px;
+    padding-left: 85px;
     left: 45%;
-    top: 0px;
+    top: -15px;
     image-rendering: pixelated;
     pointer-events: none;
+    z-index: 2;
+}
+
+#cat {
+    top: -15px;
+    padding-left: 90px;
+    height: 130px;
     z-index: 1;
 }
 
@@ -65,85 +73,37 @@ body, html
     padding: 2px;
 }
 
-.avatar p {
-    position: static;
+.avatar .level{
+    display: inline-flex;
+    position: absolute;
+    left: 45%;
+    top: 258px;
+    padding-left: 40px;
+}
+
+.avatar .level p{
+    display: flex;
     width: 39px;
     height: 22px;
-    left: 45%;
-    top: 8.87px;
-
-    font-family: 'Rubik';
-    font-style: normal;
     font-weight: 400;
-    font-size: 15.6851px;
-    line-height: 140%;
-    z-index: 1;
     color: #959BA5;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 5.22835px 0px;
-}
-
-.avatar .level{
-    display: flex;
-    flex-direction: column;
+    padding-bottom: 30px;
+    margin-right: 50px;
+    padding-left: 15px;
     justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 156.85px;
-    height: 70px;
-    left: 45%;
-    top: 238px;
 }
 
-.avatar .tasks{
-    display: flex;
-    flex-direction: column;
+.avatar .level .num{
     justify-content: center;
-    align-items: center;
-    color: #959BA5;
-    position: absolute;
-    width: 156.85px;
-    height:70px;
-    left: 45%;
-    padding-left: 225px;
-    top: 238px;
-}
-
-.avatar .numlevel {
-    position: absolute;
-    width: 155px;
-    height: 26px;
-    left: 45%;
-    padding-left: 5px;
-    top: 285px;
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28.7559px;
-    line-height: 140%;
-    text-align: center;
     color: #242730;
-}
-
-.avatar .numtasks {
-    position: absolute;
-    width: 450px;
-    height: 26px;
-    left: 45%;
-    padding-left: 5px;
-    top: 285px;
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
+    display: flex;
+    width: 36px;
+    height: 40px;
+    left: 60.43px;
+    font-weight: 700;
     font-size: 28.7559px;
-    line-height: 140%;
-    text-align: center;
-    color: #242730;
+    margin-top: -15px;
+    padding-left: 20px;
 }
 
 .avatar .xp img{
@@ -270,16 +230,16 @@ progress::-webkit-progress-value {
     left: 45%;
     padding-left: 75px;
     top: 468px;
+    color: #959BA5;
 }
 
 .buttonstask a{
-    color: #959BA5;
     font-size: 30px;
     margin-right: 40px;
     text-decoration: none;
 }
 
-.buttonstask a:hover {
+.buttonstask :hover {
     color: #3D3655;
 }
 
@@ -325,13 +285,20 @@ label.btn span {
     margin-top: -30px;
     font-family: 'Rubik';
 }
-
+.btn-group .descrimg{
+    font-size: 12px;
+    display: inline;
+    position: absolute;
+    float: left;
+    margin-top: -32px;
+    padding-left: 80px;
+}
 .btn-group .date {
     font-size: 12px;
     display: inline;
     position: relative;
     float: right;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-top: -30px;
     font-family: 'Rubik';
 }
@@ -366,7 +333,6 @@ label:hover input[type="checkbox"] ~ i.fa {
 
 div[data-toggle="buttons"] label {
     display: inline-block;
-    margin-bottom: 0;
     font-size: 18px;
     font-weight: normal;
     line-height: 3em;
@@ -395,15 +361,17 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 .btn-group {
     display: grid;
     flex-direction: column;
-    align-items: center;
     position: absolute;
-    width: 343.7px;
-    height: 270px;  
-    margin-left: -12px;
+    width: 310px;
+    margin-left: 5px;
     margin-top: -5px;
     top: 620px;
     left: 45%;
     overflow-y:scroll;
+}
+
+.btn-group span{
+    margin-left: 5px;
 }
 
 .btn-group::-webkit-scrollbar { width: 0; }
@@ -449,9 +417,67 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 .delete {
     float: right;
     margin-top: -60px;
-    margin-left: 170px;
+    margin-left: 160px;
 }
 
 .delete img {
     pointer-events: none;
 }
+
+.searchbar {
+    font-size: 1.2rem;
+    width: 18rem;
+    height: 3rem;
+    border: none;
+    outline: none;
+    border-radius: 10rem;
+    transition: all .1s;
+    transition-delay: .1s;
+    box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
+}
+.searchbar::placeholder {
+    padding-left: 5px;
+    color: #959BA5;
+}
+
+.searchbar::target-text {
+    padding-left: 5px;
+}
+.buttonSearch {
+    height: 1.3rem;
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    transition: all .1s;
+    transition-delay: .1s;
+}
+
+.buttonSearch:hover {
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 5;
+    right: 120px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.show {display:block;}

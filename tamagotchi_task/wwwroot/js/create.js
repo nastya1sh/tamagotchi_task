@@ -1,15 +1,28 @@
 function showAnimal() {
     document.getElementById('showColor').style.display = "none";
+    document.getElementById('showWallpaper').style.display = "none";
     document.getElementById('showAnimal').style.display = "block";
 }
 
 function showColor() {
+    document.getElementById('showWallpaper').style.display = "none";
     document.getElementById('showAnimal').style.display = "none";
     document.getElementById('showColor').style.display = "block";
 }
 
+function showWallpaper() {
+    document.getElementById('showAnimal').style.display = "none";
+    document.getElementById('showColor').style.display = "none";
+    document.getElementById('showWallpaper').style.display = "block";
+}
+
 function changeImg(lin){
     var img = document.getElementById("myImg");
+    img.src=lin;
+}
+
+function changeImgWallpaper(lin){
+    var img = document.getElementById("myWallpaper");
     img.src=lin;
 }
 
@@ -35,4 +48,21 @@ function showDate() {
 
 function hideDate() {
     document.getElementById('dateinput').style.display = "none";
+}
+
+function dropDown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }

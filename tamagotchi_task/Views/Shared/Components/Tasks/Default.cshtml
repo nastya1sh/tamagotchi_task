@@ -3,13 +3,29 @@
 <div class="wrapper">
     <div id="rectangle3"></div>
     <div class="btn-group btn-group-vertical" data-toggle="buttons">
-@foreach (var c in Model) {
+        <div class="container">
+            <input type="text" maxlength="12" placeholder="Search" class="searchbar">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="search icon" class="buttonSearch">
+        </div>
+        <button onclick="dropDown()" class="btn btn-default dropdown-toggle dropbtn" type="button">
+            <span class="caret"></span>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+            <a>Name</a>
+            <a>Description</a>
+            <a>Date</a>
+        </div>
+        @foreach (var c in Model) {
     <label class="btn active">
         <input type="checkbox" checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span>@c.Name</span>
 <span class="descrdate">
     <a title="Delete" class="delete" href=""><img src="~/img/trash.png" alt="heart"></a>
-    <span class="descr">@c.Description</span>
-    <time class="date">@c.DeadLine</time>
+    <span class="descr"> @c.Description </span>
+    <div class="descrimg">
+        <img src="~/img/strength.png">
+        <img src="~/img/strength.png">
+    </div>
+    <time class="date"> @c.DeadLine </time>
 </span>
 </label>
         }

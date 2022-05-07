@@ -49,12 +49,8 @@ public partial class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
-    public IActionResult GetTasks()
-    {
-        var tasks = _taskManager.GetAll();
-        return PartialView(tasks);
-    }   
-    public IActionResult ViewCharacter ()
+
+    public IActionResult ViewCharacter ()   
     {
         var animal = _characterManager.FindCharacterByUser(User.Identity.Name);
         return View();
