@@ -12,9 +12,9 @@ namespace tamagotchi_task.Managers.EF_Realizations
         {
             _db = context;
         }
-        public async Task AddTaskToDataBase(Guid taskID, string description, string difficulty, string tag, DateTime deadLine)
+        public async Task AddTaskToDataBase(Guid taskID, string name, string description, string difficulty, string tag, DateTime deadLine)
         {
-            _db.CharacterTasks.Add(new CharacterTask { Id = taskID, Description= description , Difficulty= difficulty, Tag = tag, DeadLine = deadLine});
+            _db.CharacterTasks.Add(new CharacterTask { Id = taskID, Name = name, Description= description , Difficulty= difficulty, Tag = tag, DeadLine = deadLine});
             await _db.SaveChangesAsync();                  
         }
 

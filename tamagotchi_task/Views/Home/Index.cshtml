@@ -1,5 +1,6 @@
 ﻿@using tamagotchi_task.Models.ViewModels
 @using tamagotchi_task.Domain
+@model tamagotchi_task.Models.ViewModels.TaskModel
 
 @{
     ViewData["Title"] = "Home Page";
@@ -11,10 +12,57 @@
 
 
 @await Html.PartialAsync("Actions/Avatar");
-@await Html.PartialAsync("Actions/CreateTask");
-@*@await Html.RenderAction("GetTasks", Model.CharacterTasks)*@
+@*@await Component.InvokeAsync("CreateTask");*@
 @await Component.InvokeAsync("Tasks")
 
+@*У меня не получается вынести post-метод отдельно :(*@
+<script src="~/js/create.js" asp-append-version="true"></script>
+
+<div class="wrapper">
+    <form asp-action="Index" asp-controller="Home">
+            <div class="input">
+                <div id="rectangle2"></div>
+                <div>
+                    <input type="text" placeholder="My task" class="area" maxlength="20" asp-for="Name">
+                    <input type="text" placeholder="Description" class="area2" maxlength="100" asp-for="Description">
+                    
+                    <div id="taginput" class="buttonSet" style="display: none">
+                        <select name="tag" class="start">
+                            <optgroup label="Set tag">
+                                <option value="1">Sport</option>
+                                <option value="2">Study</option>
+                                <option value="3">Home Chores</option>
+                            </optgroup>
+                        </select>
+                        <button type="submit" class="close" onclick="hideTag()">OK</button>
+                    </div>
+                    
+                    <div id="difficultyinput" class="buttonSet" style="display: none">
+                        <select name="difficulty" class="start">
+                            <optgroup label="Set difficulty">
+                                <option value="1">Low</option>
+                                <option value="2">Medium</option>
+                                <option value="3">High</option>
+                            </optgroup>
+                        </select>
+                        <button type="submit" class="close" onclick="hideDifficulty()">OK</button>
+                    </div>
+                    
+                    <div id="dateinput" class="buttonSet" style="display: none">
+                        <input type="date" class="start" name="trip-start" value="2022-04-23" min="2022-04-23" max="">
+                        <button type="submit" class="close" onclick="hideDate()">OK</button>
+                    </div>
+                    
+                    <div class="buttonstask">
+                        <a title="Set tag" onclick="showTag()"><i class="fa fa-tags fa-1x"></i></a>
+                        <a title="Set difficulty" onclick="showDifficulty()"><i class="fa fa-flag fa-1x"></i></a>
+                        <a title="Set a deadline" onclick="showDate()"><i class="fa fa-calendar fa-1x"></i></a>
+                    </div>
+                    <input type="submit" id="buttonadd" value="ADD">
+                </div>
+            </div>
+        </form>
+</div>
 
 <link rel="stylesheet" href="~/css/dashboard.css" xmlns="http://www.w3.org/1999/html">
 

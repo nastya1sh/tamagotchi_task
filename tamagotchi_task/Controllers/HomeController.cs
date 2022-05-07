@@ -30,22 +30,14 @@ public partial class HomeController : Controller
             return RedirectToAction("Login", "Account");
     }
     [HttpPost]
-    public async Task<ActionResult> Index(TaskModel model) 
+    public async Task<IActionResult> Index(TaskModel model)
     {
         if (ModelState.IsValid)
         {
-            CharacterTask user = await _taskManager.FindTaskByName(model.Name);
-            if (user == null)
-            {
-                Guid id = Guid.NewGuid(); //У нас Id не int, поэтому нужно его генерить ручками
+            //Добавляем задачу в бд
+            await _taskManager.AddTaskToDataBase(Guid.NewGuid(), model.Name, model.Description, model.Difficulty, model.Tag, model.DeadLine);
 
-                //Добавляем задачу в бд
-                await _taskManager.AddTaskToDataBase(id, model.Name, model.Difficulty, model.Tag, model.DeadLine);
-
-                return RedirectToAction("Index", "Home");
-            }
-            else
-                ModelState.AddModelError("", "This task already exists!");
+            return View();
         }
         else //Должно выскакивать при пустых полях задачи
             ModelState.AddModelError("", "This task is incomplete!");
