@@ -1,15 +1,28 @@
 function showAnimal() {
     document.getElementById('showColor').style.display = "none";
+    document.getElementById('showWallpaper').style.display = "none";
     document.getElementById('showAnimal').style.display = "block";
 }
 
 function showColor() {
+    document.getElementById('showWallpaper').style.display = "none";
     document.getElementById('showAnimal').style.display = "none";
     document.getElementById('showColor').style.display = "block";
 }
 
+function showWallpaper() {
+    document.getElementById('showAnimal').style.display = "none";
+    document.getElementById('showColor').style.display = "none";
+    document.getElementById('showWallpaper').style.display = "block";
+}
+
 function changeImg(lin){
     var img = document.getElementById("myImg");
+    img.src=lin;
+}
+
+function changeImgWallpaper(lin){
+    var img = document.getElementById("myWallpaper");
     img.src=lin;
 }
 

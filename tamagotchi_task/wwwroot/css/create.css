@@ -113,6 +113,13 @@ img {
 #myImg {
     display: inline;
     position: center;
+    z-index: 1;
+}
+#myWallpaper{
+    position: absolute;
+    right: 150px;
+    top: 15px;
+    z-index: -1;
 }
 
 .buttoncolor {
