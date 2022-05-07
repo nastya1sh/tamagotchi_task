@@ -52,7 +52,7 @@
                     </div>
                     
                     <div id="dateinput" class="buttonSet" style="display: none">
-                        <input type="date" class="start" name="trip-start" value="2022-04-23" min="2022-04-23" max="" asp-for="DeadLine">
+                        <input class="start" style="width: 210px" asp-for="DeadLine"  asp-format="{0:yyyy-MM-ddTHH:mm}" />
                         <button type="button" class="close" onclick="hideDate()">OK</button>
                     </div>
                     
