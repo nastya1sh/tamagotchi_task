@@ -2,6 +2,7 @@ body, html
 {
     font-size: 16px !important;
     width: 100%;
+    font-family: Rubik;
 }
 
 .ui-button
@@ -72,85 +73,37 @@ body, html
     padding: 2px;
 }
 
-.avatar p {
-    position: static;
+.avatar .level{
+    display: inline-flex;
+    position: absolute;
+    left: 45%;
+    top: 258px;
+    padding-left: 40px;
+}
+
+.avatar .level p{
+    display: flex;
     width: 39px;
     height: 22px;
-    left: 45%;
-    top: 8.87px;
-
-    font-family: 'Rubik';
-    font-style: normal;
     font-weight: 400;
-    font-size: 15.6851px;
-    line-height: 140%;
-    z-index: 1;
     color: #959BA5;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 5.22835px 0px;
-}
-
-.avatar .level{
-    display: flex;
-    flex-direction: column;
+    padding-bottom: 30px;
+    margin-right: 50px;
+    padding-left: 15px;
     justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 156.85px;
-    height: 70px;
-    left: 45%;
-    top: 238px;
 }
 
-.avatar .tasks{
-    display: flex;
-    flex-direction: column;
+.avatar .level .num{
     justify-content: center;
-    align-items: center;
-    color: #959BA5;
-    position: absolute;
-    width: 156.85px;
-    height:70px;
-    left: 45%;
-    padding-left: 225px;
-    top: 238px;
-}
-
-.avatar .numlevel {
-    position: absolute;
-    width: 155px;
-    height: 26px;
-    left: 45%;
-    padding-left: 5px;
-    top: 285px;
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28.7559px;
-    line-height: 140%;
-    text-align: center;
     color: #242730;
-}
-
-.avatar .numtasks {
-    position: absolute;
-    width: 450px;
-    height: 26px;
-    left: 45%;
-    padding-left: 5px;
-    top: 285px;
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
+    display: flex;
+    width: 36px;
+    height: 40px;
+    left: 60.43px;
+    font-weight: 700;
     font-size: 28.7559px;
-    line-height: 140%;
-    text-align: center;
-    color: #242730;
+    margin-top: -15px;
+    padding-left: 20px;
 }
 
 .avatar .xp img{
