@@ -34,8 +34,12 @@ public partial class HomeController : Controller
     {
         if (ModelState.IsValid)
         {
+            //Ищем животное, которому присвоится это задание
+            Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
             //Добавляем задачу в бд
-            await _taskManager.AddTaskToDataBase(Guid.NewGuid(), model.Name, model.Description, model.Difficulty, model.Tag, model.DeadLine);
+            await _taskManager.AddTaskToDataBase(
+                Guid.NewGuid(), model.Name, model.Description, model.Difficulty,
+                model.Tag, model.DeadLine, chara);
 
             return View();
         }
