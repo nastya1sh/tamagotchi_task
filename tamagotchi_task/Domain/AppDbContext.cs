@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using tamagotchi_task.Domain.Entities.AuxTables;
+
 
 namespace tamagotchi_task.Domain
 {
@@ -12,14 +12,9 @@ namespace tamagotchi_task.Domain
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         #region Создание таблиц
-        public DbSet<CharacterTask> CharacterTasks { get; set; }
-        public DbSet<Accessories> Accessories { get; set; }
-        public DbSet<Animal> Animals { get; set; }
-        public DbSet<Avatar> Avatars { get; set; }
-        public DbSet<Chat> Chats { get; set; }
-        public DbSet<Fur> Furs { get; set; }
-        public DbSet<Message> Messages { get; set; }
-        public DbSet<Wallpaper> Wallpapers { get; set; }
+       
+        public DbSet<Chat> Chats { get; set; }     
+        public DbSet<Message> Messages { get; set; }     
         public DbSet<Character> Characters { get; set; }
         public DbSet<Forage> Forages { get; set; }
         public DbSet<MyUser> MyUsers { get; set; }
@@ -31,14 +26,14 @@ namespace tamagotchi_task.Domain
         public DbSet<Tags> Tags { get; set; }
         public DbSet<Toys> Toys { get; set; }
         public DbSet<Difficulty> Difficulties { get; set; }
-        public DbSet<ForageAmount> ForageAmounts { get; set; }
-        public DbSet<PotionAmount> PotionAmounts { get; set; }
-        public DbSet<ToyAmount> ToyAmounts { get; set; }
+        public DbSet<CharacterTask> CharacterTasks { get; set; }
+       
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
 
             modelBuilder.Entity<Chat>().HasData(new Chat
             {

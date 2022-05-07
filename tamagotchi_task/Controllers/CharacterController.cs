@@ -10,11 +10,13 @@ namespace tamagotchi_task.Controllers
     {
         private readonly ICharacterManager _characterManager;
         private readonly IUserManager _userManager;
+        private readonly IShowcaseManager _showcaseManager;
 
-        public CharacterController(ICharacterManager characterManager, IUserManager userManager) 
+        public CharacterController(ICharacterManager characterManager, IUserManager userManager, IShowcaseManager showcaseManager)
         {
             _characterManager = characterManager;
             _userManager = userManager;
+            _showcaseManager = showcaseManager;
         }
 
         public IActionResult Create()

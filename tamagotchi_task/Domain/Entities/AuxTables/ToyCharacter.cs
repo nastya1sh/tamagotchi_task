@@ -1,12 +1,12 @@
-﻿using tamagotchi_task.Domain.Entities.AuxTables;
+﻿
 
 namespace tamagotchi_task.Domain.Entities
 {
     public class ToyCharacter
     {
         public Guid Id { get; set; }
-        public List<Character> Characters { get; set; } = new List<Character>();
-        public List<Toys> Toys { get; set; } = new List<Toys>();
-        public List<ToyAmount> ToyAmounts { get; set; } = new List<ToyAmount>();
+        public Guid CharacterId { get; set; }
+        public Guid ToyId { get; set; }
+        public int Amount { get; set; }
     }
 }

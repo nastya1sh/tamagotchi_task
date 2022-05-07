@@ -11,11 +11,13 @@ public partial class HomeController : Controller
     //private readonly ILogger<HomeController> _logger;
     private readonly ITaskManager _taskManager;
     private readonly ICharacterManager _characterManager;
+    
 
     public HomeController(ITaskManager taskManager, ICharacterManager characterManager)
     {
         _taskManager = taskManager;
         _characterManager = characterManager;
+        
     }
 
     public IActionResult Index()
