@@ -285,13 +285,20 @@ label.btn span {
     margin-top: -30px;
     font-family: 'Rubik';
 }
-
+.btn-group .descrimg{
+    font-size: 12px;
+    display: inline;
+    position: absolute;
+    float: left;
+    margin-top: -32px;
+    padding-left: 80px;
+}
 .btn-group .date {
     font-size: 12px;
     display: inline;
     position: relative;
     float: right;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-top: -30px;
     font-family: 'Rubik';
 }
@@ -326,7 +333,6 @@ label:hover input[type="checkbox"] ~ i.fa {
 
 div[data-toggle="buttons"] label {
     display: inline-block;
-    margin-bottom: 0;
     font-size: 18px;
     font-weight: normal;
     line-height: 3em;
@@ -355,15 +361,18 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 .btn-group {
     display: grid;
     flex-direction: column;
-    align-items: center;
     position: absolute;
-    width: 343.7px;
+    width: 310px;
     height: 270px;  
-    margin-left: -12px;
+    margin-left: 5px;
     margin-top: -5px;
     top: 620px;
     left: 45%;
     overflow-y:scroll;
+}
+
+.btn-group span{
+    margin-left: 5px;
 }
 
 .btn-group::-webkit-scrollbar { width: 0; }
@@ -409,7 +418,7 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 .delete {
     float: right;
     margin-top: -60px;
-    margin-left: 170px;
+    margin-left: 160px;
 }
 
 .delete img {
