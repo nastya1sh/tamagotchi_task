@@ -13,11 +13,17 @@
         public int Strength { get; set; }
         public int Intellect { get; set; }
 
+        public string AnimalImage { get; set; } = "~/img/cat0.png";
+        public string AccessoryImage { get; set; } = null;
+        public string WallpaperImage { get; set; } = "~/img/circle.png";
+
+
         public MyUser MyUsers { get; set; } //Ссылка на пользователя
         public ToyCharacter ToyCharacters { get; set; } //Ссылка на таблицу ToyCharacter
         public PotionCharacter PotionCharacters { get; set; } //И т.д.
         public ForageCharacter ForageCharacters { get; set; }
+
         public List<CharacterTask> CharacterTasks { get; set; } = new List<CharacterTask>();//Нужна для создания связи "Один ко многим"
-        public List<Avatar> Avatars { get; set; } = new List<Avatar>();
+        //public List<Avatar> Avatars { get; set; } = new List<Avatar>();
     }
 }
