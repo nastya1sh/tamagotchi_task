@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using tamagotchi_task.Domain;
-using tamagotchi_task.Managers.EF_Realizations;
 using tamagotchi_task.Managers.Interfaces;
 using tamagotchi_task.Models.ViewModels;
 
@@ -44,12 +43,56 @@ namespace tamagotchi_task.Controllers
             return View(model);
         }
 
-        public IActionResult Avatar() 
+        public IActionResult Animal() 
         {
             if (User.Identity.IsAuthenticated)
                 return View();
             else
                 return RedirectToAction("Login", "Account");
+        }
+        [HttpPost]
+        public IActionResult Animal(AnimalModel model)
+        {
+            return View();
+        }
+
+        public IActionResult Color()
+        {
+            if (User.Identity.IsAuthenticated)
+                return View();
+            else
+                return RedirectToAction("Login", "Account");
+        }
+        [HttpPost]
+        public IActionResult Color(ColorModel model)
+        {
+            return View();
+        }
+
+        public IActionResult Wallpaper()
+        {
+            if (User.Identity.IsAuthenticated)
+                return View();
+            else
+                return RedirectToAction("Login", "Account");
+        }
+        [HttpPost]
+        public IActionResult Wallpaper(WallpaperModel model)
+        {
+            return View();
+        }
+
+        public IActionResult Accessory()
+        {
+            if (User.Identity.IsAuthenticated)
+                return View();
+            else
+                return RedirectToAction("Login", "Account");
+        }
+        [HttpPost]
+        public IActionResult Accessory(AccessoryModel model)
+        {
+            return View();
         }
 
         public IActionResult Inventory()
