@@ -86,12 +86,12 @@ img {
 .start {
     text-align: center;
     font-size: 16px;
-    padding: 10px 15px;
-    width: 100px;
+    width: 110px;
     border-radius: 15px;
     background-color:#4e4a57;
     color: white;
     margin-bottom: 12px;
+    padding: 10px;
 }
 
 .answer_box {
@@ -100,7 +100,7 @@ img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 400px;
+    width: 480px;
     height: 520px;
     left: 40%;
     top:20%;
@@ -117,9 +117,15 @@ img {
 }
 #myWallpaper{
     position: absolute;
-    right: 150px;
+    right: 190px;
     top: 15px;
     z-index: -1;
+}
+
+#myAccessories{
+    position: absolute;
+    right: 194px;
+    z-index: 2;
 }
 
 .buttoncolor {

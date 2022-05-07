@@ -1,19 +1,29 @@
 function showAnimal() {
+    document.getElementById('showAccessories').style.display = "none";
     document.getElementById('showColor').style.display = "none";
     document.getElementById('showWallpaper').style.display = "none";
     document.getElementById('showAnimal').style.display = "block";
 }
 
 function showColor() {
+    document.getElementById('showAccessories').style.display = "none";
     document.getElementById('showWallpaper').style.display = "none";
     document.getElementById('showAnimal').style.display = "none";
     document.getElementById('showColor').style.display = "block";
 }
 
 function showWallpaper() {
+    document.getElementById('showAccessories').style.display = "none";
     document.getElementById('showAnimal').style.display = "none";
     document.getElementById('showColor').style.display = "none";
     document.getElementById('showWallpaper').style.display = "block";
+}
+
+function showAccessories() {
+    document.getElementById('showAnimal').style.display = "none";
+    document.getElementById('showColor').style.display = "none";
+    document.getElementById('showWallpaper').style.display = "none";
+    document.getElementById('showAccessories').style.display = "block";
 }
 
 function changeImg(lin){
@@ -23,6 +33,11 @@ function changeImg(lin){
 
 function changeImgWallpaper(lin){
     var img = document.getElementById("myWallpaper");
+    img.src=lin;
+}
+
+function changeImgAccessories(lin){
+    var img = document.getElementById("myAccessories");
     img.src=lin;
 }
 
