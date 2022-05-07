@@ -1,0 +1,43 @@
+﻿@model tamagotchi_task.Models.ViewModels.AvatarModel
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <script src="~/js/create.js" asp-append-version="true"></script>
+
+    <link rel="stylesheet" href="~/css/create.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/tamagotchi_task.styles.css" asp-append-version="true"/>
+</head>
+<body>
+    <div id="welcomeDiv" class="answer_box" >
+            <div id="mess">
+                <img src="~/img/catMes.png">
+                <p>Here you can choose your character with which you will complete tasks</p>
+            </div>
+        <div>
+            <img id="myWallpaper" src="~/img/circle.png">
+            <img id="myImg" src="~/img/cat0.png">
+            <img id="myAccessories" src="">
+        </div>
+        <div class="buttonChange">
+           <button type="button" class="start" onclick="">Animal</button>
+           <button type="button" class="start" onclick="">Color</button>
+           <button type="button" class="start" onclick="">Wallpaper</button>
+           <button type="button" class="start" onclick="">Accessories</button>
+        </div>
+        <div id="showAnimal" class="buttoncolor">
+            <input type="image" src="~/img/catAnimal.png" onClick="changeImg('/img/cat0.png')">
+        </div>
+        <button type="submit" id="finish" class="start" onClick='location.href="/home/index"'>Finish!</button>
+        </div>
+</body>
+</html>
