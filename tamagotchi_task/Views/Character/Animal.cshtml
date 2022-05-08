@@ -29,11 +29,11 @@
             <img id="myAccessories" src="">
         </div>
         <div id="showAnimal" class="buttoncolor">
-            <input type="image" src="/img/catAnimal.png" onclick="document.getElementById('text').value='~/img/cat0.png'; document.getElementById('myImg').src='/img/cat0.png';">
+            <input type="image" src="/img/catAnimal.png" onclick="document.getElementById('text').value='/img/cat0.png'; document.getElementById('myImg').src='/img/cat0.png';">
         </div>
         <form asp-controller="Character" asp-action="Animal">
             <input type="text" id="text" style="display: none" asp-for="Animal"/>
-            <button type="submit" id="finish" value="~/img/cat0.png" class="start">Next</button>
+            <button type="submit" id="finish" value="/img/cat0.png" class="start">Next</button>
         </form>
     </div>
 </body>

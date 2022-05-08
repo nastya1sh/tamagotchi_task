@@ -29,16 +29,16 @@
             <img id="myAccessories" src="">
         </div>
         <div id="showWallpaper" class="buttoncolor">
-            <input type="image" src="/img/circle.png" onclick="document.getElementById('text').value='~/img/circle.png'; document.getElementById('myWallpaper').src='/img/circle.png';">
-            <input type="image" src="/img/circle1.png" onclick="document.getElementById('text').value='~/img/circle1.png'; document.getElementById('myWallpaper').src='/img/circle1.png';">
-            <input type="image" src="/img/circle2.png" onclick="document.getElementById('text').value='~/img/circle2.png'; document.getElementById('myWallpaper').src='/img/circle2.png';">
-            <input type="image" src="/img/circle3.png" onclick="document.getElementById('text').value='~/img/circle3.png'; document.getElementById('myWallpaper').src='/img/circle3.png';">
-            <input type="image" src="/img/circle4.png" onclick="document.getElementById('text').value='~/img/circle4.png'; document.getElementById('myWallpaper').src='/img/circle4.png';">
-            <input type="image" src="/img/circle5.png" onclick="document.getElementById('text').value='~/img/circle5.png'; document.getElementById('myWallpaper').src='/img/circle5.png';">
-            <input type="image" src="/img/circle6.png" onclick="document.getElementById('text').value='~/img/circle6.png'; document.getElementById('myWallpaper').src='/img/circle6.png';">
+            <input type="image" src="/img/circle.png" onclick="document.getElementById('text').value='/img/circle.png'; document.getElementById('myWallpaper').src='/img/circle.png';">
+            <input type="image" src="/img/circle1.png" onclick="document.getElementById('text').value='/img/circle1.png'; document.getElementById('myWallpaper').src='/img/circle1.png';">
+            <input type="image" src="/img/circle2.png" onclick="document.getElementById('text').value='/img/circle2.png'; document.getElementById('myWallpaper').src='/img/circle2.png';">
+            <input type="image" src="/img/circle3.png" onclick="document.getElementById('text').value='/img/circle3.png'; document.getElementById('myWallpaper').src='/img/circle3.png';">
+            <input type="image" src="/img/circle4.png" onclick="document.getElementById('text').value='/img/circle4.png'; document.getElementById('myWallpaper').src='/img/circle4.png';">
+            <input type="image" src="/img/circle5.png" onclick="document.getElementById('text').value='/img/circle5.png'; document.getElementById('myWallpaper').src='/img/circle5.png';">
+            <input type="image" src="/img/circle6.png" onclick="document.getElementById('text').value='/img/circle6.png'; document.getElementById('myWallpaper').src='/img/circle6.png';">
         </div>
         <form asp-controller="Character" asp-action="Wallpaper">
-            <input type="text" id="text" style="display: none" value="~/img/circle.png" asp-for="Wallpaper"/>
+            <input type="text" id="text" style="display: none" value="/img/circle.png" asp-for="Wallpaper"/>
             <button type="submit" id="finish" class="start">Next</button>
         </form>
     </div>
