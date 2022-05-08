@@ -2,6 +2,7 @@
 using tamagotchi_task.Domain;
 using tamagotchi_task.Managers.Interfaces;
 using tamagotchi_task.Models.ViewModels;
+using tamagotchi_task.Models.ViewModels.Avatar;
 
 namespace tamagotchi_task.Controllers
 {
@@ -38,7 +39,7 @@ namespace tamagotchi_task.Controllers
                 //Добавляем персонажа в бд
                 await _characterManager.AddCharacterToDataBase(Guid.NewGuid(), user, model.Name);
 
-                return RedirectToAction("Avatar", "Character");
+                return RedirectToAction("Animal", "Character");
             }
             return View(model);
         }

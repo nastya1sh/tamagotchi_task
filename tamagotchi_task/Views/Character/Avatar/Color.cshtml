@@ -1,6 +1,9 @@
+@model tamagotchi_task.Models.ViewModels.ColorModel
+
 @{
     Layout = "";
 }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +40,7 @@
         <input type="image" src="~/img/catAnimal.png" onClick="changeImg('/img/cat0.png')">
     </div>
     
-        <form asp-controller="Character" asp-action="Avatar">
+        <form asp-controller="Character" asp-action="Color">
             <div id="showColor" style="display:none;" class="buttoncolor">
                 <input type="image" src="~/img/cat0.png" onClick="changeImg('/img/cat0.png')">
                 <input type="image" src="~/img/cat2.png" onClick="changeImg('/img/cat2.png')">
