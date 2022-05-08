@@ -65,6 +65,12 @@ public partial class HomeController : Controller
         await _taskManager.CompleteTask(taskID, character);
         return RedirectToAction("Index", "Home");
     }
+    
+    public async Task<IActionResult> Delete(Guid taskID)
+    {
+        await _taskManager.DeleteTask(taskID);
+        return RedirectToAction("Index", "Home");
+    }
 
     public IActionResult ViewCharacter ()   
     {

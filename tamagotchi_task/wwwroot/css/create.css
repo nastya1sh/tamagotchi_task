@@ -150,6 +150,11 @@ img {
     border-color: rgba(100, 109, 121, 0.35);
 }
 
+.caret {
+    display: block;
+    padding-bottom: 18px;
+}
+
 #finish {
     width: 150px;
     margin-top: 25px;

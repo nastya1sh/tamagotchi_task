@@ -15,23 +15,26 @@
             <a>Description</a>
             <a>Date</a>
         </div>
-        @foreach (var c in Model) {
         <label class="btn active">
+        @foreach (var c in Model) {
 
-        <form id="form-@c.Id" asp-action="Complete" asp-controller="Home">
+            <form id="form-@c.Id" asp-action="Complete" asp-controller="Home">
         <input type="hidden" name="taskID" value="@c.Id">
         <input type="checkbox" unchecked onclick="document.getElementById('form-@c.Id').submit();" value="@c.Id"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span>@c.Name</span>
         </form>
-        <span class="descrdate">
-            <a title="Delete" class="delete" href=""><img src="~/img/trash.png" alt="heart"></a>
-            <span class="descr"> @c.Description </span>
-            <div class="descrimg">
-                <img src="~/img/strength.png">
-                <img src="~/img/strength.png">
-            </div>
-            <datetime class="date"> @c.DeadLine </datetime>
-        </span>
-        </label>
+            <span class="descrdate">
+                <form id="f-@c.Id" asp-action="Delete" asp-controller="Home">
+                    <input type="hidden" name="taskID" value="@c.Id">
+                    <input type="image" src="~/img/trash.png" onclick="document.getElementById('f-@c.Id').submit();" title="Delete" class="delete">
+                </form>
+                <span class="descr"> @c.Description </span>
+                <div class="descrimg">
+                    <img src="~/img/strength.png">
+                    <img src="~/img/strength.png">
+                </div>
+                <datetime class="date"> @c.DeadLine </datetime>
+            </span>
         }
+        </label>
 </div>
 </div>
