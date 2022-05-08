@@ -17,15 +17,17 @@ public partial class HomeController : Controller
     {
         _taskManager = taskManager;
         _characterManager = characterManager;
-        
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
         //Атрибут [Authorize] не видит аутентифицированного пользователя
         //Поэтому пришлось вставить старый добрый костыль
         if (User.Identity.IsAuthenticated)
         {
+            Character temp = await _characterManager.FindCharacterByUser(User.Identity.Name);
+            if (await _taskManager.CheckTasks(temp) == null)
+                return RedirectToAction("Dead", "Character"); //Потом пропишу страницу смерти животного
             return View();
         }
         else
@@ -36,6 +38,13 @@ public partial class HomeController : Controller
     {
         if (ModelState.IsValid)
         {
+            //Проверяем дату
+            if (!_taskManager.HasCorrectDate(model.DeadLine))
+            {
+                ModelState.AddModelError("", "The date of the task is in the past!");
+                return View(model);
+            }
+
             //Ищем животное, которому присвоится это задание
             Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
             //Добавляем задачу в бд
@@ -46,14 +55,14 @@ public partial class HomeController : Controller
             return View();
         }
         else //Должно выскакивать при пустых полях задачи
-            ModelState.AddModelError("", "This task is incomplete!");
+            ModelState.AddModelError("", "The task is incomplete!");
         return View(model);
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public async Task<IActionResult> Complete(Guid taskID) 
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        await _taskManager.CompleteTask(taskID);
+        return RedirectToAction("Index", "Home");
     }
 
     public IActionResult ViewCharacter ()   

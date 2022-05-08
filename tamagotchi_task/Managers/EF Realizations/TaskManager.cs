@@ -12,6 +12,13 @@ namespace tamagotchi_task.Managers.EF_Realizations
         {
             _db = context;
         }
+
+        public bool HasCorrectDate(DateTime time) 
+        {
+            if (time <= DateTime.Now) return false;
+            return true;
+        }
+
         public async Task AddTaskToDataBase(
             Guid taskID, string name, string description, string difficulty,
             string tag, DateTime deadLine, Character character)
@@ -29,7 +36,41 @@ namespace tamagotchi_task.Managers.EF_Realizations
             await _db.SaveChangesAsync();                  
         }
 
-        public async void DeleteTask(Guid taskID)
+        /// <summary>
+        /// Проверяет сроки всех заданий. Если какие-то задачи просрочены, то отнимает жизни персонажа в соответствии с приоритетом.
+        /// </summary>
+        /// <returns>
+        /// Возвращает элемент типа Character или null, если character.HP <= 0 после выполнения метода.
+        /// </returns>
+        public async Task<Character> CheckTasks(Character character) 
+        {
+            foreach (var task in _db.CharacterTasks.Where(u => u.DeadLine < DateTime.Now && u.Characters.Id == character.Id)) 
+            {
+                if (task == null) break;
+                task.Characters.HP -= Convert.ToInt32(task.Difficulty); //У нас приоритет, по сути, Enum
+                _db.CharacterTasks.Remove(task);
+            }
+            if (character.HP <= 0) _db.Characters.Remove(character);
+
+            _db.SaveChanges();
+            return character;
+        }
+
+        public async Task CompleteTask(Guid taskID) 
+        {
+            CharacterTask task = await _db.CharacterTasks.FirstOrDefaultAsync(t => t.Id == taskID);
+            task.Characters.XP += (int)Math.Pow(2, Convert.ToInt32(task.Difficulty));
+            task.Characters.Money += 2 * Convert.ToInt32(task.Difficulty);
+            if (task.Tag == "Sport")
+                task.Characters.Strength += Convert.ToInt32(task.Difficulty);
+            else if (task.Tag == "Study")
+                task.Characters.Intellect += Convert.ToInt32(task.Difficulty);
+
+            _db.CharacterTasks.Remove(task);
+            await _db.SaveChangesAsync();
+        }
+
+        public async Task DeleteTask(Guid taskID)
         {
             _db.CharacterTasks.Remove(new CharacterTask() { Id = taskID });
             await _db.SaveChangesAsync();
