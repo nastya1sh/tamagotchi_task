@@ -42,7 +42,7 @@ namespace tamagotchi_task.Controllers
                 _character.MyUsers = user;
                 _character.Name = model.Name;
 
-                return RedirectToAction("Color", "Character");
+                return RedirectToAction("Animal", "Character");
             }
             return View(model);
         }
@@ -99,7 +99,7 @@ namespace tamagotchi_task.Controllers
             {
                 _character.WallpaperImage = model.Wallpaper;
 
-                return RedirectToAction("Wallpaper", "Character");
+                return RedirectToAction("Accessory", "Character");
             }
             return View(model);
         }
@@ -118,7 +118,7 @@ namespace tamagotchi_task.Controllers
             {
                 _character.AccessoryImage = model.Accessory;
 
-                return RedirectToAction("Wallpaper", "Character");
+                return RedirectToAction("Index", "Home");
             }
             return View(model);
         }

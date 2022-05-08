@@ -26,10 +26,10 @@ function showAccessories() {
     document.getElementById('showAccessories').style.display = "block";
 }
 
-function changeImg(lin) {
+function changeImg(lin){
     var img = document.getElementById("myImg");
     img.src = lin;
-    document.getElementById("OutputImage").innerText += lin;
+    document.getElementById("textImg").innerText = lin;
 }
 
 function changeImgWallpaper(lin){

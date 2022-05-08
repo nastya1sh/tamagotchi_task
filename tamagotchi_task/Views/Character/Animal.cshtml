@@ -28,16 +28,13 @@
             <img id="myImg" src="~/img/cat0.png">
             <img id="myAccessories" src="">
         </div>
-        <div class="buttonChange">
-           <button type="button" class="start" onclick="">Animal</button>
-           <button type="button" class="start" onclick="">Color</button>
-           <button type="button" class="start" onclick="">Wallpaper</button>
-           <button type="button" class="start" onclick="">Accessories</button>
-        </div>
         <div id="showAnimal" class="buttoncolor">
-            <input type="image" src="~/img/catAnimal.png" onClick="changeImg('/img/cat0.png')">
+            <input type="image" src="/img/catAnimal.png" onclick="document.getElementById('text').value='~/img/cat0.png'; document.getElementById('myImg').src='/img/cat0.png';">
         </div>
-        <button type="submit" id="finish" class="start" onClick='location.href="/home/index"'>Finish!</button>
-        </div>
+        <form asp-controller="Character" asp-action="Animal">
+            <input type="text" id="text" style="display: none" asp-for="Animal"/>
+            <button type="submit" id="finish" value="~/img/cat0.png" class="start">Next</button>
+        </form>
+    </div>
 </body>
 </html>

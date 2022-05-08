@@ -1,3 +1,4 @@
+@using System.Net.Mime
 @model tamagotchi_task.Models.ViewModels.Avatar.ColorModel
 
 @{
@@ -25,34 +26,28 @@
                 <img src="~/img/catMes.png">
                 <p>Here you can choose your character with which you will complete tasks</p>
             </div>
-        <form asp-controller="Character" asp-action="Color">
         <div>
             <img id="myWallpaper" src="~/img/circle.png">
             <img id="myImg" src="~/img/cat0.png">
-            <input type="text" id="OutputImage" value='' asp-for="Color">
             <img id="myAccessories" src="">
         </div>
-        <div class="buttonChange">
-                <button type="button" class="start" onclick="">Animal</button>
-                <button type="button" class="start" onclick="">Color</button>
-                <button type="button" class="start" onclick="">Wallpaper</button>
-                <button type="button" class="start" onclick="">Accessories</button>
+        <div id="showColor" class="buttoncolor">
+            <input type="image" src="/img/cat0.png" onclick="document.getElementById('text').value='~/img/cat0.png'; document.getElementById('myImg').src='/img/cat0.png';">
+            <input type="image" src="/img/cat2.png" onclick="document.getElementById('text').value='~/img/cat2.png'; document.getElementById('myImg').src='/img/cat2.png';">
+            <input type="image" src="/img/cat3.png" onclick="document.getElementById('text').value='~/img/cat3.png'; document.getElementById('myImg').src='/img/cat3.png';">
+            <input type="image" src="/img/cat4.png" onclick="document.getElementById('text').value='~/img/cat4.png'; document.getElementById('myImg').src='/img/cat4.png';">
+            <input type="image" src="/img/cat5.png" onclick="document.getElementById('text').value='~/img/cat5.png'; document.getElementById('myImg').src='/img/cat5.png';">
+            <input type="image" src="/img/cat6.png" onclick="document.getElementById('text').value='~/img/cat6.png'; document.getElementById('myImg').src='/img/cat6.png';">
+            <input type="image" src="/img/cat7.png" onclick="document.getElementById('text').value='~/img/cat7.png'; document.getElementById('myImg').src='/img/cat7.png';">
+            <input type="image" src="/img/cat8.png" onclick="document.getElementById('text').value='~/img/cat8.png'; document.getElementById('myImg').src='/img/cat8.png';">
+            <input type="image" src="/img/cat9.png" onclick="document.getElementById('text').value='~/img/cat9.png'; document.getElementById('myImg').src='/img/cat9.png';">
+            <input type="image" src="/img/cat10.png" onclick="document.getElementById('text').value='~/img/cat10.png'; document.getElementById('myImg').src='/img/cat10.png';">
+            <input type="image" src="/img/cat11.png" onclick="document.getElementById('text').value='~/img/cat11.png'; document.getElementById('myImg').src='/img/cat11.png';">
+            <input type="image" src="/img/cat12.png" onclick="document.getElementById('text').value='~/img/cat12.png'; document.getElementById('myImg').src='/img/cat12.png';">
         </div>
-            <div id="showColor" class="buttoncolor">
-                <a href="#" onClick="document.getElementById("OutputImage").innerHTML+="BLYYAD";"><img src="~/img/cat0.png"></a> 
-                <a href="#" onClick="changeImg('/img/cat2.png')"><img src="~/img/cat2.png"></a>
-                <a href="#" onClick="changeImg('/img/cat3.png')"><img src="~/img/cat3.png"></a> 
-                <a href="#" onClick="changeImg('/img/cat4.png')"><img src="~/img/cat4.png"></a>    
-                <a href="#" onClick="changeImg('/img/cat5.png')"><img src="~/img/cat5.png"></a> 
-                <a href="#" onClick="changeImg('/img/cat6.png')"><img src="~/img/cat6.png"></a>   
-                <a href="#" onClick="changeImg('/img/cat7.png')"><img src="~/img/cat7.png"></a> 
-                <a href="#" onClick="changeImg('/img/cat8.png')"><img src="~/img/cat8.png"></a>
-                <a href="#" onClick="changeImg('/img/cat9.png')"><img src="~/img/cat9.png"></a> 
-                <a href="#" onClick="changeImg('/img/cat10.png')"><img src="~/img/cat10.png"></a>    
-                <a href="#" onClick="changeImg('/img/cat11.png')"><img src="~/img/cat11.png"></a> 
-                <a href="#" onClick="changeImg('/img/cat12.png')"><img src="~/img/cat12.png"></a> 
-            </div>
-        <button type="submit" id="finish" class="start" onClick='location.href="/home/index"'>Finish!</button>
+        <form asp-controller="Character" asp-action="Color">
+            <input type="text" id="text" style="display: none" asp-for="Color"/>
+            <button type="submit" id="finish" value="~/img/cat0.png" class="start">Next</button>
         </form>
     </div>
 </body>

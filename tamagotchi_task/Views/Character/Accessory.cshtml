@@ -28,28 +28,21 @@
             <img id="myImg" src="~/img/cat0.png">
             <img id="myAccessories" src="">
         </div>
-         <div class="buttonChange">
-                <button type="button" class="start" onclick="">Animal</button>
-                <button type="button" class="start" onclick="">Color</button>
-                <button type="button" class="start" onclick="">Wallpaper</button>
-             <button type="button" class="start" onclick="">Accessories</button>
-         </div>
-    <div id="showAnimal" class="buttoncolor">
-        <input type="image" src="~/img/catAnimal.png" onClick="changeImg('/img/cat0.png')">
-    </div>
-    
-        <div id="showAccessories" style="display:none;" class="buttoncolor">
-            <input type="image" src="~/img/hat1.png" onClick="changeImgAccessories('/img/hat1.png')">
-            <input type="image" src="~/img/hat2.png" onClick="changeImgAccessories('/img/hat2.png')">
-            <input type="image" src="~/img/hat3.png" onClick="changeImgAccessories('/img/hat3.png')">
-            <input type="image" src="~/img/ball1.png" onClick="changeImgAccessories('/img/ball1.png')">
-            <input type="image" src="~/img/ball2.png" onClick="changeImgAccessories('/img/ball2.png')">
-            <input type="image" src="~/img/ball3.png" onClick="changeImgAccessories('/img/ball3.png')">
-            <input type="image" src="~/img/clothes1.png" onClick="changeImgAccessories('/img/clothes1.png')">
-            <input type="image" src="~/img/clothes2.png" onClick="changeImgAccessories('/img/clothes2.png')">
-            <input type="image" src="~/img/clothes3.png" onClick="changeImgAccessories('/img/clothes3.png')">
+        <div id="showAccessories" class="buttoncolor">
+            <input type="image" src="/img/hat1.png" onclick="document.getElementById('text').value='~/img/hat1.png'; document.getElementById('myAccessories').src='/img/hat1.png';">
+            <input type="image" src="/img/hat2.png" onclick="document.getElementById('text').value='~/img/hat2.png'; document.getElementById('myAccessories').src='/img/hat2.png';">
+            <input type="image" src="/img/hat3.png" onclick="document.getElementById('text').value='~/img/hat3.png'; document.getElementById('myAccessories').src='/img/hat3.png';">
+            <input type="image" src="/img/ball1.png" onclick="document.getElementById('text').value='~/img/ball1.png'; document.getElementById('myAccessories').src='/img/ball1.png';">
+            <input type="image" src="/img/ball2.png" onclick="document.getElementById('text').value='~/img/ball2.png'; document.getElementById('myAccessories').src='/img/ball2.png';">
+            <input type="image" src="/img/ball3.png" onclick="document.getElementById('text').value='~/img/ball3.png'; document.getElementById('myAccessories').src='/img/ball3.png';">
+            <input type="image" src="/img/clothes1.png" onclick="document.getElementById('text').value='~/img/clothes1.png'; document.getElementById('myAccessories').src='/img/clothes1.png';">
+            <input type="image" src="/img/clothes2.png" onclick="document.getElementById('text').value='~/img/clothes2.png'; document.getElementById('myAccessories').src='/img/clothes2.png';">
+            <input type="image" src="/img/clothes3.png" onclick="document.getElementById('text').value='~/img/clothes3.png'; document.getElementById('myAccessories').src='/img/clothes3.png';">
         </div>
-        <button type="submit" id="finish" class="start" onClick='location.href="/home/index"'>Finish!</button>
+         <form asp-controller="Character" asp-action="Accessory">
+            <input type="text" id="text" style="display: none" asp-for="Accessory"/>
+            <button type="submit" id="finish" value="" class="start">Finish!</button>
+         </form>
     </div>
 </body>
 </html>

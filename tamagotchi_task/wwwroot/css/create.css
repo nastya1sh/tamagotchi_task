@@ -100,8 +100,8 @@ img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 480px;
-    height: 520px;
+    width: 380px;
+    height: 570px;
     left: 40%;
     top:20%;
     background: rgb(255, 255, 255);
@@ -117,42 +117,37 @@ img {
 }
 #myWallpaper{
     position: absolute;
-    right: 190px;
     top: 15px;
     z-index: -1;
 }
 
 #myAccessories{
     position: absolute;
-    right: 194px;
+    right: 143px;
     z-index: 2;
 }
 
 .buttoncolor {
     display: inline-block;
     padding-top: 10px;
-    margin-top: 10px;
-    width: 350px;
-    height: 240px;
+    margin-top: 30px;
+    width: 320px;
+    height: 355px;
     background: rgb(255, 255, 255);
     box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
     backdrop-filter: blur(26.1418px);
     border-radius: 31.3701px;
 }
 
-.buttoncolor a{
-    background-color: #8a7fa171;
+.buttoncolor input{
+    width: 65px;
     border-radius: 15px;
     margin-left: 15px;
-    padding-left: 7px;
-}
-
-.buttoncolor img{
-    width: 60px;
-}
-
-.buttonChange {
-    padding-top: 20px;
+    padding-left: 13px;
+    image-rendering: pixelated;
+    background-color: rgba(143, 146, 157, 0.12);
+    border-style: dashed;
+    border-color: rgba(100, 109, 121, 0.35);
 }
 
 #finish {
