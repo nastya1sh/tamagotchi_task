@@ -11,7 +11,7 @@ namespace tamagotchi_task.Controllers
         private readonly ICharacterManager _characterManager;
         private readonly IUserManager _userManager;
         private readonly IShowcaseManager _showcaseManager;
-        private Character _character;
+        private Character _character = new Character();
 
         public CharacterController(ICharacterManager characterManager, IUserManager userManager, IShowcaseManager showcaseManager)
         {
@@ -42,7 +42,7 @@ namespace tamagotchi_task.Controllers
                 _character.MyUsers = user;
                 _character.Name = model.Name;
 
-                return RedirectToAction("Animal", "Character");
+                return RedirectToAction("Color", "Character");
             }
             return View(model);
         }
