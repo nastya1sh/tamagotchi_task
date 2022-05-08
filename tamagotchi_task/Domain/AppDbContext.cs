@@ -78,21 +78,6 @@ namespace tamagotchi_task.Domain
                 Name = "Home Chores"
             });
             #endregion
-
-            #region Промежуточные таблицы
-            modelBuilder.Entity<ForageCharacter>().HasData(new ForageCharacter
-            {
-                Id = new Guid("597d8c8c-7295-4315-8e60-57286dc85683")
-            });
-            modelBuilder.Entity<PotionCharacter>().HasData(new PotionCharacter
-            {
-                Id = new Guid("357afc1a-e414-498e-84ed-60281751ae36")
-            });
-            modelBuilder.Entity<ToyCharacter>().HasData(new ToyCharacter
-            {
-                Id = new Guid("ce3ce8b7-e4a8-4231-b569-7dbf558a6033")
-            });
-            #endregion
         }
     }
 }
