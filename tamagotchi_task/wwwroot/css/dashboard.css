@@ -389,7 +389,7 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
     position: absolute;
     top: 550px; 
     left: 45%;
-    width: 150px;
+    width: 400px;
     margin-left: 320px;
     border-radius: 25px;
     padding-left: 20px;
