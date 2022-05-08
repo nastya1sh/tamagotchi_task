@@ -59,9 +59,10 @@ public partial class HomeController : Controller
         return View(model);
     }
 
-    public async Task<IActionResult> Complete(Guid taskID) 
+    public async Task<IActionResult> Complete(Guid taskID)
     {
-        await _taskManager.CompleteTask(taskID);
+        Character character = await _characterManager.FindCharacterByUser(User.Identity.Name);
+        await _taskManager.CompleteTask(taskID, character);
         return RedirectToAction("Index", "Home");
     }
 

@@ -56,15 +56,15 @@ namespace tamagotchi_task.Managers.EF_Realizations
             return character;
         }
 
-        public async Task CompleteTask(Guid taskID) 
+        public async Task CompleteTask(Guid taskID, Character character) 
         {
             CharacterTask task = await _db.CharacterTasks.FirstOrDefaultAsync(t => t.Id == taskID);
-            task.Characters.XP += (int)Math.Pow(2, Convert.ToInt32(task.Difficulty));
-            task.Characters.Money += 2 * Convert.ToInt32(task.Difficulty);
+            character.XP += (int)Math.Pow(2, Convert.ToInt32(task.Difficulty));
+            character.Money += 2 * Convert.ToInt32(task.Difficulty);
             if (task.Tag == "Sport")
-                task.Characters.Strength += Convert.ToInt32(task.Difficulty);
+                character.Strength += Convert.ToInt32(task.Difficulty);
             else if (task.Tag == "Study")
-                task.Characters.Intellect += Convert.ToInt32(task.Difficulty);
+                character.Intellect += Convert.ToInt32(task.Difficulty);
 
             _db.CharacterTasks.Remove(task);
             await _db.SaveChangesAsync();

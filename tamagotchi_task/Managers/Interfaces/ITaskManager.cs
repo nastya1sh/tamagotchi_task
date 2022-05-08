@@ -8,7 +8,7 @@ namespace tamagotchi_task.Managers.Interfaces
         Task<CharacterTask> FindTaskByID(Guid taskID); /*поиск задач по ID*/
         public bool HasCorrectDate(DateTime time);
         public Task<Character> CheckTasks(Character character);
-        public Task CompleteTask(Guid taskID);
+        public Task CompleteTask(Guid taskID, Character character);
         Task AddTaskToDataBase(
             Guid taskID, string name, string description, string difficulty,
             string tag, DateTime deadLine, Character character); /*добавление задачи*/
