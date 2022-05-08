@@ -7,5 +7,6 @@
 
         //public ForageCharacter ForageCharacters { get; set; }
         public Showcase Showcases { get; set; }
+        public List<ForageCharacter> ForageCharacters { get; set; }
     }
 }

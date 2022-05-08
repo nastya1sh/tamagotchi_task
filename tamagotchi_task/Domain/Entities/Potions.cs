@@ -7,5 +7,6 @@
 
         //public PotionCharacter PotionCharacters { get; set; }
         public Showcase Showcases { get; set; }
+        public List<PotionCharacter> PotionCharacters { get; set; }
     }
 }

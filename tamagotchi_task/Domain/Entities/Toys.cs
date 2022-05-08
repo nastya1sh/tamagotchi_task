@@ -8,5 +8,6 @@
 
         //public ToyCharacter ToyCharacters { get; set; }
         public Showcase Showcase { get; set; }
+        public List<ToyCharacter> ToyCharacters { get; set; }
     }
 }
