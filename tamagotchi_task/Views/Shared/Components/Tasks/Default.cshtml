@@ -16,18 +16,22 @@
             <a>Date</a>
         </div>
         @foreach (var c in Model) {
-    <label class="btn active">
-        <input type="checkbox" checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span>@c.Name</span>
-<span class="descrdate">
-    <a title="Delete" class="delete" href=""><img src="~/img/trash.png" alt="heart"></a>
-    <span class="descr"> @c.Description </span>
-    <div class="descrimg">
-        <img src="~/img/strength.png">
-        <img src="~/img/strength.png">
-    </div>
-    <datetime class="date"> @c.DeadLine </datetime>
-</span>
-</label>
+        <label class="btn active">
+
+        <form id="form-@c.Id" asp-action="Complete" asp-controller="Home">
+        <input type="hidden" name="taskID" value="@c.Id">
+        <input type="checkbox" unchecked onclick="document.getElementById('form-@c.Id').submit();" value="@c.Id"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span>@c.Name</span>
+        </form>
+        <span class="descrdate">
+            <a title="Delete" class="delete" href=""><img src="~/img/trash.png" alt="heart"></a>
+            <span class="descr"> @c.Description </span>
+            <div class="descrimg">
+                <img src="~/img/strength.png">
+                <img src="~/img/strength.png">
+            </div>
+            <datetime class="date"> @c.DeadLine </datetime>
+        </span>
+        </label>
         }
 </div>
 </div>
