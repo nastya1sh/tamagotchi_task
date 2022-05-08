@@ -13,8 +13,9 @@
         public int Strength { get; set; }
         public int Intellect { get; set; }
 
-        public string AnimalImage { get; set; } = "~/img/cat0.png";
-        public string AccessoryImage { get; set; } = null;
+        public string? AnimalImage { get; set; } = "~/img/catAnimal.png";
+        public string ColorImage { get; set; } = "~/img/cat0.png";
+        public string? AccessoryImage { get; set; } = null;
         public string WallpaperImage { get; set; } = "~/img/circle.png";
 
 

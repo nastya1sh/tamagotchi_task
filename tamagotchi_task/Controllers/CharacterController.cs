@@ -11,6 +11,7 @@ namespace tamagotchi_task.Controllers
         private readonly ICharacterManager _characterManager;
         private readonly IUserManager _userManager;
         private readonly IShowcaseManager _showcaseManager;
+        private Character _character;
 
         public CharacterController(ICharacterManager characterManager, IUserManager userManager, IShowcaseManager showcaseManager)
         {
@@ -37,7 +38,9 @@ namespace tamagotchi_task.Controllers
                     return RedirectToAction("Login", "Account");
 
                 //Добавляем персонажа в бд
-                await _characterManager.AddCharacterToDataBase(Guid.NewGuid(), user, model.Name);
+                _character.Id = Guid.NewGuid();
+                _character.MyUsers = user;
+                _character.Name = model.Name;
 
                 return RedirectToAction("Animal", "Character");
             }
@@ -52,9 +55,15 @@ namespace tamagotchi_task.Controllers
                 return RedirectToAction("Login", "Account");
         }
         [HttpPost]
-        public IActionResult Animal(AnimalModel model)
+        public async Task<IActionResult> Animal(AnimalModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                _character.AnimalImage = model.Animal;
+
+                return RedirectToAction("Color", "Character");
+            }
+            return View(model);
         }
 
         public IActionResult Color()
@@ -67,7 +76,13 @@ namespace tamagotchi_task.Controllers
         [HttpPost]
         public IActionResult Color(ColorModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                _character.ColorImage = model.Color;
+
+                return RedirectToAction("Wallpaper", "Character");
+            }
+            return View(model);
         }
 
         public IActionResult Wallpaper()
@@ -80,7 +95,13 @@ namespace tamagotchi_task.Controllers
         [HttpPost]
         public IActionResult Wallpaper(WallpaperModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                _character.WallpaperImage = model.Wallpaper;
+
+                return RedirectToAction("Wallpaper", "Character");
+            }
+            return View(model);
         }
 
         public IActionResult Accessory()
@@ -93,7 +114,13 @@ namespace tamagotchi_task.Controllers
         [HttpPost]
         public IActionResult Accessory(AccessoryModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                _character.AccessoryImage = model.Accessory;
+
+                return RedirectToAction("Wallpaper", "Character");
+            }
+            return View(model);
         }
 
         public IActionResult Inventory()
