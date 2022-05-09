@@ -12,7 +12,6 @@ namespace tamagotchi_task.Domain
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         #region Создание таблиц
-       
         public DbSet<Chat> Chats { get; set; }     
         public DbSet<Message> Messages { get; set; }     
         public DbSet<Character> Characters { get; set; }
@@ -23,11 +22,8 @@ namespace tamagotchi_task.Domain
         public DbSet<ToyCharacter> ToyCharacters { get; set; }
         public DbSet<Potions> Potions { get; set; }
         public DbSet<Showcase> Showcases { get; set; }
-        public DbSet<Tags> Tags { get; set; }
         public DbSet<Toys> Toys { get; set; }
-        public DbSet<Difficulty> Difficulties { get; set; }
         public DbSet<CharacterTask> CharacterTasks { get; set; }
-       
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,40 +39,21 @@ namespace tamagotchi_task.Domain
                 Messages = new List<Message>()
             });
 
-            #region Хардкод сложностей
-            modelBuilder.Entity<Difficulty>().HasData(new Difficulty
-            {
-                Id = new Guid("2eb950a4-b039-47e8-b5b8-9bb596ba6ce5"),
-                Name = "Low"
-            });
-            modelBuilder.Entity<Difficulty>().HasData(new Difficulty
-            {
-                Id = new Guid("a2b7f2b0-2f30-4d7c-a4b5-0c812c677f18"),
-                Name = "Medium"
-            });
-            modelBuilder.Entity<Difficulty>().HasData(new Difficulty
-            {
-                Id = new Guid("f5b00802-6555-4fc5-af89-4532b09bc07a"),
-                Name = "High"
-            });
+            #region Дефолтные значения Character
+            modelBuilder.Entity<Character>().Property(b => b.Intellect).HasDefaultValue(0);
+            modelBuilder.Entity<Character>().Property(b => b.Strength).HasDefaultValue(0);
+            modelBuilder.Entity<Character>().Property(b => b.Money).HasDefaultValue(0);
+            modelBuilder.Entity<Character>().Property(b => b.XP).HasDefaultValue(0);
+            modelBuilder.Entity<Character>().Property(b => b.Level).HasDefaultValue(0);
+            modelBuilder.Entity<Character>().Property(b => b.HP).HasDefaultValue(6);
+            modelBuilder.Entity<Character>().Property(b => b.AnimalImage).HasDefaultValue("/img/catAnimal.png");
+            modelBuilder.Entity<Character>().Property(b => b.ColorImage).HasDefaultValue("/img/cat0.png");
+            modelBuilder.Entity<Character>().Property(b => b.WallpaperImage).HasDefaultValue("/img/circle.png");
             #endregion
-
-            #region Хардкод тэгов
-            modelBuilder.Entity<Tags>().HasData(new Tags
-            {
-                Id = new Guid("c21d9094-7381-45da-96e7-41a8d434bb0f"),
-                Name = "Sport"
-            });
-            modelBuilder.Entity<Tags>().HasData(new Tags
-            {
-                Id = new Guid("6b6a0ac9-e83b-4856-8119-b44281df595f"),
-                Name = "Study"
-            });
-            modelBuilder.Entity<Tags>().HasData(new Tags
-            {
-                Id = new Guid("dfe35ad9-f02f-4c68-96a4-29f5428d47e8"),
-                Name = "Home Chores"
-            });
+            #region Дефолтные значения AuxTables
+            modelBuilder.Entity<ForageCharacter>().Property(b => b.Amount).HasDefaultValue(0);
+            modelBuilder.Entity<PotionCharacter>().Property(b => b.Amount).HasDefaultValue(0);
+            modelBuilder.Entity<ToyCharacter>().Property(b => b.Amount).HasDefaultValue(0);
             #endregion
         }
     }

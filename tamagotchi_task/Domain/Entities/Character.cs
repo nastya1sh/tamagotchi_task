@@ -6,16 +6,16 @@
         [Display(Name = "Character's name")]
         public override string Name { get; set; } //Перегружаем, так как есть ErrorMessage и Name
 
-        public int Level { get; set; }
-        public int Money { get; set; }
-        public int HP { get; set; } //Пусть у животного будет пока 3 сердечка, а отнимается половина
-        public int XP { get; set; }
-        public int Strength { get; set; }
-        public int Intellect { get; set; }
+        public int Level { get; set; } = 0;
+        public int Money { get; set; } = 0;
+        public int HP { get; set; } = 6; //Пусть у животного будет пока 3 сердечка, а отнимается половина
+        public int XP { get; set; } = 0;
+        public int Strength { get; set; } = 0;
+        public int Intellect { get; set; } = 0;
 
-        public string? AnimalImage { get; set; } = "~/img/catAnimal.png";
+        public string? AnimalImage { get; set; }
         public string ColorImage { get; set; } = "~/img/cat0.png";
-        public string? AccessoryImage { get; set; } = null;
+        public string? AccessoryImage { get; set; }
         public string WallpaperImage { get; set; } = "~/img/circle.png";
 
 
