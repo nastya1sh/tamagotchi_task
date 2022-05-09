@@ -1,0 +1,45 @@
+﻿@model tamagotchi_task.Domain.Entities.Character
+
+<div class="wrapper">
+    <div class="money">
+    <p style="position: absolute; right: 0; padding-right: 30px; font-family: Rubik; image-rendering: pixelated; color: #7c0000"><img src="~/img/coin.png">@Model.Money</p>  
+    </div>
+    <div class="avatar">
+        <img src=@Model.WallpaperImage class="ava" alt="avatar">
+        <img src=@Model.ColorImage class="ava" id="cat" alt="avatarCat">
+        @if (Model.AccessoryImage != null)
+        {
+            <img src=@Model.AccessoryImage class="ava" id="Accessory" alt="accessoryCat">
+        }
+        <div id="rectangle"></div>
+        <div>
+            <p class="nickname">@Model.Name</p>
+        </div>
+        <div class="heart">
+            @*Пока попробую сделать чисто целые сердечки*@
+            @for(int i = 0; i < Model.HP / 2; i++){
+            <img src="~/img/heart.png" alt="heart">
+            }
+            @*Для отображения половинки сердечка можно заменить / в условии цикла на %*@
+        </div>
+        <div class="xp">
+            <img src="~/img/star.png" alt="xp">
+            @*Число 20 в формуле заменяет порог опыта для данного уровня*@
+            <progress id="xpvalue" max="100" value="@Convert.ToInt32((double)Model.XP/20 * 100)"> </progress>
+        </div>
+       <div class="level">
+           <div>
+               <p>Level</p>
+               <p class="num">@Model.Level</p>
+           </div>
+           <div>
+               <p>Intellect</p>
+               <p class="num">@Model.Intellect</p>
+           </div>
+           <div>
+               <p>Strength</p>
+               <p class="num">@Model.Strength</p>
+           </div>
+       </div>
+    </div>
+</div>
