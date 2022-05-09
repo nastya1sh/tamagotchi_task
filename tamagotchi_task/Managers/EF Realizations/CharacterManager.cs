@@ -12,6 +12,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
         {
             _db = context;
         }
+
         public async Task AddCharacterToDataBase(Guid characterID, MyUser user, string characterName)
         {
             Character temp = new Character
@@ -37,55 +38,30 @@ namespace tamagotchi_task.Managers.EF_Realizations
             return await _db.Characters.FirstOrDefaultAsync(u => u.Id == characterID);
         }
 
-        public async void HpDown(Guid characterID, int value)
-        {
-            var character = _db.Characters.Where(u => u.Id == characterID).FirstOrDefault();
-            character.HP -= value;
-            if (character.HP > 0)
-            {
-                _db.Characters.Where(u => u.Id == characterID).FirstOrDefault().HP -= value;
-                await _db.SaveChangesAsync();
-            }
-            else
-            {
-                DeleteCharacterDataBase(characterID);
-                await _db.SaveChangesAsync();
-            }
-
-        }
-
-        public async void HpUP(Guid characterID, int value)
-        {
-            _db.Characters.Where(u => u.Id == characterID).FirstOrDefault().HP += value;
-            await _db.SaveChangesAsync();
-        }
-
-        public async void IntellectUP(Guid characterID, int value)
-        {
-            _db.Characters.Where(u => u.Id == characterID).FirstOrDefault().Intellect += value;
-            await _db.SaveChangesAsync();
-        }
-
-        public async void LevelUP(Guid characterID)
-        {
-            _db.Characters.Where(u => u.Id == characterID).FirstOrDefault().Level += 1;
-            await _db.SaveChangesAsync();
-        }
-
-        public async void StrengthUP(Guid characterID, int value)
-        {
-            _db.Characters.Where(u => u.Id == characterID).FirstOrDefault().Strength += value;
-            await _db.SaveChangesAsync();
-        }
-
-        public async void XpUP(Guid characterID, int value)
-        {
-            _db.Characters.Where(u => u.Id == characterID).FirstOrDefault().XP += value;
-            await _db.SaveChangesAsync();
-        }
         public async Task<Character> FindCharacterByUser(string userName)
         {
             return await _db.Characters.FirstOrDefaultAsync(u => u.MyUsers.Name == userName);
+        }
+
+        public void SetAnimal(Character character, string image)
+        {
+            character.AnimalImage = image;
+            _db.SaveChanges();
+        }
+        public void SetColor(Character character, string image)
+        {
+            character.ColorImage = image;
+            _db.SaveChanges();
+        }
+        public void SetWallpaper(Character character, string image)
+        {
+            character.WallpaperImage = image;
+            _db.SaveChanges();
+        }
+        public void SetAccessory(Character character, string image)
+        {
+            character.AccessoryImage = image;
+            _db.SaveChanges();
         }
     }
 }

@@ -6,13 +6,11 @@ namespace tamagotchi_task.Managers.Interfaces
     {
         Task AddCharacterToDataBase(Guid characterID, MyUser user, string characterName); /*добавление персонажа с заданным именем*/
         void DeleteCharacterDataBase(Guid characterID);
-        void LevelUP(Guid characterID); /*я так понимаю за раз может увеличиться только на 1*/
-        void HpUP(Guid characterID, int value);
-        void HpDown (Guid characterID, int value);
-        void XpUP(Guid characterID, int value);
-        void StrengthUP(Guid characterID, int value);
-        void IntellectUP(Guid characterID, int value);
         Task<Character> FindCharacterByID(Guid characterID); /*поиск персонажа по ID*/
         public Task<Character> FindCharacterByUser(string userName);
+        public void SetAnimal(Character character, string image);
+        public void SetColor(Character character, string image);
+        public void SetWallpaper(Character character, string image);
+        public void SetAccessory(Character character, string image);
     }
 }
