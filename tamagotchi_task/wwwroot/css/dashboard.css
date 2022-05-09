@@ -25,20 +25,15 @@ body, html
 
 .avatar .ava {
     position: absolute;
-    height: 150px;
+    image-rendering: pixelated;
     padding-left: 85px;
     left: 45%;
-    top: -15px;
-    image-rendering: pixelated;
+    width: 220px;
     pointer-events: none;
-    z-index: 2;
 }
 
-#cat {
-    top: -15px;
-    padding-left: 90px;
-    height: 130px;
-    z-index: 1;
+.avatar .ava #accessory {
+    padding-left: 45px;
 }
 
 .avatar .nickname {
@@ -373,7 +368,6 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 
 .btn-group span{
     margin-left: 5px;
-    margin-bottom: 10px;
 }
 
 .btn-group::-webkit-scrollbar { width: 0; }
@@ -433,8 +427,6 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
     border: none;
     outline: none;
     border-radius: 10rem;
-    transition: all .1s;
-    transition-delay: .1s;
     box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
 }
 .searchbar::placeholder {
@@ -458,6 +450,10 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
     cursor: pointer;
 }
 
+.container button{
+    position: absolute;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -479,9 +475,6 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
     text-decoration: none;
     display: block;
     z-index: 5;
-}
-
-.dropbtn {
 }
 
 .dropdown-content a:hover {background-color: #ddd}

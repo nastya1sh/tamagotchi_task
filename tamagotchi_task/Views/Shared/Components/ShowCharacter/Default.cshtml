@@ -5,22 +5,31 @@
     <p style="position: absolute; right: 0; padding-right: 30px; font-family: Rubik; image-rendering: pixelated; color: #7c0000"><img src="~/img/coin.png">@Model.Money</p>  
     </div>
     <div class="avatar">
-        <img src=@Model.WallpaperImage class="ava" alt="avatar">
-        <img src=@Model.ColorImage class="ava" id="cat" alt="avatarCat">
+    <img src="@Model.ColorImage" class="ava" style="z-index: 2; top: -15px;" id="cat" alt="avatarCat">
+    <img src="@Model.WallpaperImage" class="ava" style="z-index: 1" id="wallpaper" alt="avatar">
         @if (Model.AccessoryImage != null)
         {
-            <img src=@Model.AccessoryImage class="ava" id="Accessory" alt="accessoryCat">
+            <img src="@Model.AccessoryImage" class="ava" style="z-index: 3; top: -41px; padding-left: 54px" id="accessory" alt="accessoryCat">
         }
-        <div id="rectangle"></div>
+        <div id="rectangle"></div>  
         <div>
             <p class="nickname">@Model.Name</p>
         </div>
         <div class="heart">
-            @*Пока попробую сделать чисто целые сердечки*@
-            @for(int i = 0; i < Model.HP / 2; i++){
-            <img src="~/img/heart.png" alt="heart">
+            @if (Model.HP % 2 == 0)
+            {
+                for(int i = 0; i < Model.HP/2; i++){
+                    <img src="~/img/heart.png" alt="heart">
+                }
             }
-            @*Для отображения половинки сердечка можно заменить / в условии цикла на %*@
+            else
+            {
+                for(int i = 0; i < (Model.HP-1)/2; i++){
+                    <img src="~/img/heart.png" alt="heart">
+                }
+                <img src="~/img/half_heart.png" alt="heart">
+            }
+            
         </div>
         <div class="xp">
             <img src="~/img/star.png" alt="xp">
