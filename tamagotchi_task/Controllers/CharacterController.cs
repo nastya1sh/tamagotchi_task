@@ -2,7 +2,6 @@
 using tamagotchi_task.Domain;
 using tamagotchi_task.Managers.Interfaces;
 using tamagotchi_task.Models.ViewModels;
-using tamagotchi_task.Models.ViewModels.Avatar;
 
 namespace tamagotchi_task.Controllers
 {
@@ -39,12 +38,12 @@ namespace tamagotchi_task.Controllers
                 //Добавляем персонажа в бд
                 await _characterManager.AddCharacterToDataBase(Guid.NewGuid(), user, model.Name);
 
-                return RedirectToAction("Animal", "Character");
+                return RedirectToAction("AvatarCreate", "Character");
             }
             return View(model);
         }
 
-        public IActionResult Animal() 
+        public IActionResult AvatarCreate() 
         {
             if (User.Identity.IsAuthenticated)
                 return View();
@@ -52,71 +51,14 @@ namespace tamagotchi_task.Controllers
                 return RedirectToAction("Login", "Account");
         }
         [HttpPost]
-        public async Task<IActionResult> Animal(AnimalModel model)
+        public async Task<IActionResult> AvatarCreate(AvatarModel model)
         {
             if (ModelState.IsValid)
             {
                 Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
                 _characterManager.SetAnimal(chara, model.Animal);
-
-                return RedirectToAction("Color", "Character");
-            }
-            return View(model);
-        }
-
-        public IActionResult Color()
-        {
-            if (User.Identity.IsAuthenticated)
-                return View();
-            else
-                return RedirectToAction("Login", "Account");
-        }
-        [HttpPost]
-        public async Task<IActionResult> Color(ColorModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
                 _characterManager.SetColor(chara, model.Color);
-
-                return RedirectToAction("Wallpaper", "Character");
-            }
-            return View(model);
-        }
-
-        public IActionResult Wallpaper()
-        {
-            if (User.Identity.IsAuthenticated)
-                return View();
-            else
-                return RedirectToAction("Login", "Account");
-        }
-        [HttpPost]
-        public async Task<IActionResult> Wallpaper(WallpaperModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
                 _characterManager.SetWallpaper(chara, model.Wallpaper);
-
-                return RedirectToAction("Accessory", "Character");
-            }
-            return View(model);
-        }
-
-        public IActionResult Accessory()
-        {
-            if (User.Identity.IsAuthenticated)
-                return View();
-            else
-                return RedirectToAction("Login", "Account");
-        }
-        [HttpPost]
-        public async Task<IActionResult> Accessory(AccessoryModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
                 _characterManager.SetAccessory(chara, model.Accessory);
 
                 return RedirectToAction("Index", "Home");

@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 400px;
+    width: 380px;
     height: 510px;
     left: 40%;
     top:20%;
@@ -50,13 +50,13 @@ body{
 }
 
 .box .input {
-    display:inline-flex;
+    display:block;
     padding-bottom: 10px;
 }
 
 .box .displayname {
     padding-right: 20px;
-    padding: 10px 12px;
+    padding: 10.5px 12px;
     text-align: center;
     border-radius: 15px 0 0 15px;
     background-color:#4e4a57b3;
@@ -69,12 +69,17 @@ body{
     font-size: 14px;
     line-height: 1.43;
     color: #4e4a57;
-    border: 1px solid #c3c0c7
+    border: 1px solid #c3c0c7;
+    font-family: Rubik
 }
 
 .box img {
     margin-bottom: -40px;
     z-index: 2;
+}
+
+.box .start {
+    margin-left: 80px;
 }
 
 
@@ -100,8 +105,8 @@ img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 380px;
-    height: 570px;
+    width: 500px;
+    height: 610px;
     left: 40%;
     top:20%;
     background: rgb(255, 255, 255);
@@ -123,7 +128,7 @@ img {
 
 #myAccessories{
     position: absolute;
-    right: 155px;
+    right: 214px;
     top: -6px;
     z-index: 2;
 }
@@ -131,8 +136,7 @@ img {
 .buttoncolor {
     display: inline-block;
     padding-top: 10px;
-    margin-top: 30px;
-    width: 320px;
+    width: 450px;
     height: 355px;
     background: rgb(255, 255, 255);
     box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
@@ -143,18 +147,18 @@ img {
 .buttoncolor input{
     width: 65px;
     border-radius: 15px;
-    margin-left: 25px;
+    margin-left: 13px;
+    margin-top: 5px;
     margin-bottom: 5px;
-    padding-left: 1px;
     image-rendering: pixelated;
     background-color: rgba(143, 146, 157, 0.12);
     border-style: dashed;
     border-color: rgba(100, 109, 121, 0.35);
 }
 
-.caret {
-    display: block;
-    padding-bottom: 18px;
+.answer_box .start {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #finish {

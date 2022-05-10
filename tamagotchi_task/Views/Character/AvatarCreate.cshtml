@@ -1,0 +1,79 @@
+@model tamagotchi_task.Models.ViewModels.AvatarModel
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <script src="~/js/create.js" asp-append-version="true"></script>
+
+    <link rel="stylesheet" href="~/css/create.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/tamagotchi_task.styles.css" asp-append-version="true"/>
+</head>
+<body>
+<div id="welcomeDiv" class="answer_box" >
+    <div id="mess">
+        <img src="~/img/catMes.png">
+        <p>Here you can choose your character with which you will complete tasks</p>
+    </div>
+    <div>
+        <img id="myWallpaper" src="~/img/circle.png">
+        <img id="myImg" src="~/img/cat0.png">
+        <img id="myAccessories" src="">
+    </div>
+    <div class="buttonChange">
+        <button type="button" class="start" onclick="showAnimal()">Animal</button>
+        <button type="button" class="start" onclick="showColor()">Color</button>
+        <button type="button" class="start" onclick="showWallpaper()">Wallpaper</button>
+        <button type="button" class="start" onclick="showAccessories()">Accessories</button>
+    </div>
+    <div id="showAnimal" class="buttoncolor">
+        <input type="image" src="/img/catAnimal.png" onclick="document.getElementById('animal').value='/img/cat0.png'; document.getElementById('wallpaper').value='/img/circle.png'; document.getElementById('accessory').value='';  document.getElementById('myImg').src='/img/cat0.png'; document.getElementById('myWallpaper').src='/img/circle.png'; document.getElementById('myAccessories').src='';">
+    </div>
+    <div id="showColor" style="display:none;" class="buttoncolor">
+        <input type="image" src="/img/cat0.png" onclick="document.getElementById('color').value='/img/cat0.png'; document.getElementById('myImg').src='/img/cat0.png';">
+        <input type="image" src="/img/cat2.png" onclick="document.getElementById('color').value='/img/cat2.png'; document.getElementById('myImg').src='/img/cat2.png';">
+        <input type="image" src="/img/cat3.png" onclick="document.getElementById('color').value='/img/cat3.png'; document.getElementById('myImg').src='/img/cat3.png';">
+        <input type="image" src="/img/cat4.png" onclick="document.getElementById('color').value='/img/cat4.png'; document.getElementById('myImg').src='/img/cat4.png';">
+        <input type="image" src="/img/cat5.png" onclick="document.getElementById('color').value='/img/cat5.png'; document.getElementById('myImg').src='/img/cat5.png';">
+        <input type="image" src="/img/cat6.png" onclick="document.getElementById('color').value='/img/cat6.png'; document.getElementById('myImg').src='/img/cat6.png';">
+        <input type="image" src="/img/cat7.png" onclick="document.getElementById('color').value='/img/cat7.png'; document.getElementById('myImg').src='/img/cat7.png';">
+        <input type="image" src="/img/cat8.png" onclick="document.getElementById('color').value='/img/cat8.png'; document.getElementById('myImg').src='/img/cat8.png';">
+        <input type="image" src="/img/cat9.png" onclick="document.getElementById('color').value='/img/cat9.png'; document.getElementById('myImg').src='/img/cat9.png';">
+        <input type="image" src="/img/cat10.png" onclick="document.getElementById('color').value='/img/cat10.png'; document.getElementById('myImg').src='/img/cat10.png';">
+        <input type="image" src="/img/cat11.png" onclick="document.getElementById('color').value='/img/cat11.png'; document.getElementById('myImg').src='/img/cat11.png';">
+        <input type="image" src="/img/cat12.png" onclick="document.getElementById('color').value='/img/cat12.png'; document.getElementById('myImg').src='/img/cat12.png';">
+    </div>
+    <div id="showWallpaper" style="display:none;" class="buttoncolor">
+        <input type="image" src="/img/circle.png" onclick="document.getElementById('wallpaper').value='/img/circle.png'; document.getElementById('myWallpaper').src='/img/circle.png';">
+        <input type="image" src="/img/circle1.png" onclick="document.getElementById('wallpaper').value='/img/circle1.png'; document.getElementById('myWallpaper').src='/img/circle1.png';">
+        <input type="image" src="/img/circle2.png" onclick="document.getElementById('wallpaper').value='/img/circle2.png'; document.getElementById('myWallpaper').src='/img/circle2.png';">
+        <input type="image" src="/img/circle3.png" onclick="document.getElementById('wallpaper').value='/img/circle3.png'; document.getElementById('myWallpaper').src='/img/circle3.png';">
+        <input type="image" src="/img/circle4.png" onclick="document.getElementById('wallpaper').value='/img/circle4.png'; document.getElementById('myWallpaper').src='/img/circle4.png';">
+        <input type="image" src="/img/circle5.png" onclick="document.getElementById('wallpaper').value='/img/circle5.png'; document.getElementById('myWallpaper').src='/img/circle5.png';">
+        <input type="image" src="/img/circle6.png" onclick="document.getElementById('wallpaper').value='/img/circle6.png'; document.getElementById('myWallpaper').src='/img/circle6.png';">
+    </div>
+    <div id="showAccessories" style="display:none;" class="buttoncolor">
+        <input type="image" src="/img/item1prew.png" onclick="document.getElementById('accessory').value='/img/item1.png'; document.getElementById('myAccessories').src='/img/item1.png';">
+        <input type="image" src="/img/item2prew.png" onclick="document.getElementById('accessory').value='/img/item2.png'; document.getElementById('myAccessories').src='/img/item2.png';">
+        <input type="image" src="/img/item3prew.png" onclick="document.getElementById('accessory').value='/img/item3.png'; document.getElementById('myAccessories').src='/img/item3.png';">
+        <input type="image" src="/img/item4prew.png" onclick="document.getElementById('accessory').value='/img/item4.png'; document.getElementById('myAccessories').src='/img/item4.png';">
+        <input type="image" src="/img/item5prew.png" onclick="document.getElementById('accessory').value='/img/item5.png'; document.getElementById('myAccessories').src='/img/item5.png';">
+    </div>
+    <form asp-controller="Character" asp-action="AvatarCreate">
+            <input type="text" id="animal" style="display: none" value="/img/cat0.png" asp-for="Animal"/>
+            <input type="text" id="color" style="display: none" value="/img/cat0.png" asp-for="Color"/>
+            <input type="text" id="wallpaper" style="display: none" value="/img/circle.png" asp-for="Wallpaper"/>
+            <input type="text" id="accessory" style="display: none" value="" asp-for="Accessory"/>
+            <button type="submit" id="finish" class="start">Finish!</button>
+    </form>
+</div>
+</body>
+</html>
