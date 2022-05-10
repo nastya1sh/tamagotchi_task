@@ -17,5 +17,6 @@
         //Не забываем, что в один момент времени у пользователя м.б. только одна зверушка
         public List<Character> Characters { get; set; } = new List<Character>();
         public Chat Chats { get; set; }
+
     }
 }

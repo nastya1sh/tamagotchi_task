@@ -11,12 +11,15 @@ public partial class HomeController : Controller
     //private readonly ILogger<HomeController> _logger;
     private readonly ITaskManager _taskManager;
     private readonly ICharacterManager _characterManager;
-    
+    private readonly IChatManager _ChatManager;
+    private readonly IUserManager _UserManager;
 
-    public HomeController(ITaskManager taskManager, ICharacterManager characterManager)
+    public HomeController(ITaskManager taskManager, ICharacterManager characterManager, IChatManager chatmanager, IUserManager usermanager)
     {
         _taskManager = taskManager;
         _characterManager = characterManager;
+        _ChatManager = chatmanager;
+        _UserManager = usermanager;
     }
 
     public async Task<IActionResult> Index()
