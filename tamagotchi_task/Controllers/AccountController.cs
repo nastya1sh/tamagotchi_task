@@ -71,7 +71,7 @@ namespace tamagotchi_task.Controllers
                     Guid id = Guid.NewGuid(); //У нас Id не int, поэтому нужно его генерить ручками
 
                     //Добавление нового пользователя в глобальный чат
-                    Chat chat = await _chatManager.FindChatByName("Global Chat");
+                   Chat chat = await _chatManager.FindChatByName("Global Chat");
                     //Если chat == null, выйдет SQL Exception
 
                     //Добавляем пользователя в бд
