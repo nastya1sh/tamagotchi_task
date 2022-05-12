@@ -20,9 +20,6 @@
 
 
         public MyUser MyUsers { get; set; } //Ссылка на пользователя
-        public List<ToyCharacter> ToyCharacters { get; set; } //Ссылка на таблицу ToyCharacter
-        public List<PotionCharacter> PotionCharacters { get; set; } //И т.д.
-        public List<ForageCharacter> ForageCharacters { get; set; }
 
         public List<CharacterTask> CharacterTasks { get; set; } = new List<CharacterTask>();//Нужна для создания связи "Один ко многим"
         //public List<Avatar> Avatars { get; set; } = new List<Avatar>();

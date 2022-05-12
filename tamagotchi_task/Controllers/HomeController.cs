@@ -1,8 +1,5 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using tamagotchi_task.Managers.Interfaces;
-using tamagotchi_task.Models;
 using tamagotchi_task.Models.ViewModels;
 
 namespace tamagotchi_task.Controllers;
@@ -73,11 +70,5 @@ public partial class HomeController : Controller
     {
         await _taskManager.DeleteTask(taskID);
         return RedirectToAction("Index", "Home");
-    }
-
-    public IActionResult ViewCharacter ()   
-    {
-        var animal = _characterManager.FindCharacterByUser(User.Identity.Name);
-        return View();
     }
 }

@@ -10,12 +10,16 @@ namespace tamagotchi_task.Controllers
         private readonly ICharacterManager _characterManager;
         private readonly IUserManager _userManager;
         private readonly IShowcaseManager _showcaseManager;
+        private readonly IInventoryManager _inventoryManager;
 
-        public CharacterController(ICharacterManager characterManager, IUserManager userManager, IShowcaseManager showcaseManager)
+        public CharacterController(
+            ICharacterManager characterManager, IUserManager userManager,
+            IShowcaseManager showcaseManager, IInventoryManager inventoryManager)
         {
             _characterManager = characterManager;
             _userManager = userManager;
             _showcaseManager = showcaseManager;
+            _inventoryManager = inventoryManager;
         }
 
         public IActionResult Create()
@@ -56,10 +60,7 @@ namespace tamagotchi_task.Controllers
             if (ModelState.IsValid)
             {
                 Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
-                _characterManager.SetAnimal(chara, model.Animal);
-                _characterManager.SetColor(chara, model.Color);
-                _characterManager.SetWallpaper(chara, model.Wallpaper);
-                _characterManager.SetAccessory(chara, model.Accessory);
+                await _characterManager.SetAvatar(chara, model);
 
                 return RedirectToAction("Index", "Home");
             }
@@ -69,17 +70,31 @@ namespace tamagotchi_task.Controllers
         public IActionResult Inventory()
         {
             if (User.Identity.IsAuthenticated)
-                return View();
+                return View(_inventoryManager.GetItems());
             else
                 return RedirectToAction("Login", "Account");
+        }
+        [HttpPost]
+        public async Task<IActionResult> Use(Guid itemID)
+        {
+            Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
+            await _inventoryManager.UseItem(chara, itemID);
+            return RedirectToAction("Inventory", "Character");
         }
 
         public IActionResult Shop()
         {
             if (User.Identity.IsAuthenticated)
-                return View();
+                return View(_showcaseManager.ShowAll());
             else
                 return RedirectToAction("Login", "Account");
+        }
+        [HttpPost]
+        public async Task<IActionResult> Buy(Guid itemID)
+        {
+            Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
+            await _showcaseManager.BuyItem(chara, itemID);
+            return RedirectToAction("Shop", "Character");
         }
     }
 }

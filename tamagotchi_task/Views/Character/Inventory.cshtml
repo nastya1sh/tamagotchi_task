@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model IQueryable<Inventory>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="~/css/inventory.css" asp-append-version="true"/>
@@ -9,20 +11,20 @@
     </div>
     <div class="content">
         <div class="grid container">
-            <div class="item">
-                <h4>Flask HP</h4>
-                <img src="~/img/flask_hp.png" alt="" />
-                <p class="amount">Amount:</p>
-                <p class="desc">1</p>
-                <input type="submit" id="usebut" value="Use">
-            </div>
-            <div class="item">
-                <h4>Flask Intellect</h4>
-                <img src="~/img/flask_intellect.png" alt="" />
-                <p class="amount">Amount:</p>
-                <p class="desc">2</p>
-                <input type="submit" id="usebut" value="Use">
-            </div>
+            @if (Model != null)
+                foreach(var thing in Model)
+                {
+                <div class="f-@thing.Id">
+                    <h4>@thing.Item_Name</h4>
+                    <img src="@thing.Image" alt="" />
+                    <p class="amount">Amount:</p>
+                    <p class="desc">@thing.Amount</p>
+                    <form id="form-@thing.Id" asp-action="Use" asp-controller="Character">
+                        <input type="hidden" name="itemID" value="@thing.Id">
+                        <input type="submit" id="usebut" value="Use">
+                    </form>
+                </div>
+                }
         </div>
     </div>
 </body>

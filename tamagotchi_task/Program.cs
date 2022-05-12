@@ -36,6 +36,7 @@ builder.Services.AddTransient<IChatManager, ChatManager>();
 builder.Services.AddTransient<ITaskManager, TaskManager>();
 builder.Services.AddTransient<ICharacterManager, CharacterManager>();
 builder.Services.AddTransient<IShowcaseManager, ShowcaseManager>();
+builder.Services.AddTransient<IInventoryManager, InventoryManager>();
 #endregion
 
 var app = builder.Build();

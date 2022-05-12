@@ -5,8 +5,7 @@ namespace tamagotchi_task.Managers.Interfaces
     public interface IShowcaseManager
     {
         public Task<Showcase> FindShowcaseByID(Guid showcaseID);
-        public void BuyItem(Guid characterID, int item_Id);
+        public Task BuyItem(Character character, Guid showcaseID);
         public IQueryable<Showcase> ShowAll();
-
     }
 }
