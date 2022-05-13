@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using tamagotchi_task.Domain;
 using tamagotchi_task.Managers.Interfaces;
 
 namespace tamagotchi_task.Managers.EF_Realizations

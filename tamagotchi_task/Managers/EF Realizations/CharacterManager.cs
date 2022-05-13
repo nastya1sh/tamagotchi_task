@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using tamagotchi_task.Domain;
 using tamagotchi_task.Managers.Interfaces;
+using tamagotchi_task.Models.ViewModels;
 
 namespace tamagotchi_task.Managers.EF_Realizations
 {
@@ -43,25 +43,15 @@ namespace tamagotchi_task.Managers.EF_Realizations
             return await _db.Characters.FirstOrDefaultAsync(u => u.MyUsers.Name == userName);
         }
 
-        public void SetAnimal(Character character, string image)
+        public async Task SetAvatar(Character character, AvatarModel model) 
         {
-            character.AnimalImage = image;
-            _db.SaveChanges();
-        }
-        public void SetColor(Character character, string image)
-        {
-            character.ColorImage = image;
-            _db.SaveChanges();
-        }
-        public void SetWallpaper(Character character, string image)
-        {
-            character.WallpaperImage = image;
-            _db.SaveChanges();
-        }
-        public void SetAccessory(Character character, string image)
-        {
-            character.AccessoryImage = image;
-            _db.SaveChanges();
+            //И тут менеджер внезапно узнал о представлении AvatarModel, что не совсем ладится с принятой нами схемой
+            //Но строгое следование паттернам иногда тоже выглядит несколько странно
+            character.AnimalImage = model.Animal;
+            character.ColorImage = model.Color;
+            character.WallpaperImage = model.Wallpaper;
+            character.AccessoryImage = model.Accessory;
+            await _db.SaveChangesAsync();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using tamagotchi_task.Domain;
 using tamagotchi_task.Managers.Interfaces;
 
 namespace tamagotchi_task.Managers.EF_Realizations
@@ -15,18 +14,39 @@ namespace tamagotchi_task.Managers.EF_Realizations
         {
             return await _db.Showcases.FirstOrDefaultAsync(u => u.Id == showcaseID);
         }
-        public async void BuyItem(Guid characterID, int item_Id)
+        public async Task BuyItem(Character character, Guid showcaseID)
         {
-            int balance = _db.Characters.Where(u => u.Id == characterID).FirstOrDefault().Money ;         
-            int cost = _db.Showcases.Where(u => u.Item_Id == item_Id).FirstOrDefault().Price;
-            if (balance >= cost)
-                _db.Characters.Where(u => u.Id == characterID).FirstOrDefault().Money -= cost;
-            await _db.SaveChangesAsync();
+            Showcase item = await _db.Showcases.FirstOrDefaultAsync(u => u.Id == showcaseID);
+
+            if (character.Money >= item.Price)
+            {
+                character.Money -= item.Price;
+
+                Inventory inventory = await _db.Inventories.FirstOrDefaultAsync(u => u.Item_Name == item.Item_Name);
+                if (inventory == null)
+                {
+                    _db.Inventories.Add(new Inventory
+                    {
+                        Id = new Guid(),
+                        Item_Type = item.Item_Type,
+                        Item_Name = item.Item_Name,
+                        Image = item.Image,
+                        Amount = 1,
+                        ToyId = item.ToyId,
+                        PotionId = item.PotionId,
+                        ForageId = item.ForageId,
+                        Character = character,
+                    });
+                }
+                else
+                    inventory.Amount += 1;
+                await _db.SaveChangesAsync();
+            }
         }
+
         public IQueryable<Showcase> ShowAll()
         {
-
-            return  _db.Showcases;
+            return _db.Showcases;
         }
     }
 }

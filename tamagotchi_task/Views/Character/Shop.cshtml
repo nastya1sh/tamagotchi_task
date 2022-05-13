@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model IQueryable<Showcase>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="~/css/shop.css" asp-append-version="true"/>
@@ -9,30 +11,18 @@
     </div>
     <div class="content">
         <div class="grid container">
-            <div class="item">
-                <h4>Flask HP</h4>
-                <img src="~/img/flask_hp.png" alt="" />
-                <p class="desc"><img class="coin" src="~/img/coin.png">20</p>
-                <input type="submit" id="buy" value="Buy">
+            @foreach (var thing in Model)
+            {
+            <div class="f-@thing.Id">
+                <h4>@thing.Item_Name</h4>
+                <img src="@thing.Image" alt="" />
+                <p class="desc"><img class="coin" src="~/img/coin.png">@thing.Price</p>
+                <form id="form-@thing.Id" asp-action="Buy" asp-controller="Character">
+                    <input type="hidden" name="itemID" value="@thing.Id">
+                    <input type="submit" id="buy" value="Buy">
+                </form>
             </div>
-            <div class="item">
-                <h4>Flask XP</h4>
-                <img src="~/img/flask_xp.png" alt="" />
-                <p class="desc"><img class="coin" src="~/img/coin.png">20</p>
-                <input type="submit" id="buy" value="Buy">
-            </div>
-            <div class="item">
-                <h4>Flask Intellect</h4>
-                <img src="~/img/flask_intellect.png" alt="" />
-                <p class="desc"><img class="coin" src="~/img/coin.png">5</p>
-                <input type="submit" id="buy" value="Buy">
-            </div>
-            <div class="item">
-                <h4>Flask Strength</h4>
-                <img src="~/img/flask_strength.png" alt="" />
-                <p class="desc"><img class="coin" src="~/img/coin.png">8</p>
-                <input type="submit" id="buy" value="Buy">
-            </div>
+            }
         </div>
     </div>
 </body>
