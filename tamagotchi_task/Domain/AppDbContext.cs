@@ -41,7 +41,7 @@ namespace tamagotchi_task.Domain
             modelBuilder.Entity<Forage>().HasData(new Forage
             {
                 Id = new Guid("5ba2279b-e785-43e4-89f9-d75e805985a2"),
-                Name = "Elixir of Health", //Нужна для удобного поиска при создании нового пользователя
+                Name = "Beer", //Нужна для удобного поиска при создании нового пользователя
                 Buff_HP = 1,
             });
             modelBuilder.Entity<Potions>().HasData(new Potions
@@ -53,7 +53,7 @@ namespace tamagotchi_task.Domain
             modelBuilder.Entity<Toys>().HasData(new Toys
             {
                 Id = new Guid("37514fe5-e7f3-4926-89ad-60a4d7dc55ab"),
-                Name = "Ball", //Нужна для удобного поиска при создании нового пользователя
+                Name = "Ring", //Нужна для удобного поиска при создании нового пользователя
                 Buff_Strength = 1
             });
             #endregion
@@ -63,8 +63,8 @@ namespace tamagotchi_task.Domain
             {
                 Id = new Guid("1a3a93a0-796c-471a-9c25-a93771b8e6df"),
                 Item_Type = "Forage",
-                Item_Name = "Elixir of Health",
-                Image = "/img/flask_hp.png",
+                Item_Name = "Beer",
+                Image = "/img/beer.png",
                 Price = 1,
                 ForageId = new Guid("5ba2279b-e785-43e4-89f9-d75e805985a2"),
             });
@@ -81,8 +81,8 @@ namespace tamagotchi_task.Domain
             {
                 Id = new Guid("4ff8e8f7-bcc5-4172-a94e-fdf959ba1760"),
                 Item_Type = "Toys",
-                Item_Name = "Ball",
-                Image = "/img/flask_strength.png",
+                Item_Name = "Ring",
+                Image = "/img/ring.png",
                 Price = 3,
                 ToyId = new Guid("37514fe5-e7f3-4926-89ad-60a4d7dc55ab"),
             });

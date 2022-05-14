@@ -72,7 +72,7 @@ body, html
     display: inline-flex;
     position: absolute;
     left: 45%;
-    top: 258px;
+    top: 333px;
     padding-left: 40px;
 }
 
@@ -280,14 +280,7 @@ label.btn span {
     margin-top: -30px;
     font-family: 'Rubik';
 }
-.btn-group .descrimg{
-    font-size: 12px;
-    display: inline;
-    position: absolute;
-    float: left;
-    margin-top: -32px;
-    padding-left: 80px;
-}
+
 .btn-group .date {
     font-size: 12px;
     display: inline;

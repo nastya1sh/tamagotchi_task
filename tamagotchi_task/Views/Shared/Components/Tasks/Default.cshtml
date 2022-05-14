@@ -1,8 +1,10 @@
 ﻿@model IQueryable<CharacterTask>
 
+<link rel="stylesheet" href="~/css/dashboard.css">
+
 <div class="wrapper">
-    <div id="rectangle3"></div>
-    <div class="btn-group btn-group-vertical" data-toggle="buttons">
+    <div id="rectangle3" style="top: 680px;"></div>
+    <div class="btn-group btn-group-vertical" data-toggle="buttons" style="top: 695px;">
         <div class="container">
             <input type="text" maxlength="12" placeholder="Search" class="searchbar">
             <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="search icon" class="buttonSearch">
@@ -17,40 +19,44 @@
         </div>
         @foreach (var c in Model) {
             <label class="btn active">
-            <form id="form-@c.Id" asp-action="Complete" asp-controller="Home">
-        <input type="hidden" name="taskID" value="@c.Id">
-        <input type="checkbox" unchecked onclick="document.getElementById('form-@c.Id').submit();" value="@c.Id"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span>@c.Name</span>
-        </form>
-        <span class="descrdate">
-            <form id="f-@c.Id" asp-action="Delete" asp-controller="Home">
-                <input type="hidden" name="taskID" value="@c.Id">
-                <input type="image" src="~/img/trash.png" onclick="document.getElementById('f-@c.Id').submit();" title="Delete" class="delete">
-            </form>
-            <span class="descr"> @c.Description </span>
-            <div class="descrimg">
-                @switch (c.Tag)
-                {
-                    case "Sport":
+                <form id="form-@c.Id" asp-action="Complete" asp-controller="Home">
+                    <input type="hidden" name="taskID" value="@c.Id">
+                    <input type="checkbox" unchecked onclick="document.getElementById('form-@c.Id').submit();" value="@c.Id"><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span>@c.Name</span>
+                </form>
+                <div id="descrimg" style=" position: absolute;
+                                              float: left;
+                                              margin-left: 35px;
+                                              margin-top: -75px;
+                                              image-rendering: pixelated;">
+                    @switch (c.Tag)
                     {
-                        for (int i = 0; i < Convert.ToInt32(c.Difficulty); i++)
+                        case "Sport":
                         {
-                            <img src="~/img/strength.png">
+                            for (int i = 0; i < Convert.ToInt32(c.Difficulty); i++)
+                            {
+                                <img src="~/img/strength.png">
+                            }
+                            break;
                         }
-                        break;
-                    }
-                    case "Study":
-                    {
-                        for (int i = 0; i < Convert.ToInt32(c.Difficulty); i++)
+                        case "Study":
                         {
-                            <img src="~/img/intellect.png">
+                            for (int i = 0; i < Convert.ToInt32(c.Difficulty); i++)
+                            {
+                                <img src="~/img/intellect.png">
+                            }
+                            break;
                         }
-                        break;
                     }
-                }
-            </div>
-            <datetime class="date"> @c.DeadLine </datetime>
-        </span>
-        </label>
+                </div>
+                <span class="descrdate">
+                    <form id="f-@c.Id" asp-action="Delete" asp-controller="Home">
+                        <input type="hidden" name="taskID" value="@c.Id">
+                        <input type="image" src="~/img/trash.png" onclick="document.getElementById('f-@c.Id').submit();" title="Delete" class="delete">
+                    </form>
+                    <span class="descr"> @c.Description </span>
+                    <datetime class="date"> @c.DeadLine </datetime>
+                </span>
+            </label>
         }
     </div>
 </div>

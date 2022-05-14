@@ -20,6 +20,28 @@ body {
     flex-direction: column;
 }
 
+.money {
+    display: table;
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+    margin: 0;
+    background-color: #3D3655;
+}
+.money img{
+    image-rendering: pixelated;
+}
+
+.money p{
+    position: relative;
+    float: right;
+    top: 8px;
+    right: 15px;
+    color: white;
+}
+
 /* For sticky footer - grow to fill the space */
 .content {
     flex: 1 0 auto;
@@ -34,7 +56,7 @@ body {
     display: inline-block;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
-    padding-top: 80px;
+    padding-top: 100px;
     padding-left: 350px;
 }
 
@@ -101,5 +123,45 @@ body {
     margin-left: 35px;
     margin-top: -10px;
     border-radius: 20px;
+}
+
+.searchbar {
+    font-size: 1.2rem;
+    width: 16rem;
+    height: 2rem;
+    border: none;
+    outline: none;
+    float: right;
+    display: flex;
+    position: absolute;
+    top: 13px;
+    right: 100px;
+    border-radius: 10rem;
+    box-shadow: 103.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
+}
+.searchbar::placeholder {
+    padding-left: 5px;
+    color: #959BA5;
+}
+
+.searchbar::target-text {
+    padding-left: 5px;
+}
+.buttonSearch {
+    height: 1.3rem;
+    display: flex;
+    position: absolute;
+    top: 18px;
+    right: 110px;
+    transition: all .1s;
+    transition-delay: .1s;
+}
+
+.buttonSearch:hover {
+    cursor: pointer;
+}
+
+.search button{
+    position: absolute;
 }
 

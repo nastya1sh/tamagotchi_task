@@ -42,9 +42,9 @@ namespace tamagotchi_task.Managers.EF_Realizations
             await _db.SaveChangesAsync();
         }
 
-        public IQueryable<Inventory> GetItems()
+        public IQueryable<Inventory> GetItems(Character chara)
         {
-            return _db.Inventories;
+            return _db.Inventories.Where(u => u.Character == chara);
         }
     }
 }

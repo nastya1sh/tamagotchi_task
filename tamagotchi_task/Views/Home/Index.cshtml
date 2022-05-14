@@ -18,11 +18,10 @@
 <div class="wrapper">
     <form asp-action="Index" asp-controller="Home">
             <div class="input">
-                <div id="rectangle2"></div>
+                <div id="rectangle2" style="top: 435px;"></div>
                 <div>
-                    <input type="text" placeholder="My task" class="area" maxlength="20" value="" asp-for="Name">
-                    <input type="text" placeholder="Description" class="area2" maxlength="20" value="" asp-for="Description">
-                    
+                    <input type="text" placeholder="My task" class="area" style="top: 450px;" maxlength="17" value="" asp-for="Name">
+                    <input type="text" placeholder="Description" class="area2"  style="top: 490px;" maxlength="17" value="" asp-for="Description">
                     <div id="taginput" class="buttonSet" style="display: none">
                         <select name="tag" class="start" asp-for="Tag" style="width: 150px; margin-left: 335px; padding-right: 5px; text-align: center">
                             <optgroup label="Set tag">
@@ -50,12 +49,12 @@
                         <button type="button" class="close" onclick="hideDate()">OK</button>
                     </div>
                     
-                    <div class="buttonstask">
+                    <div class="buttonstask" style="top: 543px;">
                         <a title="Set tag" onclick="showTag()"><i class="fa fa-tags fa-1x"></i></a>
                         <a title="Set difficulty" onclick="showDifficulty()"><i class="fa fa-flag fa-1x"></i></a>
                         <a title="Set a deadline" onclick="showDate()"><i class="fa fa-calendar fa-1x"></i></a>
                     </div>
-                    <input type="submit" id="buttonadd" value="ADD">
+                    <input type="submit" id="buttonadd" style="top: 610px" value="ADD">
                 </div>
             </div>
         </form>

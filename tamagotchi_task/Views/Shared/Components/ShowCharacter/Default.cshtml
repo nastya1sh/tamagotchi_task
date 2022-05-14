@@ -1,21 +1,22 @@
 ﻿@model tamagotchi_task.Domain.Entities.Character
 
+<div class="money" style="display: table; position: absolute; right: 0px; width: 100%; box-sizing: border-box; height: 50px; margin: 0; background-color: #3D3655;">
+    <p style="color: white; position: relative; float: right; top: 8px; right: 15px;"><img src="~/img/coin.png" style="image-rendering: pixelated;">@Model.Money</p> 
+</div>
+
 <div class="wrapper">
-    <div class="money">
-    <p style="position: absolute; right: 0; padding-right: 30px; font-family: Rubik; image-rendering: pixelated; color: #7c0000"><img src="~/img/coin.png">@Model.Money</p>  
-    </div>
     <div class="avatar">
-    <img src="@Model.ColorImage" class="ava" style="z-index: 2; top: -15px;" id="cat" alt="avatarCat">
-    <img src="@Model.WallpaperImage" class="ava" style="z-index: 1" id="wallpaper" alt="avatar">
+    <img src="@Model.ColorImage" class="ava" style="z-index: 2; top: 60px;" id="cat" alt="avatarCat">
+    <img src="@Model.WallpaperImage" class="ava" style="z-index: 1; top: 75px" id="wallpaper" alt="avatar">
         @if (Model.AccessoryImage != null)
         {
-            <img src="@Model.AccessoryImage" class="ava" style="z-index: 3; top: -41px; padding-left: 54px" id="accessory" alt="accessoryCat">
+            <img src="@Model.AccessoryImage" class="ava" style="z-index: 3; top: 34px; padding-left: 54px" id="accessory" alt="accessoryCat">
         }
-        <div id="rectangle"></div>  
+        <div id="rectangle" style="top: 147px;"></div>  
         <div>
-            <p class="nickname">@Model.Name</p>
+            <p class="nickname" style="top: 207px;">@Model.Name</p>
         </div>
-        <div class="heart">
+        <div class="heart" style="top: 245px">
             @if (Model.HP % 2 == 0)
             {
                 for(int i = 0; i < Model.HP/2; i++){
@@ -32,11 +33,11 @@
             
         </div>
         <div class="xp">
-            <img src="~/img/star.png" alt="xp">
+            <img src="~/img/star.png" alt="xp" style="top: 280px">
             @*Число 20 в формуле заменяет порог опыта для данного уровня*@
-            <progress id="xpvalue" max="100" value="@Convert.ToInt32((double)Model.XP/20 * 100)"> </progress>
+            <progress id="xpvalue" max="100" value="@Convert.ToInt32((double)Model.XP/20 * 100)" style="top: 250px"> </progress>
         </div>
-       <div class="level">
+       <div class="level" style="top: 333px;">
            <div>
                <p>Level</p>
                <p class="num">@Model.Level</p>

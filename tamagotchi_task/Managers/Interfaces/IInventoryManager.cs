@@ -3,6 +3,6 @@
     public interface IInventoryManager
     {
         Task UseItem(Character character, Guid itemID);
-        IQueryable<Inventory> GetItems();
+        public IQueryable<Inventory> GetItems(Character chara);
     }
 }

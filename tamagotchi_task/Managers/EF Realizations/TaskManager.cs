@@ -83,9 +83,9 @@ namespace tamagotchi_task.Managers.EF_Realizations
         {
             return await _db.CharacterTasks.FirstOrDefaultAsync(u => u.Id == taskID);
         }
-        public IQueryable<CharacterTask> GetAll()
+        public IQueryable<CharacterTask> GetTasks(Character chara)
         {
-            return  _db.CharacterTasks;
+            return _db.CharacterTasks.Where(u => u.Characters == chara);
         }
     }
 }
