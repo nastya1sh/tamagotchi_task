@@ -82,3 +82,8 @@ window.onclick = function(event) {
         }
     }
 }
+
+function showMessage(lin){
+    document.getElementById(lin).style.display = "block";
+    setTimeout(()=>lin.hidden = true, 3500);
+}

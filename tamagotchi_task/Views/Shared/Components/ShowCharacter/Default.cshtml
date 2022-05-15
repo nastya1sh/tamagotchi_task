@@ -1,7 +1,7 @@
 ﻿@model tamagotchi_task.Domain.Entities.Character
 
-<div class="money" style="display: table; position: absolute; right: 0px; width: 100%; box-sizing: border-box; height: 50px; margin: 0; background-color: #3D3655;">
-    <p style="color: white; position: relative; float: right; top: 8px; right: 15px;"><img src="~/img/coin.png" style="image-rendering: pixelated;">@Model.Money</p> 
+<div class="money" style="display: table; z-index:-1; position: absolute; right: 0px; top: -20px; width: 100%; box-sizing: border-box; height: 50px; margin: 0; background-color: #3D3655;">
+    <p style="color: white; position: relative; float: right; top: 18px; right: 15px;"><img src="~/img/coin.png" style="image-rendering: pixelated;">@Model.Money</p> 
 </div>
 
 <div class="wrapper">
@@ -10,7 +10,7 @@
     <img src="@Model.WallpaperImage" class="ava" style="z-index: 1; top: 75px" id="wallpaper" alt="avatar">
         @if (Model.AccessoryImage != null)
         {
-            <img src="@Model.AccessoryImage" class="ava" style="z-index: 3; top: 34px; padding-left: 54px" id="accessory" alt="accessoryCat">
+            <img src="@Model.AccessoryImage" class="ava" style="z-index: 3; top: 31px; padding-left: 54px" id="accessory" alt="accessoryCat">
         }
         <div id="rectangle" style="top: 147px;"></div>  
         <div>

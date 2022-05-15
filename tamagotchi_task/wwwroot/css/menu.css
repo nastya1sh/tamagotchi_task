@@ -1,3 +1,21 @@
+.logo {
+  font-family: 'Press Start 2P'; 
+  color: white; 
+  z-index: 1;
+  padding-left: 45px;
+  position: absolute;
+  padding-top: 5px;
+  font-size: 24px;
+  width: 272px;
+  height: 40px;
+  background-color: #28243b;
+  text-decoration: none;
+}
+
+.logo:hover{
+  color: #FFFFFF;
+}
+
 .menu {
   width: 272px;
   position: absolute;

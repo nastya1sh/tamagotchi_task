@@ -9,20 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b4a9a2e718.js" crossorigin="anonymous"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/menu.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/tamagotchi_task.styles.css" asp-append-version="true"/>
 </head>
 <body>
+<a class="logo" href="/home/index">TAMOTASK</a>
 <div class="menu">
-        <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" href="/home/index"><i class="fa fa-table fa-1x"></i> Dashboard</a>
-        <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" href="/character/shop"><i class="fa fa-gem fa-1x"></i> Shop</a>
-        <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" href="/character/inventory"><i class="fa fa-flask fa-1x"></i> Inventory</a>
-        <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" href=""><i class="fa fa-comment-dots fa-1x"></i> Chat</a>
-        <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" href=""><i class="fa fa-cat fa-1x"></i> Profile</a>
-        <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" asp-action="Logout" asp-controller="Account"><i class="fa fa-door-open fa-1x"></i> Log Out</a>
+    <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" href="/home/index"><i class="fa fa-table fa-1x"></i> Dashboard</a>
+    <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" href="/character/shop"><i class="fa fa-gem fa-1x"></i> Shop</a>
+    <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" href="/character/inventory"><i class="fa fa-flask fa-1x"></i> Inventory</a>
+    <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" href="/home/chat"><i class="fa fa-comment-dots fa-1x"></i> Chat</a>
+    <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" href=""><i class="fa fa-cat fa-1x"></i> Profile</a>
+    <a style="color: #FFFFFF;" onmouseover="this.style.color='#000';" onmouseout="this.style.color='#fff';" asp-action="Logout" asp-controller="Account"><i class="fa fa-door-open fa-1x"></i> Log Out</a>
     <div class="anim"></div>
-    </div>
+</div>
 <div class="container">
     <main role="main" class="pb-3">
         @RenderBody()
