@@ -275,6 +275,10 @@ label.btn span {
     font-family: 'Rubik';
 }
 
+.btn {
+    width: 310px;
+}
+
 .btn-group .descr {
     font-size: 12px;
     display: inline;
@@ -350,20 +354,23 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 }
 
 .btn-group {
-    display: grid;
-    flex-direction: column;
+    display: flex;
     position: absolute;
     width: 310px;
-    height: 295px;
+    height: 280px;
     margin-left: 5px;
     margin-top: -5px;
-    top: 620px;
     left: 45%;
     overflow-y:scroll;
+    top: 695px;
 }
 
 .btn-group span{
     margin-left: 5px;
+}
+
+.btn-group label {
+    
 }
 
 .btn-group::-webkit-scrollbar { width: 0; }
@@ -491,7 +498,7 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
     box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
     backdrop-filter: blur(26.1418px);
     border-radius: 31.3701px;
-    z-index: 2;
+    z-index: 1;
 }
 
 .msgbox p {
