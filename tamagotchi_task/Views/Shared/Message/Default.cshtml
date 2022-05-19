@@ -1,0 +1,18 @@
+﻿@model IQueryable<Message>;
+
+
+<div> 
+       <h1>Сообщения:</h1> 
+       <table>
+    @foreach(var m in Model)
+    {
+        <tr> 
+            <td>@m.MyUserName</td>
+            <td>@m.Text</td>
+             <td>@m.Sending_Time</td>
+        </tr>
+       
+       
+    }        
+    </table>
+</div>

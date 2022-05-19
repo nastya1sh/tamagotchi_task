@@ -19,19 +19,17 @@ namespace tamagotchi_task.Managers.EF_Realizations
         {
             return await _db.Chats.FirstOrDefaultAsync(c => c.Name == chatName);
         }
-
-        
-        //public void SendMessage(string text, Chat chat, string username)
-        //{
-        //   Task<Chat> chat1 = _db.Chats.FirstOrDefaultAsync(c => c.Name == "GlobalChat");
-        //        _db.Chats.
-        //}
-
-        public ICollection<Message> WriteNLastMessages(Chat chat)
+                
+        public IQueryable<Message> WriteNLastMessages()
         {
-            int N = 10;
-            // return   _db.Messages.Reverse().Take(N).ToList(); // реверс нельзя 
-            return _db.Messages.Take(N).ToList();
+            //int N = 10;
+            //ICollection<Message> t = new List<Message>();
+            //for (int i=chat.Messages.Count; i< chat.Messages.Count-N; i--)
+            //{
+            //    t.Add( chat.Messages.ElementAt(i));
+            //}
+            //return t;
+            return _db.Messages;
         }
 
         public ICollection<MyUser> WriteAllUsers(Chat chat)
@@ -44,7 +42,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
             return chat.Name;
         }
 
-        public async Task SendMessage(string text, Chat chat, MyUser MyUser)
+        public async Task SendMessage(string text, Chat chat, MyUser myUser)
         {
             _db.Messages.Add(new Message
             { 
@@ -52,11 +50,12 @@ namespace tamagotchi_task.Managers.EF_Realizations
                 Text = text,
                 Sending_Time = DateTime.Now,
                 Chat = chat,
-                MyUser = MyUser,
+                MyUser = myUser,
                 ChatId= chat.Id,
-                MyUserId= chat.Id
+                MyUserId=myUser.Id,
+                MyUserName= myUser.Name
             });
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
         }
     }
 }

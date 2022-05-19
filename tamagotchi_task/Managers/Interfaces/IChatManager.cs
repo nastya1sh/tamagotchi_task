@@ -7,7 +7,7 @@ namespace tamagotchi_task.Managers.Interfaces
         public Task<Chat> FindChatByName(string chatName); 
         public Task SendMessage(string text,Chat chat, MyUser MyUser); // отправить сообщение в форум (1)
         // получать текст, chat и userid
-        public ICollection<Message> WriteNLastMessages(Chat chat); // показать 10 последних сообщений в форуме (2)
+        public IQueryable<Message> WriteNLastMessages(); // показать 10 последних сообщений в форуме (2)
        
         public string WriteChatName(Chat chat); // возврашает имя чата (3)
 
