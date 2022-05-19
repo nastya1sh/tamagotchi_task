@@ -9,6 +9,7 @@
         [Required]
         public DateTime Sending_Time { get; set; }
 
+        public string MyUserName { get; set; }
         public Chat Chat { get; set; }
         public Guid ChatId { get; set; }
         public MyUser MyUser { get; set; }

@@ -23,7 +23,7 @@
                 <input type="text" placeholder="My task" class="area" style="top: 450px;" maxlength="17" value="" asp-for="Name">
                 <input type="text" placeholder="Description" class="area2"  style="top: 490px;" maxlength="17" value="" asp-for="Description">
                 <div id="taginput" class="buttonSet" style="display: none">
-                    <select name="tag" class="start" asp-for="Tag" style="width: 150px; margin-left: 335px; padding-right: 5px; text-align: center">
+                    <select name="tag" value="" class="start" asp-for="Tag" style="width: 150px; margin-left: 335px; padding-right: 5px; text-align: center">
                         <optgroup label="Set tag">
                             <option value="Sport">Sport</option>
                             <option value="Study">Study</option>
@@ -34,7 +34,7 @@
                 </div>
                     
                 <div id="difficultyinput" class="buttonSet" style="display: none">
-                    <select name="difficulty" class="start" asp-for="Difficulty" style="width: 110px; margin-left: 355px; padding-right: 5px; text-align: center">
+                    <select name="difficulty" value="" class="start" asp-for="Difficulty" style="width: 110px; margin-left: 355px; padding-right: 5px; text-align: center">
                         <optgroup label="Set difficulty">
                             <option value="1">Low</option>
                             <option value="2">Medium</option>
@@ -45,7 +45,7 @@
                 </div>
                     
                 <div id="dateinput" class="buttonSet" style="display: none">
-                    <input class="start" style="width: 180px; text-align: center;" asp-for="DeadLine" asp-format="{0:yyyy-MM-ddTHH:mm}"/>
+                    <input class="start" style="width: 180px; text-align: center;" value="" asp-for="DeadLine" asp-format="{0:yyyy-MM-ddTHH:mm}"/>
                     <button type="button" class="close" onclick="hideDate()">OK</button>
                 </div>
                     
