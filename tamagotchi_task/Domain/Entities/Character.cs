@@ -6,7 +6,7 @@
         [Display(Name = "Character's name")]
         public override string Name { get; set; } //Перегружаем, так как есть ErrorMessage и Name
 
-        public int Level { get; set; } = 0;
+        public int Level { get; set; } = 1;
         public int Money { get; set; } = 0;
         public int HP { get; set; } = 6; //Пусть у животного будет пока 3 сердечка, а отнимается половина
         public int XP { get; set; } = 0;
