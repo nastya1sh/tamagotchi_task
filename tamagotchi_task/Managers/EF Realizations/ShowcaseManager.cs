@@ -22,7 +22,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
             {
                 character.Money -= item.Price;
 
-                Inventory inventory = await _db.Inventories.FirstOrDefaultAsync(u => u.Item_Name == item.Item_Name);
+                Inventory inventory = await _db.Inventories.FirstOrDefaultAsync(u => u.Item_Name == item.Item_Name && u.CharacterId == character.Id);
                 if (inventory == null)
                 {
                     _db.Inventories.Add(new Inventory

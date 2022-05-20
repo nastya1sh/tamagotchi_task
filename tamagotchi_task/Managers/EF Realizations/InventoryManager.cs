@@ -13,7 +13,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
 
         public async Task UseItem(Character character, Guid itemID)
         {
-            Inventory item = await _db.Inventories.FirstOrDefaultAsync(u => u.Id == itemID);
+            Inventory item = await _db.Inventories.FirstOrDefaultAsync(u => u.Id == itemID && u.CharacterId == character.Id);
 
             switch (item.Item_Type) 
             {
