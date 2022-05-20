@@ -34,8 +34,8 @@
         </div>
         <div class="xp">
             <img src="~/img/star.png" alt="xp" style="top: 280px">
-            @*Число 20 в формуле заменяет порог опыта для данного уровня*@
-            <progress id="xpvalue" max="100" value="@Convert.ToInt32((double)Model.XP/20 * 100)" style="top: 250px"> </progress>
+            @*В формуле число опыта делится на порог опыта для данного уровня (20 * Model.Level) и переводится в проценты*@
+            <progress id="xpvalue" max="100" value="@Convert.ToInt32((double)Model.XP/(20 * Model.Level) * 100)" style="top: 250px"> </progress>
         </div>
        <div class="level" style="top: 333px;">
            <div>

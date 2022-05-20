@@ -101,7 +101,7 @@ namespace tamagotchi_task.Domain
             modelBuilder.Entity<Character>().Property(b => b.Strength).HasDefaultValue(0);
             modelBuilder.Entity<Character>().Property(b => b.Money).HasDefaultValue(0);
             modelBuilder.Entity<Character>().Property(b => b.XP).HasDefaultValue(0);
-            modelBuilder.Entity<Character>().Property(b => b.Level).HasDefaultValue(0);
+            modelBuilder.Entity<Character>().Property(b => b.Level).HasDefaultValue(1);
             modelBuilder.Entity<Character>().Property(b => b.HP).HasDefaultValue(6);
             modelBuilder.Entity<Character>().Property(b => b.AnimalImage).HasDefaultValue("/img/catAnimal.png");
             modelBuilder.Entity<Character>().Property(b => b.ColorImage).HasDefaultValue("/img/cat0.png");

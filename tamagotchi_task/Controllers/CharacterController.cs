@@ -22,10 +22,16 @@ namespace tamagotchi_task.Controllers
             _inventoryManager = inventoryManager;
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             if (User.Identity.IsAuthenticated)
+            {
+                //Проверяем, есть ли у пользователя зверушка
+                if (await _characterManager.FindCharacterByUser(User.Identity.Name) != null)
+                    return RedirectToAction("Index", "Home"); //Если уже есть, то не даём создать новую
+
                 return View();
+            }
             else
                 return RedirectToAction("Login", "Account");
         }
@@ -70,6 +76,7 @@ namespace tamagotchi_task.Controllers
         public async Task<IActionResult> Inventory()
         {
             if (User.Identity.IsAuthenticated)
+                //Выводим список вещей из инвентаря зверушки
                 return View(_inventoryManager.GetItems(await _characterManager.FindCharacterByUser(User.Identity.Name)));
             else
                 return RedirectToAction("Login", "Account");

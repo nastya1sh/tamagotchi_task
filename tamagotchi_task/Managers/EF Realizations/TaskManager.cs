@@ -12,6 +12,11 @@ namespace tamagotchi_task.Managers.EF_Realizations
             _db = context;
         }
 
+        /// <summary>
+        /// Проверяет, не "устарело" ли задание.
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns>Возвращает 1, если нет. Иначе 0, если срок задания просрочен.</returns>
         public bool HasCorrectDate(DateTime time) 
         {
             if (time <= DateTime.Now) return false;
@@ -38,9 +43,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
         /// <summary>
         /// Проверяет сроки всех заданий. Если какие-то задачи просрочены, то отнимает жизни персонажа в соответствии с приоритетом.
         /// </summary>
-        /// <returns>
-        /// Возвращает элемент типа Character или null, если character.HP <= 0 после выполнения метода.
-        /// </returns>
+        /// <param name="character"></param>
         public async Task<Character> CheckTasks(Character character) 
         {
             foreach (var task in _db.CharacterTasks.Where(u => u.DeadLine < DateTime.Now && u.Characters.Id == character.Id)) 
@@ -51,24 +54,40 @@ namespace tamagotchi_task.Managers.EF_Realizations
             }
             if (character.HP <= 0) _db.Characters.Remove(character);
 
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
             return character;
         }
 
         public async Task CompleteTask(Guid taskID, Character character) 
         {
+            //Ищем персонажа
             CharacterTask task = await _db.CharacterTasks.FirstOrDefaultAsync(t => t.Id == taskID);
+            //Добавляем опыт в соответствии со сложностью
             character.XP += (int)Math.Pow(2, Convert.ToInt32(task.Difficulty));
+            if (character.XP >= character.Level * 20) //Проверяем количество опыта
+            {
+                //Вместо добавления в таблицу предела опыта для уровня, можно просто скаллировать его относительно 20
+                character.XP -= character.Level * 20;
+                character.Level++;
+                //Заодно и восстановим HP зверушке
+                character.HP = 6;
+            }
+
+            //Платим зверушке и увеличиваем определённые характеристики
             character.Money += 2 * Convert.ToInt32(task.Difficulty);
             if (task.Tag == "Sport")
                 character.Strength += Convert.ToInt32(task.Difficulty);
             else if (task.Tag == "Study")
                 character.Intellect += Convert.ToInt32(task.Difficulty);
 
-            _db.CharacterTasks.Remove(task);
-            await _db.SaveChangesAsync();
+            _db.CharacterTasks.Remove(task); //Задача выполнена
+            await _db.SaveChangesAsync(); //И пусть БД запоминает, что мы тут творим
         }
 
+        /// <summary>
+        /// Наверное, удаляет задание?
+        /// </summary>
+        /// <param name="taskID"></param>
         public async Task DeleteTask(Guid taskID)
         {
             _db.CharacterTasks.Remove(new CharacterTask() { Id = taskID });

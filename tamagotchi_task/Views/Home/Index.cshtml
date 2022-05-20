@@ -10,7 +10,8 @@
 <script src="~/js/create.js" asp-append-version="true"></script>
 
 @await Component.InvokeAsync("ShowCharacter")
-@await Component.InvokeAsync("Tasks")
+@*Передача параметров в компонент представления через анонимное свойство*@
+@await Component.InvokeAsync("Tasks", new {searchString = ViewBag.Search})
 
 @*У меня не получается вынести post-метод отдельно :(*@
 <script src="~/js/create.js" asp-append-version="true"></script>
