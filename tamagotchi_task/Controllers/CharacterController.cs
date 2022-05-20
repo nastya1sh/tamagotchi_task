@@ -99,12 +99,14 @@ namespace tamagotchi_task.Controllers
         }
 
         [HttpGet]
-        public IActionResult Shop(string searchString)
+        public async Task<IActionResult> Shop(string searchString)
         {
             if (User.Identity.IsAuthenticated)
             {
-                //Выводим список вещей в магазине (назвал по-другому, чтобы отличать от вещей в инвентаре)
-                var products = _showcaseManager.ShowAll();
+                //Нам нужно взять уровень персонажа, чтобы вывести предметы в магазине
+                Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
+                //Выводим список вещей в магазине (назвал products, чтобы отличать от вещей в инвентаре)
+                var products = _showcaseManager.GetItems(chara);
                 if (!String.IsNullOrEmpty(searchString))
                 {
                     products = products.Where(s => s.Item_Name.ToUpper().Contains(searchString.ToUpper()));

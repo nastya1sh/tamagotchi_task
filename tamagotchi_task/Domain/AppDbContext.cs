@@ -41,21 +41,33 @@ namespace tamagotchi_task.Domain
             modelBuilder.Entity<Forage>().HasData(new Forage
             {
                 Id = new Guid("5ba2279b-e785-43e4-89f9-d75e805985a2"),
-                Name = "Beer", //Нужна для удобного поиска при создании нового пользователя
+                Name = "Beer",
                 Buff_HP = 1,
-            });
+            }); //Beer
+            modelBuilder.Entity<Forage>().HasData(new Forage
+            {
+                Id = new Guid("5ba3030b-e785-43e4-89f9-d75e805985a2"),
+                Name = "Fried Fish",
+                Buff_HP = 4,
+            }); //Fried Fish
             modelBuilder.Entity<Potions>().HasData(new Potions
             {
                 Id = new Guid("df691f45-64ab-4618-b3d9-4256a94cdf6a"),
-                Name = "Elixir of Wisdom", //Нужна для удобного поиска при создании нового пользователя
+                Name = "Elixir of Wisdom",
                 Buff_XP = 5,
-            });
+            }); //Elixir of Wisdom
+            modelBuilder.Entity<Potions>().HasData(new Potions
+            {
+                Id = new Guid("df691f45-ddad-4618-b3d9-4256a94cdf6a"),
+                Name = "COCKtail",
+                Buff_XP = 30,
+            }); //Cocktail
             modelBuilder.Entity<Toys>().HasData(new Toys
             {
                 Id = new Guid("37514fe5-e7f3-4926-89ad-60a4d7dc55ab"),
-                Name = "Ring", //Нужна для удобного поиска при создании нового пользователя
+                Name = "Ring",
                 Buff_Strength = 1
-            });
+            }); //Ring
             #endregion
 
             #region Добавление витрины
@@ -66,8 +78,9 @@ namespace tamagotchi_task.Domain
                 Item_Name = "Beer",
                 Image = "/img/beer.png",
                 Price = 1,
+                Level = 1,
                 ForageId = new Guid("5ba2279b-e785-43e4-89f9-d75e805985a2"),
-            });
+            }); //Beer
             modelBuilder.Entity<Showcase>().HasData(new Showcase
             {
                 Id = new Guid("3b11ab11-0696-41e0-9d6d-abc0119a942c"),
@@ -75,8 +88,9 @@ namespace tamagotchi_task.Domain
                 Item_Name = "Elixir of Wisdom",
                 Image = "/img/flask_xp.png",
                 Price = 2,
+                Level = 1,
                 PotionId = new Guid("df691f45-64ab-4618-b3d9-4256a94cdf6a"),
-            });
+            }); //Elixir of Wisdom
             modelBuilder.Entity<Showcase>().HasData(new Showcase
             {
                 Id = new Guid("4ff8e8f7-bcc5-4172-a94e-fdf959ba1760"),
@@ -84,8 +98,29 @@ namespace tamagotchi_task.Domain
                 Item_Name = "Ring",
                 Image = "/img/ring.png",
                 Price = 3,
+                Level = 1,
                 ToyId = new Guid("37514fe5-e7f3-4926-89ad-60a4d7dc55ab"),
-            });
+            }); //Ring
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("4ff8edd7-bcc5-4172-a94e-fdf959ba1760"),
+                Item_Type = "Forage",
+                Item_Name = "Fried Fish",
+                Image = "/img/flask_intellect.png",
+                Price = 5,
+                Level = 3,
+                ForageId = new Guid("5ba3030b-e785-43e4-89f9-d75e805985a2"),
+            }); //Fried Fish
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("323a9b11-0696-41e0-9d6d-abc0119a942c"),
+                Item_Type = "Potions",
+                Item_Name = "COCKtail",
+                Image = "/img/xp.png",
+                Price = 10,
+                Level = 5,
+                PotionId = new Guid("df691f45-ddad-4618-b3d9-4256a94cdf6a"),
+            }); //Cocktail
             #endregion
 
             #region Решение конфликта

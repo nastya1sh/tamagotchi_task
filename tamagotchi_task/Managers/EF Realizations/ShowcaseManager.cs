@@ -44,9 +44,9 @@ namespace tamagotchi_task.Managers.EF_Realizations
             }
         }
 
-        public IQueryable<Showcase> ShowAll()
+        public IQueryable<Showcase> GetItems(Character character)
         {
-            return _db.Showcases;
+            return _db.Showcases.Where(u => u.Level <= character.Level);
         }
     }
 }

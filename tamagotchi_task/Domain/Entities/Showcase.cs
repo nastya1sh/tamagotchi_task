@@ -9,6 +9,7 @@
         public string Item_Name { get; set; }
         public int Price { get; set; }
         public string Image { get; set; }
+        public int Level { get; set; }
 
         public Guid? ToyId { get; set; }
         public Toys? Toy { get; set; }
