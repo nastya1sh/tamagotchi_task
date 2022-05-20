@@ -121,6 +121,53 @@ namespace tamagotchi_task.Domain
                 Level = 5,
                 PotionId = new Guid("df691f45-ddad-4618-b3d9-4256a94cdf6a"),
             }); //Cocktail
+
+            //Аксессуары
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("7716b8f6-4d7d-49d5-95ff-8ffe1065b142"),
+                Item_Type = "Accessories",
+                Item_Name = "Desperado's Coat",
+                Image = "/img/Item1prew.png",
+                Price = 10,
+                Level = 1,
+            }); //Desperado's Coat
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("516ef915-6b18-4dea-8dd4-0e24abc5bb98"),
+                Item_Type = "Accessories",
+                Item_Name = "Sombrero",
+                Image = "/img/Item2prew.png",
+                Price = 1500,
+                Level = 100,
+            }); //Sombrero
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("5eaf1a37-0b00-4b90-b73d-d739f9ec6d32"),
+                Item_Type = "Accessories",
+                Item_Name = "Clown's Glasses",
+                Image = "/img/Item3prew.png",
+                Price = 60,
+                Level = 3,
+            }); //Clown's Glasses
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("219920cd-971d-4db7-94e8-246bac987be0"),
+                Item_Type = "Accessories",
+                Item_Name = "Astrohelmet",
+                Image = "/img/Item4prew.png",
+                Price = 30,
+                Level = 2,
+            }); //Astrohelmet
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("12c40c10-eb5b-4ba2-80c4-5352fe5a6c24"),
+                Item_Type = "Accessories",
+                Item_Name = "Motorcycle Helmet",
+                Image = "/img/Item5prew.png",
+                Price = 100,
+                Level = 5,
+            }); //Motorcycle Helmet
             #endregion
 
             #region Решение конфликта
