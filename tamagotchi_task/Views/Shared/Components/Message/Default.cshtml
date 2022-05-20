@@ -1,0 +1,38 @@
+﻿@model IQueryable<Message>;   
+    <main class="msger-chat">
+    @foreach(var message in Model)
+    {
+
+        if(message.MyUserName != ViewBag.Username)
+        {
+           <div class="msg left-msg">
+        <div class="msg-img"><img src="~/img/cat9.png"></div>
+        
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name">@message.MyUserName</div>
+            <time class="msg-info-time">@message.Sending_Time.Day.@message.Sending_Time.Month @message.Sending_Time.Hour:@message.Sending_Time.Minute</time>
+          </div>
+
+          <div class="msg-text">@message.Text</div>
+        </div>
+            </div>
+        }
+
+        if(message.MyUserName == ViewBag.Username)
+        {
+            <div class="msg right-msg">
+        <div class="msg-img"><img src="~/img/cat2.png"></div>
+
+        <div class="msg-bubble">
+           <div class="msg-info">
+            <div class="msg-info-name">@message.MyUserName</div>
+            <time class="msg-info-time">@message.Sending_Time.Day.@message.Sending_Time.Month @message.Sending_Time.Hour:@message.Sending_Time.Minute</time>
+          </div>
+
+          <div class="msg-text">@message.Text</div>
+        </div>
+      </div>
+        }
+    }
+    </main>
