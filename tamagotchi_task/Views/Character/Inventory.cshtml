@@ -9,10 +9,14 @@
 <div class="money">
     <p><img src="~/img/coin.png">256</p>
 </div>
-<div class="search">
-    <input type="text" maxlength="17" placeholder="Search" class="searchbar">
-    <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="search icon" class="buttonSearch">
-</div>
+<form method="get">
+    <div class="search">
+        <input type="text" maxlength="17" name="searchString" placeholder="Search" class="searchbar">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="search icon" class="buttonSearch">
+        <input type="submit" value="Search" class="btn btn-default"/>
+    </div>
+</form>
+
 <div class="content">
     <div class="grid container">
         @if (Model != null)

@@ -73,11 +73,20 @@ namespace tamagotchi_task.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Inventory()
+        [HttpGet]
+        public async Task<IActionResult> Inventory(string searchString)
         {
             if (User.Identity.IsAuthenticated)
+            {
                 //Выводим список вещей из инвентаря зверушки
-                return View(_inventoryManager.GetItems(await _characterManager.FindCharacterByUser(User.Identity.Name)));
+                var items = _inventoryManager.GetItems(await _characterManager.FindCharacterByUser(User.Identity.Name));
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    items = items.Where(s => s.Item_Name.ToUpper().Contains(searchString.ToUpper()));
+                }
+
+                return View(items);
+            }
             else
                 return RedirectToAction("Login", "Account");
         }
@@ -89,10 +98,20 @@ namespace tamagotchi_task.Controllers
             return RedirectToAction("Inventory", "Character");
         }
 
-        public IActionResult Shop()
+        [HttpGet]
+        public IActionResult Shop(string searchString)
         {
             if (User.Identity.IsAuthenticated)
-                return View(_showcaseManager.ShowAll());
+            {
+                //Выводим список вещей в магазине (назвал по-другому, чтобы отличать от вещей в инвентаре)
+                var products = _showcaseManager.ShowAll();
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    products = products.Where(s => s.Item_Name.ToUpper().Contains(searchString.ToUpper()));
+                }
+
+                return View(products);
+            }
             else
                 return RedirectToAction("Login", "Account");
         }
