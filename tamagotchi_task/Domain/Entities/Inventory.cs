@@ -9,6 +9,8 @@
         public string Item_Name { get; set; }
         public int Amount { get; set; }
         public string Image { get; set; }
+        //Костыль-костыльчик для аксессуаров
+        public string? AuxImg { get; set; }
 
         public Guid? ToyId { get; set; }
         public Toys? Toy { get; set; }

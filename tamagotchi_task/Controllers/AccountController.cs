@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-using tamagotchi_task.Domain;
 using tamagotchi_task.Managers.Interfaces;
 using tamagotchi_task.Models.ViewModels;
 
@@ -22,12 +21,10 @@ namespace tamagotchi_task.Controllers
             _chatManager = chatManager;
         }
 
-        [HttpGet]
         //Без AllowAnonymous невозможно регаться
         [AllowAnonymous]
-        public IActionResult Login(string returnUrl)
+        public IActionResult Login()
         {
-            ViewBag.returnUrl = returnUrl;
             return View();
         }
         [HttpPost]
@@ -110,6 +107,7 @@ namespace tamagotchi_task.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

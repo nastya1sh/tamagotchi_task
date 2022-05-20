@@ -129,6 +129,7 @@ namespace tamagotchi_task.Domain
                 Item_Type = "Accessories",
                 Item_Name = "Desperado's Coat",
                 Image = "/img/Item1prew.png",
+                AuxImg = "/img/Item1.png",
                 Price = 10,
                 Level = 1,
             }); //Desperado's Coat
@@ -138,6 +139,7 @@ namespace tamagotchi_task.Domain
                 Item_Type = "Accessories",
                 Item_Name = "Sombrero",
                 Image = "/img/Item2prew.png",
+                AuxImg = "/img/Item2.png",
                 Price = 1500,
                 Level = 100,
             }); //Sombrero
@@ -147,6 +149,7 @@ namespace tamagotchi_task.Domain
                 Item_Type = "Accessories",
                 Item_Name = "Clown's Glasses",
                 Image = "/img/Item3prew.png",
+                AuxImg = "/img/Item3.png",
                 Price = 60,
                 Level = 3,
             }); //Clown's Glasses
@@ -156,6 +159,7 @@ namespace tamagotchi_task.Domain
                 Item_Type = "Accessories",
                 Item_Name = "Astrohelmet",
                 Image = "/img/Item4prew.png",
+                AuxImg = "/img/Item4.png",
                 Price = 30,
                 Level = 2,
             }); //Astrohelmet
@@ -165,9 +169,66 @@ namespace tamagotchi_task.Domain
                 Item_Type = "Accessories",
                 Item_Name = "Motorcycle Helmet",
                 Image = "/img/Item5prew.png",
+                AuxImg = "/img/Item5.png",
                 Price = 100,
                 Level = 5,
             }); //Motorcycle Helmet
+
+            //Обои
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("88f537f9-403c-4c67-bc9f-2701d9976358"),
+                Item_Type = "Wallpapers",
+                Item_Name = "Space",
+                Image = "/img/circle1.png",
+                Price = 30,
+                Level = 3,
+            }); //Space
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("1f532944-e963-4b76-beb6-43e33cd89cc1"),
+                Item_Type = "Wallpapers",
+                Item_Name = "Moonlight Sky",
+                Image = "/img/circle2.png",
+                Price = 60,
+                Level = 5,
+            }); //Moonlight Sky
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("fe887384-eb7f-47cd-a79c-c15e5ce6d4cb"),
+                Item_Type = "Wallpapers",
+                Item_Name = "Grassland",
+                Image = "/img/circle3.png",
+                Price = 20,
+                Level = 2,
+            }); //Grassland
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("6026be02-35b2-4517-97bf-cafef3ccec05"),
+                Item_Type = "Wallpapers",
+                Item_Name = "Seashore",
+                Image = "/img/circle4.png",
+                Price = 110,
+                Level = 7,
+            }); //Seashore
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("c048eb27-60ce-47af-8d4c-6db5d03b6e4c"),
+                Item_Type = "Wallpapers",
+                Item_Name = "Woods",
+                Image = "/img/circle5.png",
+                Price = 300,
+                Level = 10,
+            }); //Woods
+            modelBuilder.Entity<Showcase>().HasData(new Showcase
+            {
+                Id = new Guid("c7e1f0d8-d81f-48ca-83dd-f5c6864567b2"),
+                Item_Type = "Wallpapers",
+                Item_Name = "Desert",
+                Image = "/img/circle6.png",
+                Price = 3500,
+                Level = 100,
+            }); //Desert
             #endregion
 
             #region Решение конфликта

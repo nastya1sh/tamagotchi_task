@@ -5,5 +5,6 @@
         Task UseItem(Character character, Guid itemID);
         public IQueryable<Inventory> GetItems(Character chara);
         public IQueryable<Inventory> GetAccessories(Character chara);
+        public IQueryable<Inventory> GetWallpapers(Character chara);
     }
 }

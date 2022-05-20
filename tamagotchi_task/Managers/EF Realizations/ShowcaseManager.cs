@@ -31,6 +31,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
                         Item_Type = item.Item_Type,
                         Item_Name = item.Item_Name,
                         Image = item.Image,
+                        AuxImg = item.AuxImg,
                         Amount = 1,
                         ToyId = item.ToyId,
                         PotionId = item.PotionId,

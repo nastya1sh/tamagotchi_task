@@ -53,10 +53,19 @@ namespace tamagotchi_task.Controllers
             return View(model);
         }
 
-        public IActionResult AvatarCreate() 
+        public async Task<IActionResult> AvatarCreate() 
         {
             if (User.Identity.IsAuthenticated)
+            {
+                //Отправляем в представление все аксессуары у зверушки (или просто null, если их нет) 
+                ViewBag.Accessories = _inventoryManager
+                    .GetAccessories(await _characterManager.FindCharacterByUser(User.Identity.Name)).ToList();
+                //То же самое делаем с обоями
+                ViewBag.Wallpapers = _inventoryManager
+                    .GetWallpapers(await _characterManager.FindCharacterByUser(User.Identity.Name)).ToList();
+
                 return View();
+            }
             else
                 return RedirectToAction("Login", "Account");
         }
