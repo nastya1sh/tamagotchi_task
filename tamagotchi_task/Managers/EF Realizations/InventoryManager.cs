@@ -42,9 +42,39 @@ namespace tamagotchi_task.Managers.EF_Realizations
             await _db.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Возвращает коллекцию всех вещей из инвентаря, кроме аксессуаров.
+        /// </summary>
+        /// <param name="chara"></param>
+        /// <returns>IQuariable коллекцию, закрытую типом данных Inventory.</returns>
         public IQueryable<Inventory> GetItems(Character chara)
         {
-            return _db.Inventories.Where(u => u.Character == chara);
+            //Возвращаем все предметы в инвентаре (кроме аксессуаров и обоев), отсортированные по типу
+            return _db.Inventories
+                .Where(u => u.Character == chara 
+                    && u.Item_Type != "Accessories"
+                    && u.Item_Type != "Wallpapers")
+                .OrderBy(item => item.Item_Type);
+        }
+
+        /// <summary>
+        /// Возвращает коллекцию вещей из инвентаря, в которой присутствуют только аксессуары.
+        /// </summary>
+        /// <param name="chara"></param>
+        /// <returns>IQuariable коллекцию, закрытую типом данных Inventory.</returns>
+        public IQueryable<Inventory> GetAccessories(Character chara)
+        {
+            return _db.Inventories.Where(u => u.Character == chara && u.Item_Type == "Accessories");
+        }
+
+        /// <summary>
+        /// Возвращает коллекцию вещей из инвентаря, в которой присутствуют только обои.
+        /// </summary>
+        /// <param name="chara"></param>
+        /// <returns>IQuariable коллекцию, закрытую типом данных Inventory.</returns>
+        public IQueryable<Inventory> GetWallpapers(Character chara)
+        {
+            return _db.Inventories.Where(u => u.Character == chara && u.Item_Type == "Wallpapers");
         }
     }
 }

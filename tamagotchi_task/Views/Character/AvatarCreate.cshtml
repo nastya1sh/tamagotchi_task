@@ -1,4 +1,4 @@
-@model tamagotchi_task.Models.ViewModels.AvatarModel
+﻿@model tamagotchi_task.Models.ViewModels.AvatarModel
 @{
     Layout = "";
 }
@@ -52,20 +52,35 @@
         <input type="image" src="/img/cat12.png" onclick="document.getElementById('color').value='/img/cat12.png'; document.getElementById('myImg').src='/img/cat12.png';">
     </div>
     <div id="showWallpaper" style="display:none;" class="buttoncolor">
+        @*Я намеренно оставил "пустые" обои*@
         <input type="image" src="/img/circle.png" onclick="document.getElementById('wallpaper').value='/img/circle.png'; document.getElementById('myWallpaper').src='/img/circle.png';">
-        <input type="image" src="/img/circle1.png" onclick="document.getElementById('wallpaper').value='/img/circle1.png'; document.getElementById('myWallpaper').src='/img/circle1.png';">
-        <input type="image" src="/img/circle2.png" onclick="document.getElementById('wallpaper').value='/img/circle2.png'; document.getElementById('myWallpaper').src='/img/circle2.png';">
-        <input type="image" src="/img/circle3.png" onclick="document.getElementById('wallpaper').value='/img/circle3.png'; document.getElementById('myWallpaper').src='/img/circle3.png';">
-        <input type="image" src="/img/circle4.png" onclick="document.getElementById('wallpaper').value='/img/circle4.png'; document.getElementById('myWallpaper').src='/img/circle4.png';">
-        <input type="image" src="/img/circle5.png" onclick="document.getElementById('wallpaper').value='/img/circle5.png'; document.getElementById('myWallpaper').src='/img/circle5.png';">
-        <input type="image" src="/img/circle6.png" onclick="document.getElementById('wallpaper').value='/img/circle6.png'; document.getElementById('myWallpaper').src='/img/circle6.png';">
-    </div>
-    <div id="showAccessories" style="display:none;" class="buttoncolor">
+            @if (ViewBag.Wallpapers != null)
+            {
+                @foreach (var wall in ViewBag.Wallpapers)
+                {
+                    <input type="image" src="@wall.Image" onclick="document.getElementById('wallpaper').value='@wall.Image'; document.getElementById('myWallpaper').src='@wall.Image';">
+                }
+            }
+            @*<input type="image" src="/img/circle1.png" onclick="document.getElementById('wallpaper').value='/img/circle1.png'; document.getElementById('myWallpaper').src='/img/circle1.png';">
+            <input type="image" src="/img/circle2.png" onclick="document.getElementById('wallpaper').value='/img/circle2.png'; document.getElementById('myWallpaper').src='/img/circle2.png';">
+            <input type="image" src="/img/circle3.png" onclick="document.getElementById('wallpaper').value='/img/circle3.png'; document.getElementById('myWallpaper').src='/img/circle3.png';">
+            <input type="image" src="/img/circle4.png" onclick="document.getElementById('wallpaper').value='/img/circle4.png'; document.getElementById('myWallpaper').src='/img/circle4.png';">
+            <input type="image" src="/img/circle5.png" onclick="document.getElementById('wallpaper').value='/img/circle5.png'; document.getElementById('myWallpaper').src='/img/circle5.png';">
+            <input type="image" src="/img/circle6.png" onclick="document.getElementById('wallpaper').value='/img/circle6.png'; document.getElementById('myWallpaper').src='/img/circle6.png';">*@
+        </div>
+        <div id="showAccessories" style="display:none;" class="buttoncolor">
+            @if (ViewBag.Accessories != null)
+            {
+                @foreach (var acc in ViewBag.Accessories)
+                {
+                    <input type="image" src="@acc.Image" onclick="document.getElementById('accessory').value='@acc.AuxImg'; document.getElementById('myAccessories').src='@acc.AuxImg';">
+                }
+            }
         <input type="image" src="/img/item1prew.png" onclick="document.getElementById('accessory').value='/img/item1.png'; document.getElementById('myAccessories').src='/img/item1.png';">
-        <input type="image" src="/img/item2prew.png" onclick="document.getElementById('accessory').value='/img/item2.png'; document.getElementById('myAccessories').src='/img/item2.png';">
+        @*<input type="image" src="/img/item2prew.png" onclick="document.getElementById('accessory').value='/img/item2.png'; document.getElementById('myAccessories').src='/img/item2.png';">
         <input type="image" src="/img/item3prew.png" onclick="document.getElementById('accessory').value='/img/item3.png'; document.getElementById('myAccessories').src='/img/item3.png';">
         <input type="image" src="/img/item4prew.png" onclick="document.getElementById('accessory').value='/img/item4.png'; document.getElementById('myAccessories').src='/img/item4.png';">
-        <input type="image" src="/img/item5prew.png" onclick="document.getElementById('accessory').value='/img/item5.png'; document.getElementById('myAccessories').src='/img/item5.png';">
+        <input type="image" src="/img/item5prew.png" onclick="document.getElementById('accessory').value='/img/item5.png'; document.getElementById('myAccessories').src='/img/item5.png';">*@
     </div>
     <form asp-controller="Character" asp-action="AvatarCreate">
             <input type="text" id="animal" style="display: none" value="/img/cat0.png" asp-for="Animal"/>

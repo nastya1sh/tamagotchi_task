@@ -53,10 +53,19 @@ namespace tamagotchi_task.Controllers
             return View(model);
         }
 
-        public IActionResult AvatarCreate() 
+        public async Task<IActionResult> AvatarCreate() 
         {
             if (User.Identity.IsAuthenticated)
+            {
+                //Отправляем в представление все аксессуары у зверушки (или просто null, если их нет) 
+                ViewBag.Accessories = _inventoryManager
+                    .GetAccessories(await _characterManager.FindCharacterByUser(User.Identity.Name)).ToList();
+                //То же самое делаем с обоями
+                ViewBag.Wallpapers = _inventoryManager
+                    .GetWallpapers(await _characterManager.FindCharacterByUser(User.Identity.Name)).ToList();
+
                 return View();
+            }
             else
                 return RedirectToAction("Login", "Account");
         }
@@ -73,11 +82,20 @@ namespace tamagotchi_task.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Inventory()
+        [HttpGet]
+        public async Task<IActionResult> Inventory(string searchString)
         {
             if (User.Identity.IsAuthenticated)
+            {
                 //Выводим список вещей из инвентаря зверушки
-                return View(_inventoryManager.GetItems(await _characterManager.FindCharacterByUser(User.Identity.Name)));
+                var items = _inventoryManager.GetItems(await _characterManager.FindCharacterByUser(User.Identity.Name));
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    items = items.Where(s => s.Item_Name.ToUpper().Contains(searchString.ToUpper()));
+                }
+
+                return View(items);
+            }
             else
                 return RedirectToAction("Login", "Account");
         }
@@ -89,10 +107,22 @@ namespace tamagotchi_task.Controllers
             return RedirectToAction("Inventory", "Character");
         }
 
-        public IActionResult Shop()
+        [HttpGet]
+        public async Task<IActionResult> Shop(string searchString)
         {
             if (User.Identity.IsAuthenticated)
-                return View(_showcaseManager.ShowAll());
+            {
+                //Нам нужно взять уровень персонажа, чтобы вывести предметы в магазине
+                Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
+                //Выводим список вещей в магазине (назвал products, чтобы отличать от вещей в инвентаре)
+                var products = _showcaseManager.GetItems(chara);
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    products = products.Where(s => s.Item_Name.ToUpper().Contains(searchString.ToUpper()));
+                }
+
+                return View(products);
+            }
             else
                 return RedirectToAction("Login", "Account");
         }

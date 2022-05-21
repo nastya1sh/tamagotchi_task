@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Builder;
-using tamagotchi_task.Domain;
 using tamagotchi_task.Service;
 using tamagotchi_task.Managers.Interfaces;
 using tamagotchi_task.Managers.EF_Realizations;

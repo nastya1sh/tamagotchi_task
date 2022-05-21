@@ -31,6 +31,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
                         Item_Type = item.Item_Type,
                         Item_Name = item.Item_Name,
                         Image = item.Image,
+                        AuxImg = item.AuxImg,
                         Amount = 1,
                         ToyId = item.ToyId,
                         PotionId = item.PotionId,
@@ -44,9 +45,10 @@ namespace tamagotchi_task.Managers.EF_Realizations
             }
         }
 
-        public IQueryable<Showcase> ShowAll()
+        public IQueryable<Showcase> GetItems(Character character)
         {
-            return _db.Showcases;
+            //Возвращаем все предметы в витрине, отсортированные по типу
+            return _db.Showcases.Where(u => u.Level <= character.Level).OrderBy(item => item.Item_Type);
         }
     }
 }

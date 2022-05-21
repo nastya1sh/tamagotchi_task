@@ -104,7 +104,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
         }
         public IQueryable<CharacterTask> GetTasks(Character chara)
         {
-            return _db.CharacterTasks.Where(u => u.Characters == chara);
+            return _db.CharacterTasks.Where(u => u.Characters == chara).OrderBy(task => task.DeadLine);
         }
     }
 }
