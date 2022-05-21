@@ -1,18 +1,53 @@
-﻿
-
-@await Component.InvokeAsync("Message")
+﻿@await Component.InvokeAsync("Message")
 @model tamagotchi_task.Models.ViewModels.MessageModel;
-<link href="~/css/chat.css" rel="stylesheet">
 <div class="money">
   <p><img src="~/img/coin.png">256</p>
 </div>
 <div class="container">
-  <section class="msger">
-        
-         <form class="msger-inputarea" asp-action="Chat" asp-controller="Home"> 
-      <input type="text" class="msger-input" placeholder="Enter your message..." asp-for="Text" value="">
-      <button type="submit" class="msger-send-btn">SEND</button>
-        </form>
-    
-  </section>
+  <form class="msger-inputarea" asp-action="Chat" asp-controller="Home"> 
+    <input type="text" class="msger-input" placeholder="Enter your message..." asp-for="Text" value="">
+    <button type="submit" class="msger-send-btn">SEND</button>
+  </form>
 </div>
+
+<style>
+  .container {
+      height: 30px;
+      padding-top: 0px;
+      padding-left: 150px;
+  }
+  
+  .msger-inputarea {
+      display: flex;
+      width: 100%;
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-top: var(--border);
+      background: rgb(239, 237, 237);
+      border-radius: 0px 0px 48px 48px;
+  }
+  .msger-inputarea * {
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      font-size: 1em;
+  }
+  .msger-input {
+      width: 100%;
+      border-radius: 15px;
+      background: rgb(255, 255, 255);
+  }
+  .msger-send-btn {
+      margin-left: 10px;
+      background:  #3D3655;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 20px;
+      transition: background 0.23s;
+  }
+  .msger-send-btn:hover {
+      background: #4c4075;
+  }
+</style>

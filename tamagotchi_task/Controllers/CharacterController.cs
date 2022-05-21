@@ -81,6 +81,39 @@ namespace tamagotchi_task.Controllers
             }
             return View(model);
         }
+        
+        public async Task<IActionResult> EditAvatar() 
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
+                //Отправляем в представление все аксессуары у зверушки (или просто null, если их нет) 
+                ViewBag.Accessory = chara.AccessoryImage;
+                //То же самое делаем с обоями
+                ViewBag.Wallpaper = chara.WallpaperImage;
+                ViewBag.Color = chara.ColorImage;
+                ViewBag.Accessories = _inventoryManager
+                    .GetAccessories(await _characterManager.FindCharacterByUser(User.Identity.Name)).ToList();
+                //То же самое делаем с обоями
+                ViewBag.Wallpapers = _inventoryManager
+                    .GetWallpapers(await _characterManager.FindCharacterByUser(User.Identity.Name)).ToList();
+                return View();
+            }
+            else
+                return RedirectToAction("Login", "Account");
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditAvatar(AvatarModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
+                await _characterManager.SetAvatar(chara, model);
+
+                return RedirectToAction("Index", "Home");
+            }
+            return View(model);
+        }
 
         [HttpGet]
         public async Task<IActionResult> Inventory(string searchString)
@@ -132,6 +165,11 @@ namespace tamagotchi_task.Controllers
             Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
             await _showcaseManager.BuyItem(chara, itemID);
             return RedirectToAction("Shop", "Character");
+        }
+
+        public async Task<IActionResult> Dead()
+        {
+            return View();
         }
     }
 }

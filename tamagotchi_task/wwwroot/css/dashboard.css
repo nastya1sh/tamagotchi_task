@@ -261,7 +261,7 @@ progress::-webkit-progress-value {
     position: absolute;
     display: grid;
     width: 313.7px;
-    height: 300px;
+    height: 320px;
     left: 45%;
     top: 605px;
     background: rgba(255, 255, 255, 0.2);
@@ -273,10 +273,6 @@ progress::-webkit-progress-value {
 label.btn span {
     font-size: 20px;
     font-family: 'Rubik';
-}
-
-.btn {
-    width: 310px;
 }
 
 .btn-group .descr {

@@ -3,6 +3,7 @@ body{
     margin:0;
     font-family: Rubik
 }
+
 .box {
     display: flex;
     position:absolute;
@@ -86,6 +87,7 @@ body{
 img {
     width: 100px;
     image-rendering: pixelated;
+    pointer-events: none;
 }
 
 .start {
@@ -108,7 +110,7 @@ img {
     width: 500px;
     height: 610px;
     left: 40%;
-    top:20%;
+    top:10%;
     background: rgb(255, 255, 255);
     box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
     backdrop-filter: blur(26.1418px);
@@ -119,11 +121,13 @@ img {
     display: inline;
     position: center;
     z-index: 1;
+    pointer-events: none;
 }
 #myWallpaper{
     position: absolute;
     top: 15px;
     z-index: -1;
+    pointer-events: none;
 }
 
 #myAccessories{
@@ -131,6 +135,7 @@ img {
     right: 214px;
     top: -6px;
     z-index: 2;
+    pointer-events: none;
 }
 
 .buttoncolor {

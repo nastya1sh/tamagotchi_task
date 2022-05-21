@@ -57,13 +57,14 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     padding-top: 100px;
-    padding-left: 350px;
+    width: 80%;
+    margin-left: calc(10% + 160px);
 }
 
 .grid .item {
     display: inline-block;
     flex-direction: column;
-    height: 195px;
+    height: 210px;
     width: 150px;
     text-decoration: none;
     color: black;
@@ -72,12 +73,21 @@ body {
     box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
     backdrop-filter: blur(26.1418px);
     border-radius: 31.3701px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    border-style: dashed;
+    border-color: rgba(100, 109, 121, 0.25);
 }
 
 .grid .item h4 {
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
+}
+
+.grid .item h3 {
+    text-align: center;
+    font-size: 14px;
+    color: var(--secondary-color);
 }
 
 .grid .item p {
@@ -88,12 +98,13 @@ body {
 }
 
 .grid .item img {
-    width: 90px;
+    width: 65px;
     text-align: center;
     display: block;
     align-self: center;
-    margin-left: 30px;
+    margin-left: 40px;
     image-rendering: pixelated;
+    pointer-events: none;
 }
 
 .grid .item .coin{
@@ -106,8 +117,10 @@ body {
 .grid .item .desc {
     display:flex;
     position:relative;
-    margin-top: -10px;
+    justify-content: center;
+    margin-right: 55px;
     margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 #buy {
@@ -120,7 +133,7 @@ body {
     font-family: 'Rubik';
     width: 80px;
     height: 34px;
-    margin-left: 35px;
+    margin-left: 33px;
     margin-top: -10px;
     border-radius: 20px;
 }

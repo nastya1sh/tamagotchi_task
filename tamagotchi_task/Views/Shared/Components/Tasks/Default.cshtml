@@ -4,23 +4,16 @@
 
 <div class="wrapper">
     <div id="rectangle3" style="top: 680px;"></div>
-    <div class="btn-group" data-toggle="buttons" style=" display: grid; position: absolute; width: 310px; height: 280px; margin-left: 5px; left: 45%; overflow-y:scroll; top: 695px;">
+    <div class="btn-group" data-toggle="buttons" style=" display: grid; grid-auto-rows: 65px; position: absolute; width: 310px; height: 295px; margin-left: 5px; left: 45%; overflow-y:scroll; top: 695px;">
         <form method="get">
             <div class="container">
                 <input type="text" maxlength="12" placeholder="Search" value="" name="searchString" class="searchbar">
-                <img src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" alt="search icon" class="buttonSearch">
-                <input type="submit" value="Search" class="btn btn-default"/>
-            </div>
-            <button onclick="dropDown()" class="btn btn-default dropdown-toggle dropbtn" type="button">
-                <span class="caret"></span>
-           </button>
-            <div id="myDropdown" class="dropdown-content">
-                <a>Name</a>
-                <a>Description</a>
+                <input type="image" src="https://images-na.ssl-images-amazon.com/images/I/41gYkruZM2L.png" class="buttonSearch"/>
             </div>
         </form>
         @if (Model != null)
-        @foreach (var c in Model) {
+        {
+@foreach (var c in Model) {
             <label class="btn active">
                 <form id="form-@c.Id" asp-action="Complete" asp-controller="Home">
                     <input type="hidden" name="taskID" value="@c.Id">
@@ -75,6 +68,7 @@
                     <datetime class="date"> @c.DeadLine </datetime>
                 </span>
             </label>
+        }
         }
     </div>
 </div>

@@ -28,8 +28,7 @@ public partial class HomeController : Controller
         {
             Character temp = await _characterManager.FindCharacterByUser(User.Identity.Name);
             if (await _taskManager.CheckTasks(temp) == null)
-                return RedirectToAction("Dead", "Character"); //Потом пропишу страницу смерти животного
-
+                return RedirectToAction("Dead", "Character");
             ViewBag.Search = searchString;
             return View();
         }
