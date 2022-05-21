@@ -22,14 +22,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
                 
         public IQueryable<Message> WriteNLastMessages()
         {
-            //int N = 10;
-            //ICollection<Message> t = new List<Message>();
-            //for (int i=chat.Messages.Count; i< chat.Messages.Count-N; i--)
-            //{
-            //    t.Add( chat.Messages.ElementAt(i));
-            //}
-            //return t;
-            return _db.Messages;
+            return _db.Messages.OrderBy(s => s.Sending_Time);
         }
 
         public ICollection<MyUser> WriteAllUsers(Chat chat)
