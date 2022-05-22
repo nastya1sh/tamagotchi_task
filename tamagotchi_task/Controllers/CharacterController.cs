@@ -126,7 +126,8 @@ namespace tamagotchi_task.Controllers
                 {
                     items = items.Where(s => s.Item_Name.ToUpper().Contains(searchString.ToUpper()));
                 }
-
+                Character character = await _characterManager.FindCharacterByUser(User.Identity.Name);
+                ViewBag.Money=character.Money;
                 return View(items);
             }
             else
@@ -153,7 +154,8 @@ namespace tamagotchi_task.Controllers
                 {
                     products = products.Where(s => s.Item_Name.ToUpper().Contains(searchString.ToUpper()));
                 }
-
+                Character character = await _characterManager.FindCharacterByUser(User.Identity.Name);
+                ViewBag.Money = character.Money;
                 return View(products);
             }
             else
