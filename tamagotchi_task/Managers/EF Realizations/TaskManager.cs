@@ -13,10 +13,10 @@ namespace tamagotchi_task.Managers.EF_Realizations
         }
 
         /// <summary>
-        /// Проверяет, не "устарело" ли задание.
+        /// Проверяет, не установлена ли дата в прошлом.
         /// </summary>
         /// <param name="time"></param>
-        /// <returns>Возвращает 1, если нет. Иначе 0, если срок задания просрочен.</returns>
+        /// <returns>Возвращает true, если нет. Иначе false.</returns>
         public bool HasCorrectDate(DateTime time) 
         {
             if (time <= DateTime.Now) return false;
@@ -52,7 +52,12 @@ namespace tamagotchi_task.Managers.EF_Realizations
                 task.Characters.HP -= Convert.ToInt32(task.Difficulty); //У нас приоритет, по сути, Enum
                 _db.CharacterTasks.Remove(task);
             }
-            if (character.HP <= 0) _db.Characters.Remove(character);
+            if (character.HP <= 0)
+            {
+                _db.Characters.Remove(character);
+                await _db.SaveChangesAsync();
+                return null;
+            }
 
             await _db.SaveChangesAsync();
             return character;
@@ -85,7 +90,7 @@ namespace tamagotchi_task.Managers.EF_Realizations
         }
 
         /// <summary>
-        /// Наверное, удаляет задание?
+        /// Наверное, удаляет задание из БД?
         /// </summary>
         /// <param name="taskID"></param>
         public async Task DeleteTask(Guid taskID)

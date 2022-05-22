@@ -26,10 +26,17 @@ public partial class HomeController : Controller
         //Поэтому пришлось вставить старый добрый костыль
         if (User.Identity.IsAuthenticated)
         {
+            //Ищем зверушку данного пользователя в БД
             Character temp = await _characterManager.FindCharacterByUser(User.Identity.Name);
+            //Если её вдруг нет - пусть идёт создавать новую
+            if(temp == null)
+                return RedirectToAction("Create", "Character");
+
+            //Иначе проверяем задачи у зверушки
             if (await _taskManager.CheckTasks(temp) == null)
-                return RedirectToAction("Dead", "Character");
-            ViewBag.Search = searchString;
+                return RedirectToAction("Dead", "Character"); //Если животное умерло от количества потерянных задач - редирект :(
+
+            ViewBag.Search = searchString; //Передаём текст для поиска, если такой есть
             return View();
         }
         else
@@ -61,13 +68,16 @@ public partial class HomeController : Controller
         return View(model);
     }
 
+    [HttpPost]
     public async Task<IActionResult> Complete(Guid taskID)
     {
+        //Этот метод вызывается из существующего View, поэтому проверку на ненулевое животное не делаем
         Character character = await _characterManager.FindCharacterByUser(User.Identity.Name);
         await _taskManager.CompleteTask(taskID, character);
         return RedirectToAction("Index", "Home");
     }
-    
+
+    [HttpPost]
     public async Task<IActionResult> Delete(Guid taskID)
     {
         await _taskManager.DeleteTask(taskID);
