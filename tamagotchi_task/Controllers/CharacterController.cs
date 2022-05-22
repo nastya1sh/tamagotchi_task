@@ -42,7 +42,7 @@ namespace tamagotchi_task.Controllers
             {
                 //Вместо получения ID пользователя воспользуемся его именем
                 MyUser user = await _userManager.FindUserByNameAsync(User.Identity.Name);
-                if (user == null) //Если вдруг пользователь не авторизирован - пока-пока!
+                if (user == null) //Если вдруг пользователь не авторизирован - пока-пока! (На самом деле эта проверка - результат паранойи)
                     return RedirectToAction("Login", "Account");
 
                 //Добавляем персонажа в бд
@@ -57,6 +57,10 @@ namespace tamagotchi_task.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
+                //Та же проверка на ненулевое животное
+                if (await _characterManager.FindCharacterByUser(User.Identity.Name) == null)
+                    return RedirectToAction("Create", "Character");
+
                 //Отправляем в представление все аксессуары у зверушки (или просто null, если их нет) 
                 ViewBag.Accessories = _inventoryManager
                     .GetAccessories(await _characterManager.FindCharacterByUser(User.Identity.Name)).ToList();
@@ -87,6 +91,10 @@ namespace tamagotchi_task.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
+                //Сначала проверяем животное на существование
+                if (chara == null)
+                    return RedirectToAction("Create", "Character");
+
                 //Отправляем в представление все аксессуары у зверушки (или просто null, если их нет) 
                 ViewBag.Accessory = chara.AccessoryImage;
                 //То же самое делаем с обоями
@@ -120,13 +128,17 @@ namespace tamagotchi_task.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
+                Character character = await _characterManager.FindCharacterByUser(User.Identity.Name);
+
+                if (character == null)
+                    return RedirectToAction("Create", "Character");
+
                 //Выводим список вещей из инвентаря зверушки
-                var items = _inventoryManager.GetItems(await _characterManager.FindCharacterByUser(User.Identity.Name));
+                var items = _inventoryManager.GetItems(character);
                 if (!String.IsNullOrEmpty(searchString))
                 {
                     items = items.Where(s => s.Item_Name.ToUpper().Contains(searchString.ToUpper()));
                 }
-                Character character = await _characterManager.FindCharacterByUser(User.Identity.Name);
                 ViewBag.Money=character.Money;
                 return View(items);
             }
@@ -148,14 +160,17 @@ namespace tamagotchi_task.Controllers
             {
                 //Нам нужно взять уровень персонажа, чтобы вывести предметы в магазине
                 Character chara = await _characterManager.FindCharacterByUser(User.Identity.Name);
+                //А ещё проверим животное на существование
+                if (chara == null)
+                    return RedirectToAction("Create", "Character");
+
                 //Выводим список вещей в магазине (назвал products, чтобы отличать от вещей в инвентаре)
                 var products = _showcaseManager.GetItems(chara);
                 if (!String.IsNullOrEmpty(searchString))
                 {
                     products = products.Where(s => s.Item_Name.ToUpper().Contains(searchString.ToUpper()));
                 }
-                Character character = await _characterManager.FindCharacterByUser(User.Identity.Name);
-                ViewBag.Money = character.Money;
+                ViewBag.Money = chara.Money;
                 return View(products);
             }
             else
@@ -169,9 +184,12 @@ namespace tamagotchi_task.Controllers
             return RedirectToAction("Shop", "Character");
         }
 
-        public async Task<IActionResult> Dead()
+        public IActionResult Dead()
         {
-            return View();
+            if (User.Identity.IsAuthenticated) //Хотя эта страница как бы для нулевого животного, нулевой пользователь также сломает сайт
+                return View();
+            else
+                return RedirectToAction("Login", "Account");
         }
     }
 }
