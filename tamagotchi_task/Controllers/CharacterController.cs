@@ -52,10 +52,15 @@ namespace tamagotchi_task.Controllers
                 return RedirectToAction("Login", "Account");
         }
 
-        public IActionResult Inventory()
+        public async Task<IActionResult> Inventory()
         {
             if (User.Identity.IsAuthenticated)
+            {
+                Character character = await _characterManager.FindCharacterByUser(User.Identity.Name);
+                ViewBag.Money = character.Money;
                 return View();
+            }
+                
             else
                 return RedirectToAction("Login", "Account");
         }
