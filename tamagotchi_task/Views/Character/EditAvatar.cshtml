@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="~/tamagotchi_task.styles.css" asp-append-version="true"/>
 </head>
 <body>
+<div class="bar" style="display: table; z-index:-1; position: absolute; top: -10px; right: 0px; width: 100%; box-sizing: border-box; height: 50px; margin: 0; background-color: #3D3655;"></div>
 <div id="welcomeDiv" class="answer_box">
     <div>
         <img id="myWallpaper" src="@ViewBag.Wallpaper">
@@ -29,7 +30,7 @@
         <button type="button" class="start" onclick="showAccessories()">Accessories</button>
     </div>
     <div id="showAnimal" class="buttoncolor">
-        <input type="image" src="/img/catAnimal.png" onclick="document.getElementById('color').value='/img/cat0.png'; document.getElementById('wallpaper').value='/img/circle.png'; document.getElementById('accessory').value='/img/item1.png';  document.getElementById('myImg').src='/img/cat0.png'; document.getElementById('myWallpaper').src='/img/circle.png'; document.getElementById('myAccessories').src='/img/item1.png';">
+        <input type="image" src="/img/catAnimal.png" onclick="document.getElementById('color').value='/img/cat0.png'; document.getElementById('wallpaper').value='/img/circle.png'; document.getElementById('accessory').value='/img/null_item.png';  document.getElementById('myImg').src='/img/cat0.png'; document.getElementById('myWallpaper').src='/img/circle.png'; document.getElementById('myAccessories').src='/img/null_item.png';">
     </div>
     <div id="showColor" style="display:none;" class="buttoncolor">
         <input type="image" src="/img/cat0.png" onclick="document.getElementById('color').value='/img/cat0.png'; document.getElementById('myImg').src='/img/cat0.png';">

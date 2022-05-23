@@ -1,7 +1,8 @@
 ﻿@model IQueryable<Message>;   
 
+<div class="bar" style="display: table; z-index:-1; position: absolute; top: -10px; right: 0px; width: 100%; box-sizing: border-box; height: 50px; margin: 0; background-color: #3D3655;"></div>
 <section class="msger">
-    <main class="msger-chat">
+    <div class="msger-chat">
         @foreach (var message in Model)
         {
             if (message.MyUserName != ViewBag.Username)
@@ -36,7 +37,7 @@
                 </div>
             }
         }
-    </main>
+    </div>
 </section>
 
 <style>
