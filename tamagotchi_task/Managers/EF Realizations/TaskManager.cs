@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.CompilerServices;
 using tamagotchi_task.Managers.Interfaces;
 
 namespace tamagotchi_task.Managers.EF_Realizations
@@ -46,12 +47,13 @@ namespace tamagotchi_task.Managers.EF_Realizations
         /// <param name="character"></param>
         public async Task<Character> CheckTasks(Character character) 
         {
-            foreach (var task in _db.CharacterTasks.Where(u => u.DeadLine < DateTime.Now && u.Characters.Id == character.Id)) 
+            foreach (var task in _db.CharacterTasks.Where(u => u.Characters.Id == character.Id)) 
             {
-                if (task == null) break;
+                if (task == null || task.DeadLine.Value > DateTime.Now) break; //заменил, потому что macos не для людей...
                 task.Characters.HP -= Convert.ToInt32(task.Difficulty); //У нас приоритет, по сути, Enum
                 _db.CharacterTasks.Remove(task);
             }
+            
             if (character.HP <= 0)
             {
                 _db.Characters.Remove(character);

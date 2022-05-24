@@ -12,8 +12,8 @@ body{
     flex-direction: column;
     width: 380px;
     height: 510px;
-    left: 40%;
-    top:20%;
+    left: 35%;
+    top:15%;
     background: rgb(255, 255, 255);
     box-shadow: 13.0709px 13.0709px 104.567px rgba(63, 39, 102, 0.1);
     backdrop-filter: blur(26.1418px);
@@ -65,10 +65,9 @@ body{
 }
 
 .box .inputname {
-    padding: 10px 12px;
+    padding: 11px 12px;
     border-radius: 0px 15px 15px 0px;
     font-size: 14px;
-    line-height: 1.43;
     color: #4e4a57;
     border: 1px solid #c3c0c7;
     font-family: Rubik
@@ -80,7 +79,7 @@ body{
 }
 
 .box .start {
-    margin-left: 100px;
+    margin-left: 90px;
 }
 
 

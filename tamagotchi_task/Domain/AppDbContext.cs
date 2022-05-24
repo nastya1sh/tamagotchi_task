@@ -59,7 +59,7 @@ namespace tamagotchi_task.Domain
             modelBuilder.Entity<Potions>().HasData(new Potions
             {
                 Id = new Guid("df691f45-ddad-4618-b3d9-4256a94cdf6a"),
-                Name = "COCKtail",
+                Name = "Cocktail",
                 Buff_XP = 30,
             }); //Cocktail
             modelBuilder.Entity<Toys>().HasData(new Toys
@@ -115,7 +115,7 @@ namespace tamagotchi_task.Domain
             {
                 Id = new Guid("323a9b11-0696-41e0-9d6d-abc0119a942c"),
                 Item_Type = "Potions",
-                Item_Name = "COCKtail",
+                Item_Name = "Cocktail",
                 Image = "/img/cocktail.png",
                 Price = 10,
                 Level = 5,
@@ -140,8 +140,8 @@ namespace tamagotchi_task.Domain
                 Item_Name = "Sombrero",
                 Image = "/img/Item2prew.png",
                 AuxImg = "/img/Item2.png",
-                Price = 1500,
-                Level = 100,
+                Price = 10,
+                Level = 4,
             }); //Sombrero
             modelBuilder.Entity<Showcase>().HasData(new Showcase
             {
@@ -170,8 +170,8 @@ namespace tamagotchi_task.Domain
                 Item_Name = "Motorcycle Helmet",
                 Image = "/img/Item5prew.png",
                 AuxImg = "/img/Item5.png",
-                Price = 100,
-                Level = 5,
+                Price = 20,
+                Level = 3,
             }); //Motorcycle Helmet
 
             //Обои
@@ -190,8 +190,8 @@ namespace tamagotchi_task.Domain
                 Item_Type = "Wallpapers",
                 Item_Name = "Moonlight Sky",
                 Image = "/img/circle2.png",
-                Price = 60,
-                Level = 5,
+                Price = 10,
+                Level = 2,
             }); //Moonlight Sky
             modelBuilder.Entity<Showcase>().HasData(new Showcase
             {
@@ -208,8 +208,8 @@ namespace tamagotchi_task.Domain
                 Item_Type = "Wallpapers",
                 Item_Name = "Seashore",
                 Image = "/img/circle4.png",
-                Price = 110,
-                Level = 7,
+                Price = 30,
+                Level = 4,
             }); //Seashore
             modelBuilder.Entity<Showcase>().HasData(new Showcase
             {
@@ -217,8 +217,8 @@ namespace tamagotchi_task.Domain
                 Item_Type = "Wallpapers",
                 Item_Name = "Woods",
                 Image = "/img/circle5.png",
-                Price = 300,
-                Level = 10,
+                Price = 10,
+                Level = 1,
             }); //Woods
             modelBuilder.Entity<Showcase>().HasData(new Showcase
             {
@@ -226,8 +226,8 @@ namespace tamagotchi_task.Domain
                 Item_Type = "Wallpapers",
                 Item_Name = "Desert",
                 Image = "/img/circle6.png",
-                Price = 3500,
-                Level = 100,
+                Price = 20,
+                Level = 4,
             }); //Desert
             #endregion
 
