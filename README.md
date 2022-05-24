@@ -1,2 +1,19 @@
-# tamagotchi_task
-<img width="1440" alt="Снимок экрана 2022-04-26 в 23 55 15" src="https://user-images.githubusercontent.com/43990940/165395248-3ac59ad0-92a0-4fb2-8ec7-5a79dd67dfd7.png">
+<p align="center">
+  <img src="https://i.imgur.com/Eqdtzuj.png" style="image-rendering: pixelated;" "alt="logo" width="20%"/>
+</p>
+<h1 align="center">
+  TAMOTASK
+</h1>
+
+<p align="center">
+  Tamotask is an open source habit building program which helps you complete your daily tasks. Level up as you succeed, lose HP as you fail, earn money to buy toys and clothes for your pet.
+</p>
+
+### Running from source
+
+```bash
+git clone https://github.com/holengine/tamotask.git
+cd tamagotchi_task
+update-database -context AppDbContext
+dotnet run
+```
