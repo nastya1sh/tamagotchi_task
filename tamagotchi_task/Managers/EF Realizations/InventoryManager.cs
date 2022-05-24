@@ -28,6 +28,14 @@ namespace tamagotchi_task.Managers.EF_Realizations
                 case "Potions":
                     var potion = await _db.Potions.FirstOrDefaultAsync(u => u.Id == item.PotionId);
                     character.XP += potion.Buff_XP;
+                    if (character.XP >= character.Level * 20) //Проверяем количество опыта (ура, повторяющийся код)
+                    {
+                        //Вместо добавления в таблицу предела опыта для уровня, можно просто скаллировать его относительно 20
+                        character.XP -= character.Level * 20;
+                        character.Level++;
+                        //Заодно и восстановим HP зверушке
+                        character.HP = 6;
+                    }
                     break;
 
                 case "Toys":
